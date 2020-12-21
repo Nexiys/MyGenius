@@ -240,27 +240,43 @@ body {
   height: 100px;
   margin: 34px auto 26px;
 }
-.content-area-speaker .progress div {
+.content-area-speaker .progress .speaker-icon,
+.content-area-speaker .progress .keyboard-icon,
+.content-area-speaker .progress .mouse-icon {
   width: 64px;
   height: 100px;
   float: left;
   text-align: center;
   position: relative;
 }
-.content-area-speaker .progress div span {
+.content-area-speaker .progress .speaker-icon span,
+.content-area-speaker .progress .keyboard-icon span,
+.content-area-speaker .progress .mouse-icon span {
   position: absolute;
   left: 0;
   bottom: 5px;
-  width: 100%;
+  width: 64px;
+  font-size: 18px;
+  line-height: 1;
+  color: #B2B9C5;
   display: inline-block;
   text-align: center;
   vertical-align: bottom;
 }
-.content-area-speaker .progress div.keyboard-icon {
+.content-area-speaker .progress .speaker-icon .focus-color,
+.content-area-speaker .progress .keyboard-icon .focus-color,
+.content-area-speaker .progress .mouse-icon .focus-color {
+  color: #565A66;
+}
+.content-area-speaker .progress .speaker-icon.keyboard-icon,
+.content-area-speaker .progress .keyboard-icon.keyboard-icon,
+.content-area-speaker .progress .mouse-icon.keyboard-icon {
   background: url(../img/keyboard_normal.png) top no-repeat;
   background-size: 64px 64px;
 }
-.content-area-speaker .progress div.mouse-icon {
+.content-area-speaker .progress .speaker-icon.mouse-icon,
+.content-area-speaker .progress .keyboard-icon.mouse-icon,
+.content-area-speaker .progress .mouse-icon.mouse-icon {
   background: url(../img/mouse_normal.png) top no-repeat;
   background-size: 64px 64px;
 }
@@ -449,27 +465,43 @@ body {
   height: 100px;
   margin: 34px auto 26px;
 }
-.content-area-keyboard .progress div {
+.content-area-keyboard .progress .speaker-icon,
+.content-area-keyboard .progress .keyboard-icon,
+.content-area-keyboard .progress .mouse-icon {
   width: 64px;
   height: 100px;
   float: left;
   text-align: center;
   position: relative;
 }
-.content-area-keyboard .progress div span {
+.content-area-keyboard .progress .speaker-icon span,
+.content-area-keyboard .progress .keyboard-icon span,
+.content-area-keyboard .progress .mouse-icon span {
   position: absolute;
   left: 0;
   bottom: 5px;
-  width: 100%;
+  width: 64px;
+  font-size: 18px;
+  line-height: 1;
+  color: #B2B9C5;
   display: inline-block;
   text-align: center;
   vertical-align: bottom;
 }
-.content-area-keyboard .progress div.keyboard-icon {
+.content-area-keyboard .progress .speaker-icon .focus-color,
+.content-area-keyboard .progress .keyboard-icon .focus-color,
+.content-area-keyboard .progress .mouse-icon .focus-color {
+  color: #565A66;
+}
+.content-area-keyboard .progress .speaker-icon.keyboard-icon,
+.content-area-keyboard .progress .keyboard-icon.keyboard-icon,
+.content-area-keyboard .progress .mouse-icon.keyboard-icon {
   background: url(../img/keyboard_normal.png) top no-repeat;
   background-size: 64px 64px;
 }
-.content-area-keyboard .progress div.mouse-icon {
+.content-area-keyboard .progress .speaker-icon.mouse-icon,
+.content-area-keyboard .progress .keyboard-icon.mouse-icon,
+.content-area-keyboard .progress .mouse-icon.mouse-icon {
   background: url(../img/mouse_normal.png) top no-repeat;
   background-size: 64px 64px;
 }
@@ -703,27 +735,43 @@ body {
   height: 100px;
   margin: 34px auto 26px;
 }
-.content-area-mouse .progress div {
+.content-area-mouse .progress .speaker-icon,
+.content-area-mouse .progress .keyboard-icon,
+.content-area-mouse .progress .mouse-icon {
   width: 64px;
   height: 100px;
   float: left;
   text-align: center;
   position: relative;
 }
-.content-area-mouse .progress div span {
+.content-area-mouse .progress .speaker-icon span,
+.content-area-mouse .progress .keyboard-icon span,
+.content-area-mouse .progress .mouse-icon span {
   position: absolute;
   left: 0;
   bottom: 5px;
-  width: 100%;
+  width: 64px;
+  font-size: 18px;
+  line-height: 1;
+  color: #B2B9C5;
   display: inline-block;
   text-align: center;
   vertical-align: bottom;
 }
-.content-area-mouse .progress div.keyboard-icon {
+.content-area-mouse .progress .speaker-icon .focus-color,
+.content-area-mouse .progress .keyboard-icon .focus-color,
+.content-area-mouse .progress .mouse-icon .focus-color {
+  color: #565A66;
+}
+.content-area-mouse .progress .speaker-icon.keyboard-icon,
+.content-area-mouse .progress .keyboard-icon.keyboard-icon,
+.content-area-mouse .progress .mouse-icon.keyboard-icon {
   background: url(../img/keyboard_normal.png) top no-repeat;
   background-size: 64px 64px;
 }
-.content-area-mouse .progress div.mouse-icon {
+.content-area-mouse .progress .speaker-icon.mouse-icon,
+.content-area-mouse .progress .keyboard-icon.mouse-icon,
+.content-area-mouse .progress .mouse-icon.mouse-icon {
   background: url(../img/mouse_normal.png) top no-repeat;
   background-size: 64px 64px;
 }

@@ -16,7 +16,7 @@
 			<i class="blue-bar"></i>
 			<div class="keyboard-icon"><img src="../../assets/img/keyboard_highlighted.png" alt="keyboard"><span>键盘</span></div>
 			<i class="green-bar"></i>
-			<div class="mouse-icon"><img src="../../assets/img/mouse_highlighted.png" alt="mouse"><span>鼠标</span></div>
+			<div class="mouse-icon"><img src="../../assets/img/mouse_highlighted.png" alt="mouse"><span class="focus-color">鼠标</span></div>
 		</div>
 		<div class="operate-box" >
 			<div class="left-side">

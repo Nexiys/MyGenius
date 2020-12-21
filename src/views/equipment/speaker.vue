@@ -12,7 +12,7 @@
 	<section class="content-area-speaker">
 		<h2>设备检测</h2>
 		<div class="progress">
-			<div class="speaker-icon"><img src="../../assets/img/voice_highlighted.png" alt=""><span>扬声器</span></div>
+			<div class="speaker-icon"><img src="../../assets/img/voice_highlighted.png" alt=""><span class="focus-color">扬声器</span></div>
 			<i class="blue-bar"></i>
 			<div class="keyboard-icon"><span>键盘</span></div>
 			<i></i>

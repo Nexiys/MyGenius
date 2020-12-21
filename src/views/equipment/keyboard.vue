@@ -14,7 +14,7 @@
 		<div class="progress">
 			<div class="speaker-icon"><img src="../../assets/img/voice_highlighted.png" alt="speaker"><span>扬声器</span></div>
 			<i class="blue-bar"></i>
-			<div class="keyboard-icon"><img src="../../assets/img/keyboard_highlighted.png" alt="keyboard"><span>键盘</span></div>
+			<div class="keyboard-icon"><img src="../../assets/img/keyboard_highlighted.png" alt="keyboard"><span class="focus-color">键盘</span></div>
 			<i class="green-bar"></i>
 			<div class="mouse-icon"><span>鼠标</span></div>
 		</div>
