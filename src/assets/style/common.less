@@ -1,0 +1,116 @@
+@primary-color: #1B88EE;                         // 全局主色
+@link-color: #1B88EE;                            // 链接色
+@normal-blue: #47A1FE;                           // 默认蓝
+@hover-blue: #50B2FF;                            // 悬停蓝
+@active-blue: #1583D6;                           // 激活蓝
+@disabled-gray:  #C3CEDE;                        // 禁用灰
+@success-color: #4FC7AF;                         // 成功色
+@warning-color: #F8AC59;                         // 警告色
+@error-color: #ED5C52;                           // 错误色
+@font-size: 28px;                                // 主字号
+@text-color: #565A66;                            // 主文本色
+@text-secondary: #848894;                        // 次文本色
+@text-minor: #33363E;                            // 次文本色二
+@invalid-color: rgba(0, 0, 0, .35);              // 失效色
+@option-hover: #DEEBFF;                          // 选项按钮 Hover 颜色
+@border-color: #B4BECD;                          // 边框色
+@box-shadow-base: 0 20px 40px -10px rgba(33,120,215,0.40);  // 浮层阴影
+@botton-border: 1px solid  #47A1FE;              // 按钮边框
+
+@white: #fff;
+@black: #000;
+@blue: #47A1FE;
+@hr-color: #d9d9d9;
+@introduce-bg: #EBF3FF;
+@introduce-tit: #006AD7;
+@introduce-con: #007AF8;
+@main-border: #CBD6E5;
+@Test-Color:#81d8d0;
+
+// 默认蓝色背景的按钮
+.button-default {
+	background:@normal-blue;
+	border-radius: 6px;
+	display:inline-block;
+	box-sizing: border-box;
+	line-height: 1;
+	color: @white;
+	&:hover,.hover {
+		background: @hover-blue;
+		color: @white;
+	}
+	&:active,.active {
+		background: @active-blue;
+		color: @white;
+	}
+	.disabled {
+		background: @disabled-gray;
+		color: @white;
+	}
+}
+// 默认白色背景的按钮
+.button-default-white {
+	background:@white;
+	border-radius: 6px;
+	border: 1px solid @normal-blue;
+	display:inline-block;
+	box-sizing: border-box;
+	line-height: 1;
+	color: @normal-blue;
+	& + .button-default-white {
+		margin-left: 30px;
+	}
+	&:hover,.hover {
+		background: @hover-blue;
+		border: 1px solid @hover-blue;
+		color: @white;
+	}
+	&:active,.active {
+		background: @active-blue;
+		border: 1px solid @active-blue;
+		color: @white;
+	}
+	.disabled {
+		background: @disabled-gray;
+		border: none;
+		color: @white;
+	}
+}
+// 选项按钮
+.button-option {
+	background: @white;
+	border-radius: 8px;
+	box-shadow: 0 20px 40px -10px rgba(33,120,215,0.40);
+	display: inline-block;
+	box-sizing: border-box;
+	color: @text-minor;
+	&:hover,.hover {
+		background: @option-hover;
+	}
+	&:active,.active {
+		background: @normal-blue;
+		color: @white;
+	}
+}
+
+// e.g. pt-2 pt-16 pt-40 fs-16 fs-24等等
+
+.loop(20);
+
+.loop(@n, @i: 0) when (@i =< @n) {
+    @size: @i*2;
+
+    .pt-@{size} { padding-top: unit(@size, px) !important; }
+    .pr-@{size} { padding-right: unit(@size, px) !important; }
+    .pb-@{size} { padding-bottom: unit(@size, px) !important; }
+    .pl-@{size} { padding-left: unit(@size, px) !important; }
+
+    .mt-@{size} { margin-top: unit(@size, px) !important; }
+    .mr-@{size} { margin-right: unit(@size, px) !important; }
+    .mb-@{size} { margin-bottom: unit(@size, px) !important; }
+    .ml-@{size} { margin-left: unit(@size, px) !important; }
+
+    .fs-@{size} { font-size: unit(@size, px) !important; }
+
+    .loop(@n, (@i + 1));
+} 

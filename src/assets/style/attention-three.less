@@ -1,0 +1,490 @@
+@import (reference) 'common.less';
+
+html,body {
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+  min-width: 1180px;
+  background-color: @normal-blue;
+	overflow: hidden;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+	position: relative;
+	background: url(../img/evaluation-bg.png) no-repeat;
+	background-size: cover;
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    padding: 0 40px;
+
+    line-height: 70px;
+
+    background: @white;
+
+    .logo-modular {
+        float: left;
+
+        a {
+            display: block;
+
+            cursor: pointer;
+        }
+    }
+
+    .h-operate {
+        float: right;
+
+        a {
+            display: inline-block;
+
+            width: 100px;
+            height: 38px;
+
+            font-size: 16px;
+            line-height: 38px;
+
+            color: @normal-blue;
+            border: 1px solid @normal-blue;
+            -webkit-border-radius: 4px;
+               -moz-border-radius: 4px;
+                    border-radius: 4px;
+            background: @white;
+
+            text-align: center;
+            letter-spacing: 1px;
+
+            i {
+                display: inline-block;
+
+                margin: -3px 10px 0 0;
+
+                vertical-align: middle;
+            }
+
+            &:hover {
+                color: @white;
+                border: none;
+                background: @normal-blue;
+            }
+
+            &:active {
+                color: @white;
+                border: none;
+                background: @active-blue;
+            }
+
+            &:nth-child(2) {
+                margin-left: 24px !important;
+            }
+        }
+    }
+}
+
+.content-area{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 1180px;
+	height: 760px;
+	background: @white;
+	margin-top: 35px;
+	-webkit-box-shadow: 0 20px 40px -10px rgba(33,120,215,0.40);
+	-moz-box-shadow: 0 20px 40px -10px rgba(33,120,215,0.40);
+	-ms-box-shadow: 0 20px 40px -10px rgba(33,120,215,0.40);
+	box-shadow: 0 20px 40px -10px rgba(33,120,215,0.40);
+	border-radius: 8px;
+	font-family: 'MicrosoftYaHei';
+	.c-header{
+		position: relative;
+		width: -webkit-calc(~"100% - 60px");
+		width: -moz-calc(~"100% - 60px");
+		width: -o-calc(~"100% - 60px");
+		width: calc(~"100% - 60px");
+		height: 60px;
+		line-height: 60px;
+		margin: 0 auto;
+		border-bottom: 1px solid #d9d9d9;
+		color: @text-secondary;
+		.c-h-left{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: -webkit-calc(~"100% / 3");
+			width: -moz-calc(~"100% / 3");
+			width: -o-calc(~"100% / 3");
+			width: calc(~"100% / 3");
+			font-size: 16px;
+			text-align: left;
+			letter-spacing: 0;
+			line-height: 60px;
+			em{
+				color: @text-secondary;
+				&:nth-child(2){
+					color: @normal-blue;
+				}
+			}
+		}
+		.c-h-middle{
+			width: auto;
+			height: 60px;
+			line-height: 60px;
+			font-weight: 600;
+			font-size: 22px;
+			text-align: center;
+			letter-spacing: 0;
+			color: @text-color;
+		}
+		.c-h-right{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: -webkit-calc(~"100% / 3");
+			width: -moz-calc(~"100% / 3");
+			width: -o-calc(~"100% / 3");
+			width: calc(~"100% / 3");
+			font-size: 16px;
+			text-align: right;
+			letter-spacing: 0;
+			line-height: 60px;
+		}
+	}
+	
+	// 游戏介绍页面样式
+	.introduce {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: 35px;
+		width: 1060px;
+		height: 380px;
+	
+		background: url(../img/reaction-bg.png) no-repeat;
+		background-position: 0 50%;
+		background-size: 370px 380px;
+	
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	
+		.i-box {
+			position: relative;
+	
+			float: right;
+	
+			width: 610px;
+			height: 380px;
+			padding: 40px 46px;
+	
+			font-family: 'MicrosoftYaHei';
+	
+			-webkit-border-radius: 8px;
+				-moz-border-radius: 8px;
+					border-radius: 8px;
+			background: #ebf3ff;
+	
+			text-align: center;
+	
+				-ms-border-radius: 8px;
+				-o-border-radius: 8px;
+	
+			.i-con {
+				width: 100%;
+				height: 100%;
+				
+				display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+				display: -moz-box; /* 老版本语法: Firefox (buggy) */
+				display: -ms-flexbox; /* 混合版本语法: IE 10 */
+				display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+				display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+				flex-direction: column;
+				-webkit-justify-content: space-between;
+				justify-content: space-between;
+				flex: 1;
+				h2 {
+					font-size: 32px;
+					font-weight: 600;
+					line-height: 32px;
+					
+					color: #006ad7;
+					
+					letter-spacing: 0;
+				}
+					
+				p {
+					// margin-top: 12px;
+					
+					font-size: 22px;
+					line-height: 34px;
+					
+					color: #007af8;
+					
+					text-align: left;
+					letter-spacing: 0;
+					
+					&:nth-child(2) {
+						// .mt-36;
+					}
+					
+					&:nth-child(3) {
+						// .mt-12;
+					}
+				}
+					
+				a {
+					display: inline-block;
+					
+					width: 280px;
+					height: 60px;
+					margin: 0 auto;
+					
+					font-size: 24px;
+					line-height: 60px;
+					
+					color: @white;
+					border-radius: 4px;
+					background: @normal-blue;
+					
+					cursor: pointer;
+					letter-spacing: 0;
+					
+					&:hover {
+						background: @hover-blue;
+					}
+					
+					&:active {
+						background: @active-blue;
+					}
+				}
+					
+				&::after {
+					position: absolute;
+					top: 60px;
+					left: -15px;
+					
+					width: 30px;
+					height: 30px;
+					
+					background: #ebf3ff;
+					
+					content: '';
+					-webkit-transform: rotate(45deg);
+					-moz-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					-o-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+			}
+		}
+	}
+	
+	// 读题（规则说明）页面
+	.topic-exploring-area {
+		position: relative;
+		width: 100%;
+		height: calc(~"760px - 61px");
+		padding: 24px 30px 30px;
+		margin: 0 auto;
+		h2 {
+			font-size: 26px;
+			color: @text-minor;
+			letter-spacing: 0;
+			line-height: 26px;
+			font-weight: normal;
+		}
+		.stage-tit {
+			text-align: left;
+		}
+		.guide-tit {
+			text-align: center;
+			margin-top: 24px;
+		}
+		// 倒计时占位
+		.timing-ring-wrap {
+			position: absolute;
+			left: 50%;
+			top: 120px;
+			margin-left: -50px;
+			width: 100px;
+			height: 100px;
+			box-sizing: border-box;
+			border: 3px solid @normal-blue;
+			border-radius: 100%;
+			text-align: center;
+			line-height: 100px;
+			z-index: 1;
+			background: @white;
+		}
+		// 主要内容
+		.main {
+			position: relative;
+			width: 100%;
+			height: 498px;
+			border: 2px solid @main-border;
+			border-radius: 8px;
+			margin-top: 70px;
+			text-align: center;
+			.main-box {
+				position: absolute;
+				padding: 0 60px;
+				bottom: 120px;
+				.des-con {
+					font-size: 26px;
+					color: @text-minor;
+					letter-spacing: 0;
+					line-height: 46px;
+				}
+				.start-btn {
+					width: 280px;
+					height: 60px;
+					margin-top: 60px;
+					font-size: 24px;
+					.button-default
+				}	
+			}
+			
+			.answer-area {
+				display: flex;
+				align-items: center;
+				width: 100%;
+				height: 324px;
+				flex-wrap: wrap;
+				// 答题矩阵样式
+				li {
+					width: 100%;
+					height: auto;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-flow: column wrap;
+					.topic {
+						width: calc(~"100% - 80px");
+						display: flex;
+						justify-content: space-between;
+						span {
+							font-size: 26px;
+							line-height: 26px;
+							color: @text-secondary;
+						}
+					}
+					.solution {
+						width: calc(~"100% - 80px");
+						display: none;
+						input {
+							display: inline-block;
+							width: 42px;
+							height: 50px;
+							line-height: 50px;
+							text-align: center;
+							background: #F7FAFF;
+							border: 1px solid #B2B9C5;
+							font-size: 26px;
+							color: @text-minor;
+							&:focus {
+								width: 54px;
+								height: 64px;
+								background: @white;
+								border: 2px solid @normal-blue;
+								font-size: 36px;
+								font-weight: 600;
+							}
+						}
+					}
+				}
+				// 焦点行样式
+				.focus-line {
+					width: 100%;
+					height: auto;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-flow: column wrap;
+					.topic {
+						width: calc(~"100% - 80px");
+						display: flex;
+						justify-content: space-between;
+						span {
+							font-size: 30px;
+							line-height: 30px;
+							font-weight: 600;
+							color: @text-minor;
+						}
+					}
+					.solution {
+						height: 90px;
+						display: flex;
+						justify-content: space-around;
+						align-items: center;
+					}
+				}
+			}
+		}
+		// 答题阶段需要加此样式
+		.flex{
+			display: flex;
+			align-items: center;
+		}	
+	}
+}
+
+// 过渡页面
+.exercise-end-content {
+	width: calc(100% - 608px);
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	& > img {
+	  width: 150px;
+	  height: 150px;
+	  margin-top: 110px;
+	}
+	& > h1 {
+	  font-family: MicrosoftYaHei;
+	  font-weight: 600;
+	  font-size: 32px;
+	  color: #33363e;
+	  margin: 15px auto 20px;
+	}
+	.explain {
+	  font-family: MicrosoftYaHei;
+	  font-size: 22px;
+	  color: #848894;
+	  text-align: center;
+		p {
+			font-size: 22px;
+			line-height: 34px;
+			color: @text-color;
+		}
+	}
+	a {
+	  display: inline-block;
+	  margin: 40px auto;
+	  cursor: pointer;
+	  font-family: "\5FAE\8F6F\96C5\9ED1";
+	  font-size: 24px;
+	  letter-spacing: 0;
+	  line-height: 24px;
+	  background: #47a1fe;
+	  border-radius: 4px;
+	  color: #fff;
+	  width: 280px;
+	  height: 60px;
+	  line-height: 60px;
+	  &:hover {
+		background: #50b2ff;
+	  }
+	  &:active {
+		background: #1583d6;
+	  }
+	}
+}
