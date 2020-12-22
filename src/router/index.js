@@ -101,54 +101,54 @@ const routes = [
       needLogin: false
     }
   },
-  // {
-  //   path: '/threeindex',
-  //   name: 'threeindex',
-  //   component: () => import('../views/three/index.vue'),
-  //   meta:{
-  //     needLogin: false
-  //   }
-  // },
-  // {
-  //   path: '/topic',
-  //   name: 'topic',
-  //   component: () => import('../views/three/topic-exploring.vue'),
-  //   meta:{
-  //     needLogin: false
-  //   }
-  // },
-  // {
-  //   path: '/exercisrstage',
-  //   name: 'exercisrstage',
-  //   component: () => import('../views/three/exercise-stage.vue'),
-  //   meta:{
-  //     needLogin: false
-  //   }
-  // },
-  // {
-  //   path: '/transitionpage',
-  //   name: 'transitionpage',
-  //   component: () => import('../views/three/transition-page.vue'),
-  //   meta:{
-  //     needLogin: false
-  //   }
-  // },
-  // {
-  //   path: '/formalstage',
-  //   name: 'formalstage',
-  //   component: () => import('../views/three/formal-stage.vue'),
-  //   meta:{
-  //     needLogin: false
-  //   }
-  // },
-  // {
-  //   path: '/topicexploring',
-  //   name: 'topicexploring',
-  //   component: () => import('../views/three/topic-exploring-2.vue'),
-  //   meta:{
-  //     needLogin: false
-  //   }
-  // },
+  {
+    path: '/threeindex',
+    name: 'threeindex',
+    component: () => import('../views/attention/three/index.vue'),
+    meta:{
+      needLogin: false
+    }
+  },
+  {
+    path: '/topic',
+    name: 'topic',
+    component: () => import('../views/attention/three/topic-exploring.vue'),
+    meta:{
+      needLogin: false
+    }
+  },
+  {
+    path: '/exercisrstage',
+    name: 'exercisrstage',
+    component: () => import('../views/attention/three/exercise-stage.vue'),
+    meta:{
+      needLogin: false
+    }
+  },
+  {
+    path: '/transitionpage',
+    name: 'transitionpage',
+    component: () => import('../views/attention/three/transition-page.vue'),
+    meta:{
+      needLogin: false
+    }
+  },
+  {
+    path: '/formalstage',
+    name: 'formalstage',
+    component: () => import('../views/attention/three/formal-stage.vue'),
+    meta:{
+      needLogin: false
+    }
+  },
+  {
+    path: '/topicexploring',
+    name: 'topicexploring',
+    component: () => import('../views/attention/three/topic-exploring-2.vue'),
+    meta:{
+      needLogin: false
+    }
+  },
   // {
   //   path: '/introduce',
   //   name: 'introduce',
