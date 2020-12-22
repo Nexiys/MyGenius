@@ -24,7 +24,7 @@
 		</div>
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
-			<h2 class="guide-tit">{{guide_tit}}</h2>
+			<h2 class="guide-tit">{{answer_guide}}</h2>
 			<div class="timing-ring-wrap">{{time_limit}}</div>
 			<!-- 答题页面中,下面元素需要添加 flex 样式 -->
 			<div class="main flex">
@@ -40,11 +40,6 @@
 							
 
 						</div>
-						
-						<!-- <div class="solution" >
-							<input type="text" v-for="(item,index) in answer"  class="border-input" @keyup="nextFocus($event,index)">
-						</div> -->
-
 					</li>
 					<li v-for="(item,i) in lastanswer">
 						<div class="topic">
@@ -72,9 +67,9 @@
 				datalist:[],
 				des_con:'',
 				guide_tit:'',
+				answer_guide:'',
 				stage_tit:'',
-				time_limit:'',
-				
+				time_limit:'',	
 			}
 		},
 		created(){
@@ -90,6 +85,7 @@
 				this.stage_tit=data.data.data[2].stage_tit	
 				this.des_con = data.data.data[2].des_con
 				this.guide_tit =data.data.data[2].guide_tit
+				this.answer_guide =data.data.data[2].answer_guide
 				this.time_limit = data.data.data[2].time_limit
 
 				this.pagenum = data.data.data[2].data.answer.length;

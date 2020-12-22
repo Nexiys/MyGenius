@@ -129,8 +129,8 @@
                 this.pageNum = data.data.question_total
                 if(this.desnum == 4){
                     this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/00_rgqxcp_2_input', {api_token: window.localStorage.data,data:this.quesDataList})
-                    this.$router.push("befinished")
-                }
+                    this.$router.push("threeindex")
+                } 
                 this.isShow = this.desnum
                 if(this.isShow==3 || this.isShow==2){
                     let time = 3;

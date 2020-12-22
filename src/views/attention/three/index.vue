@@ -26,9 +26,8 @@
 		<div class="introduce">
 			<div class="i-box">
 				<div class="i-con">
-					<h2>注意游戏三</h2>
+					<h2>{{ title }}</h2>
 					<p v-html="introductions"></p>
-					<!-- <a href="#">开始答题</a> -->
 					<router-link to="topic">开始答题</router-link>
 				</div>
 			</div>
@@ -41,22 +40,25 @@
 		name: "threeindex",
 		data(){
 			return{
-				introductions:''
+				title:'',						// 介绍页标题
+				introductions:''    // 介绍页内容
 			}
 		},
-		created(){
+		created() {
 			this.getData()
-        },
+    },
 		methods:{
 			async getData(){
-                const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/02_zywdxyx', {params: {api_token: window.localStorage.data},})
-                if(data.data.code !== 200){
-                   this.$router.push("login")
-                    return false
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/02_zywdxyx', {params: {api_token: window.localStorage.data},})
+				if(data.data.code !== 200){
+					this.$router.push("login")
+					return false
 				}
 				
-				this.introductions = data.data.data.introduce.introductions
-						
+				this.title = data.data.data.introduce.title;
+				this.introductions = data.data.data.introduce.introductions;
+				let title = this.title;
+				let introductions = this.introductions;
 			},
 		},
 	}

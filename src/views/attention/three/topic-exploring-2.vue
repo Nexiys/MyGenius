@@ -24,7 +24,7 @@
 		</div>
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
-			<h2 class="guide-tit">{{guide_tit}}</h2>
+			<h2 class="guide-tit">{{answer_guide}}</h2>
 			<div class="timing-ring-wrap">{{time_limit}}</div>
 			<div class="main">
 				<div class="main-box">
@@ -42,8 +42,9 @@
 		data(){
 			return{
 			des_con:'',
-			guide_tit:'',
 			stage_tit:'',
+			guide_tit:'',
+			answer_guide:'',
 			time_limit:''				
 			}
 		},
@@ -57,9 +58,10 @@
                    this.$router.push("login")
                     return false
 				}
-				this.stage_tit=data.data.data[2].stage_tit	
+				this.stage_tit=data.data.data[2].stage_tit
 				this.des_con = data.data.data[2].des_con
 				this.guide_tit =data.data.data[2].guide_tit
+				this.answer_guide = data.data.data[2].answer_guide
 				this.time_limit = data.data.data[2].time_limit
 			},
 			routergo(){

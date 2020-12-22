@@ -24,7 +24,7 @@
 		</div>
 		
 		<div class="exercise-end-content">
-		    <!-- <img src="../../assets/img/reaction.png" alt=""> -->
+		    <img src="../../../assets/img/reaction.png" alt="">
 		    <h1>非常好</h1>
 		    <div class="explain">
 		        <p>练习结束，正式游戏开始。<br/>请尽可能快速准确地完成游戏～</p>		

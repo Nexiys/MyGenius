@@ -24,7 +24,7 @@
 		</div>
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
-			<h2 class="guide-tit">{{guide_tit}}</h2>
+			<h2 class="guide-tit">{{answer_guide}}</h2>
 			<div class="timing-ring-wrap">{{time_limit}}</div>
 			<!-- 答题页面中,下面元素需要添加 flex 样式 -->
 			<div class="main flex">
@@ -32,8 +32,7 @@
 				<ul class="answer-area">
 					<li class="focus-line">
 						<div class="topic">
-							<span v-for="(item,i) in answer">{{item}}</span>
-
+							<span v-for="(item,i) in content">{{item}}</span>
 						</div>
 						<div class="solution">
 							<input  @blur="nex(index)" autofocus type="tel" maxlength="1"  v-for="(item,index) in answer" class="border-input" @keyup="nextFocus($event,index)">
@@ -59,12 +58,14 @@
 		name: "exercisrstage",
 		data(){
 			return{
-				des_con:'',
-				guide_tit:'',
-				stage_tit:'',
-				time_limit:'',
-				answer:[],
-				model:0
+				des_con:'',      // 题型说明内容
+				guide_tit:'',    // 指导标题
+				stage_tit:'',    // 阶段标题
+				answer_guide:'', // 答题阶段指导标题
+				time_limit:'',   // 时间限制
+				content:[],      // 问题数组
+				answer:[],       // 答案数组
+				model:0          // Model ?
 			}
 		},
 		created(){
@@ -81,10 +82,12 @@
 					this.$router.push("login")
                     return false
 				}
-				this.stage_tit=data.data.data[1].stage_tit	
+				this.stage_tit = data.data.data[1].stage_tit	
 				this.des_con = data.data.data[1].des_con
-				this.guide_tit =data.data.data[1].guide_tit
+				this.guide_tit = data.data.data[1].guide_tit
+				this.answer_guide = data.data.data[1].answer_guide
 				this.time_limit = data.data.data[1].time_limit
+				this.content = data.data.data[1].data.content[0]
 				this.answer = data.data.data[1].data.answer[0]
 			},
 
