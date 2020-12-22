@@ -2,7 +2,7 @@
 	<!-- 注意游戏三（注意稳定性游戏）练习阶段 -->
 	<section class="header">
 		<div class="logo-modular">
-			<!-- <a href=""><img src="../../assets/img/logo.png" ></a> -->
+			<a href=""><img src="../../../assets/img/logo.png" ></a>
 		</div>
 		<div class="h-operate">
 			<a href="#"><i class="icon-pause"></i>暂停</a>
