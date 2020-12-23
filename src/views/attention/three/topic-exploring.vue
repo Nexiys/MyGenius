@@ -25,12 +25,9 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
 			<h2 class="guide-tit">{{guide_tit}}</h2>
-			<timing :originProgressText ="timelimit" :timeFun = "kais"></timing>
-			<!-- <div class="timing-ring-wrap"></div> -->
 			<div class="main">
 				<div class="main-box">
 					<p class="des-con" v-html="des_con"></p>
-					<!-- <button class="start-btn">开始答题</button> -->
 					<button class="start-btn" @click="routergo">开始答题</button>
 				</div>
 			</div>
@@ -48,7 +45,6 @@ import timing from '../../../components/TimingRing/index'
 			des_con:'',
 			guide_tit:'',
 			stage_tit:'',
-			timelimit:30,
 			numb:10
 			}
 		},
@@ -65,8 +61,6 @@ import timing from '../../../components/TimingRing/index'
 				this.stage_tit=data.data.data[1].stage_tit	
 				this.des_con = data.data.data[1].des_con
 				this.guide_tit =data.data.data[1].guide_tit
-				this.time_limit =parseInt(data.data.data[1].time_limit) 
-				console.log(typeof this.time_limit)
 			},
 
 

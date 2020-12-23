@@ -25,8 +25,6 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
 			<h2 class="guide-tit">{{answer_guide}}</h2>
-			<timing :originProgressText ="timelimit" :timeFun = "kais"></timing>
-			<!-- <div class="timing-ring-wrap">{{time_limit}}</div> -->
 			<div class="main">
 				<div class="main-box">
 					<p class="des-con" v-html="des_con"></p>
@@ -40,16 +38,13 @@
 <script>
 import timing from '../../../components/TimingRing/index'
 	export default {
-		components: {timing},
 		name: "topicexploring",
 		data(){
 			return{
-			des_con:'',
-			stage_tit:'',
-			guide_tit:'',
-			answer_guide:'',
-			time_limit:'',
-			timelimit:60				
+				des_con:'',
+				stage_tit:'',
+				guide_tit:'',
+				answer_guide:'',		
 			}
 		},
 		created(){
@@ -66,7 +61,6 @@ import timing from '../../../components/TimingRing/index'
 				this.des_con = data.data.data[2].des_con
 				this.guide_tit =data.data.data[2].guide_tit
 				this.answer_guide = data.data.data[2].answer_guide
-				this.time_limit = data.data.data[2].time_limit
 			},
 			routergo(){
 				this.$router.push("formalstage")
