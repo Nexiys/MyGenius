@@ -52,11 +52,14 @@ textarea {
   cursor: pointer;
 }
 address,
+caption,
 cite,
 code,
+dfn,
 var,
 em,
-th {
+th,
+i {
   font-weight: normal;
   font-style: normal;
 }
