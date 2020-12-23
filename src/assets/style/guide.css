@@ -49,6 +49,7 @@ body {
   display: inline-block;
   margin: -3px 10px 0 0;
   vertical-align: middle;
+  font-weight: normal !important;
 }
 .header .h-operate a:hover {
   color: #fff;

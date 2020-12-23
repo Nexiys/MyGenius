@@ -83,6 +83,7 @@ body {
   font-size: 22px;
   color: #565A66;
   margin: 18px 22px;
+  font-weight: normal !important;
 }
 .container .wrap .main .box .content .account-box .account input {
   float: left;
@@ -133,6 +134,7 @@ body {
   font-size: 22px;
   color: #565A66;
   margin: 18px 22px;
+  font-weight: normal !important;
 }
 .container .wrap .main .box .content .account-box .password i:nth-child(3) {
   float: right;
@@ -189,6 +191,7 @@ body {
   font-size: 22px;
   color: #565A66;
   margin: 18px 22px;
+  font-weight: normal !important;
 }
 .container .wrap .main .box .content .phone-box .iphone input {
   float: left;
@@ -258,6 +261,7 @@ body {
   font-size: 22px;
   color: #565A66;
   margin: 18px 22px;
+  font-weight: normal !important;
 }
 .container .wrap .main .box .content .phone-box .v-code input {
   float: left;
@@ -308,6 +312,7 @@ body {
 .container .wrap .main .box .msg-forget .msg i {
   font-size: 20px;
   color: #ED5C52;
+  font-weight: normal !important;
 }
 .container .wrap .main .box .msg-forget .msg em {
   position: absolute;
@@ -318,6 +323,7 @@ body {
   color: #ED5C52;
   letter-spacing: 0;
   line-height: 18px;
+  font-weight: normal !important;
 }
 .container .wrap .main .box .msg-forget .forget {
   float: right;

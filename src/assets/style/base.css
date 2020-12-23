@@ -60,8 +60,8 @@ var,
 em,
 th,
 i {
-  font-weight: normal;
-  font-style: normal;
+  font-weight: normal !important;
+  font-style: normal !important;
 }
 button,
 input[type="text"]:focus,

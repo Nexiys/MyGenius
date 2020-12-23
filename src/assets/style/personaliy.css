@@ -105,6 +105,7 @@ body {
 }
 .content-area-induce .c-header .c-h-left em {
   color: #848894;
+  font-weight: normal !important;
 }
 .content-area-induce .c-header .c-h-left em:nth-child(2) {
   color: #47A1FE;
@@ -268,6 +269,9 @@ body {
   letter-spacing: 0;
   line-height: 60px;
 }
+.e-body #evaluation .e-header .e-h-left em {
+  font-weight: normal !important;
+}
 .e-body #evaluation .e-header .e-h-left em:nth-child(2) {
   color: #47A1FE;
 }
@@ -317,6 +321,7 @@ body {
   color: #007AF8;
   letter-spacing: 0;
   text-indent: 140px;
+  font-weight: normal !important;
 }
 .e-body #evaluation .questions {
   position: relative;
@@ -335,6 +340,7 @@ body {
   letter-spacing: 0;
   text-align: center;
   line-height: 26px;
+  font-weight: normal !important;
 }
 .e-body .answer {
   width: 100%;
@@ -397,6 +403,7 @@ body {
   color: #848894;
   letter-spacing: 0;
   padding-top: 24px;
+  font-weight: normal !important;
 }
 .e-tips-1 em i {
   display: inline-block;
@@ -404,6 +411,7 @@ body {
   width: 100%;
   font-style: normal;
   padding-top: 10px;
+  font-weight: normal !important;
 }
 .questions-1 {
   position: relative;
@@ -445,6 +453,7 @@ body {
   color: #007AF8;
   letter-spacing: 0;
   text-indent: 140px;
+  font-weight: normal !important;
 }
 .e-tips-2 em:last-child {
   font-family: MicrosoftYaHei;
@@ -465,6 +474,9 @@ body {
   position: relative;
   width: 1120px;
   margin: 85px auto 0;
+}
+.e-tips-2-2 em {
+  font-weight: normal !important;
 }
 .e-tips-2-2 em:first-child {
   position: absolute;
@@ -532,6 +544,7 @@ body {
 }
 .content-area .c-header .c-h-left em:nth-child(2) {
   color: #47a1fe;
+  font-weight: normal !important;
 }
 .content-area .c-header .c-h-middle {
   width: auto;
