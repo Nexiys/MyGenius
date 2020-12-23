@@ -108,9 +108,9 @@ body {
 		margin: 0 auto;
 		text-align: center;
 		img {
-			width: 400px;
-			height: 400px;
-			margin-top: 60px;
+			width: 305px;
+			height: 305px;
+			margin-top: 85px;
 		}
 		h1 {
 			font-family: 'MicrosoftYaHei';
@@ -126,5 +126,32 @@ body {
 			text-align: center;
 			margin-top: 7px;
 		}
+		a {
+			margin: 40px auto 0;
+			border-radius: 4px;
+			padding: 18px 92px;
+			font-size: 24px;
+			line-height: 24px;
+			color: @white;
+			background:@normal-blue;
+			border-radius: 6px;
+			display:inline-block;
+			box-sizing: border-box;
+			line-height: 1;
+			color: @white;
+			&:hover,.hover {
+				background: @hover-blue;
+				color: @white;
+			}
+			&:active,.active {
+				background: @active-blue;
+				color: @white;
+			}
+			.disabled {
+				background: @disabled-gray;
+				color: @white;
+			}
+		}
 	}
+	
 }

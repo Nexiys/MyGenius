@@ -89,9 +89,9 @@ body {
   text-align: center;
 }
 .content-area .exercise-end-content img {
-  width: 400px;
-  height: 400px;
-  margin-top: 60px;
+  width: 305px;
+  height: 305px;
+  margin-top: 85px;
 }
 .content-area .exercise-end-content h1 {
   font-family: 'MicrosoftYaHei';
@@ -106,4 +106,31 @@ body {
   color: #565A66;
   text-align: center;
   margin-top: 7px;
+}
+.content-area .exercise-end-content a {
+  margin: 40px auto 0;
+  border-radius: 4px;
+  padding: 18px 92px;
+  font-size: 24px;
+  line-height: 24px;
+  background: #47A1FE;
+  border-radius: 6px;
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 1;
+  color: #fff;
+}
+.content-area .exercise-end-content a:hover,
+.content-area .exercise-end-content a .hover {
+  background: #50B2FF;
+  color: #fff;
+}
+.content-area .exercise-end-content a:active,
+.content-area .exercise-end-content a .active {
+  background: #1583D6;
+  color: #fff;
+}
+.content-area .exercise-end-content a .disabled {
+  background: #C3CEDE;
+  color: #fff;
 }
