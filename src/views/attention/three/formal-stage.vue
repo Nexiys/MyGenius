@@ -115,7 +115,7 @@
 					this.content = this.lastanswer[this.thisindex]
 					this.lastanswer =this.lastanswer.splice(1)
 					if(this.page == 6){
-						this.$router.push("befinished")
+						window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
 					}
 				} 
 			},
