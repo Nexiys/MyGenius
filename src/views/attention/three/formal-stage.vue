@@ -33,12 +33,10 @@
 					<!-- 获得焦点行<li>添加 .focus-line 样式 -->
 					<li class="focus-line">
 						<div class="topic">
-							<span v-for="(item,i) in answer">{{item}}</span>
+							<span v-for="(item,i) in content">{{item}}</span>
 						</div>
 						<div class="solution">
-							<input  @blur="nex(index)" autofocus type="tel" maxlength="1"  v-for="(item,index) in answer" class="border-input" @keyup="nextFocus($event,index)">
-							
-
+							<input @blur="nex(index)" autofocus type="number" maxlength="1"  v-for="(item,index) in answer" class="border-input" @keyup="nextFocus($event,index)" oninput="if(value.length>1)value=value.slice(0,1)">							
 						</div>
 					</li>
 					<li v-for="(item,i) in lastanswer">
@@ -70,6 +68,7 @@
 				answer_guide:'',
 				stage_tit:'',
 				time_limit:'',	
+				content:[]
 			}
 		},
 		created(){
@@ -90,9 +89,10 @@
 
 				this.pagenum = data.data.data[2].data.answer.length;
 				this.answer = data.data.data[2].data.answer[this.thisindex]
-				this.datalist = data.data.data[2].data.answer
+				this.content = data.data.data[2].data.content[this.thisindex]
+				this.datalist = data.data.data[2].data.content
 				
-				this.lastanswer = data.data.data[2].data.answer.splice(1)
+				this.lastanswer = data.data.data[2].data.content.splice(1)
 						
 			},
 
@@ -112,6 +112,7 @@
 		                 a[i].value='';
 		            }
 					this.answer = this.lastanswer[this.thisindex]
+					this.content = this.lastanswer[this.thisindex]
 					this.lastanswer =this.lastanswer.splice(1)
 					if(this.page == 6){
 						this.$router.push("befinished")
@@ -120,6 +121,7 @@
 			},
 
 			nextFocus(el,index) {
+				
                 var dom = document.getElementsByClassName("border-input"),
                     currInput = dom[index],
                     nextInput = dom[index + 1],
@@ -130,6 +132,7 @@
                     if (index < (this.answer.length - 1)) {
                         nextInput.focus();
                     } else {
+						
                         currInput.blur();
                     }
                 }else{

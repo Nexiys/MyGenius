@@ -22,6 +22,22 @@
 <script>
 export default {
   name: 'Guide',
+created(){
+	
+	this.getData()
+	//alert($('input'))
+		
+},
+  methods:{
+			async getData(){
+			const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/00_rgqxcp', {params: {api_token: window.localStorage.data},})
+			if(data.data.code !== 200){
+					console.log("获取数据失败")
+					localStorage.removeItem('data');
+					this.$router.push("login")
+			}
+		}, 
+  }
 }
 </script>
 

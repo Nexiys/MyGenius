@@ -38,7 +38,8 @@
 			originProgressText: {
 				type: Number,
 				default: 6
-			}
+			},
+			timeFun:''
 		},
 		data () {
 			return {
@@ -47,10 +48,12 @@
 				color: '#47A1FE',
 				dashArray: 0,
 				dashoffset: 0,
-				progressText: this.originProgressText
+				progressText: this.originProgressText,
+				mefun:this.timeFun
 			}
 		},
 		mounted () {
+			console.log(this.$route.path)
 			// 设置倒计时间隔
 			let intervalTime = 1000
 			// 初时间始
@@ -64,6 +67,16 @@
 				time--
 				// 时间结束，切换到下一题
 				if (time <= 0) {
+					if(this.$route.path =="/topic"){
+						this.$router.push("exercisrstage")
+					}
+					if(this.$route.path =="/transitionpage"){
+						this.$router.push("topicexploring")
+					}
+					if(this.$route.path =="/topicexploring"){
+						this.$router.push("formalstage")
+					}
+					
 					this.$emit('time-end')
 					clearInterval(this.interval)
 				}

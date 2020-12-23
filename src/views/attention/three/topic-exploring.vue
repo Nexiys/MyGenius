@@ -25,7 +25,8 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
 			<h2 class="guide-tit">{{guide_tit}}</h2>
-			<div class="timing-ring-wrap">{{time_limit}}</div>
+			<timing :originProgressText ="timelimit" :timeFun = "kais"></timing>
+			<!-- <div class="timing-ring-wrap"></div> -->
 			<div class="main">
 				<div class="main-box">
 					<p class="des-con" v-html="des_con"></p>
@@ -38,14 +39,17 @@
 </template>
 
 <script>
+import timing from '../../../components/TimingRing/index'
 	export default {
+		components: {timing},
 		name: "topic",
 		data(){
 			return{
 			des_con:'',
 			guide_tit:'',
 			stage_tit:'',
-			time_limit:''
+			timelimit:30,
+			numb:10
 			}
 		},
 		created(){
@@ -61,7 +65,8 @@
 				this.stage_tit=data.data.data[1].stage_tit	
 				this.des_con = data.data.data[1].des_con
 				this.guide_tit =data.data.data[1].guide_tit
-				this.time_limit = data.data.data[1].time_limit
+				this.time_limit =parseInt(data.data.data[1].time_limit) 
+				console.log(typeof this.time_limit)
 			},
 
 

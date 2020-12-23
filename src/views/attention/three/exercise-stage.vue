@@ -35,7 +35,7 @@
 							<span v-for="(item,i) in content">{{item}}</span>
 						</div>
 						<div class="solution">
-							<input  @blur="nex(index)" autofocus type="tel" maxlength="1"  v-for="(item,index) in answer" class="border-input" @keyup="nextFocus($event,index)">
+							<input  @blur="nex(index)" autofocus type="number" maxlength="1"  v-for="(item,index) in answer" class="border-input" @keyup="nextFocus($event,index)" oninput="if(value.length>1)value=value.slice(0,1)">
 						</div>
 					</li>
 				</ul>
@@ -46,15 +46,6 @@
 
 <script>
 	export default {
-		mounted() {
-		this.$nextTick(function () {
-			this.$refs.id.onfocus()
-		})		
-		const n = document.createElement('script');
-		n.type = 'text/javascript';
-		n.src = 'http://apps.bdimg.com/libs/jquery/2.1.1/jquery.js';
-		document.body.appendChild(n);	
-		},
 		name: "exercisrstage",
 		data(){
 			return{
@@ -65,7 +56,7 @@
 				time_limit:'',   // 时间限制
 				content:[],      // 问题数组
 				answer:[],       // 答案数组
-				model:0          // Model ?
+				model:0        // Model ?
 			}
 		},
 		created(){
@@ -117,6 +108,7 @@
                     if (index < (this.answer.length - 1)) {
                         nextInput.focus();
                     } else {
+						
                         currInput.blur();
                     }
                 }else{
@@ -126,16 +118,6 @@
                 }
  
             },
-		},
-		directives: {
-			// 注册一个局部的自定义指令 v-focus
-			focus: {
-			// 指令的定义
-			inserted: function(el) {
-				// 聚焦元素
-				el.querySelector("input").focus();
-			}
-			}
 		}
 	}	
 </script>>
