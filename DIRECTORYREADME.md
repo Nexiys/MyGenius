@@ -44,7 +44,7 @@
 	1、Header          头部栏，包括 Logo、暂停、退出
 	2、Background      背景区域，整个带蓝色背景图的区域
 	3、ContentArea     内容区，中间1180*760区域，不带背景色
-	4、CaHeader        内容区的头部，C-A 为内容区前缀，包括 进度、中间标题、总用时
+	4、ContentHeader   内容区的头部，包括 进度、中间标题、总用时
 	5、Introduce       题型介绍，在内容区内，分左侧图片和右侧文字，标题+介绍内容
 	6、TransitionPage  过渡页，用于练习阶段结束，衔接正式阶段的页面
 	7、TimingRing      环形倒计时组件

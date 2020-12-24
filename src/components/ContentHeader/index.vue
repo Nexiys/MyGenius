@@ -1,11 +1,11 @@
 <template>
-	<section class="caHeader">
-		<div class="progress">
+	<section class="content-header">
+		<div class="left">
 			<span>进度：</span>
 			<span>0</span>
 			<span>/80</span>
 		</div>
-		<div class="time">
+		<div class="right">
 			<span>用时：</span>
 			<span>02:28:00</span>
 		</div>
@@ -14,25 +14,26 @@
 
 <script>
 	export default {
-		name: "CaHeader"
+		name: "ContentHeader"
 	}
 </script>
 
 <style lang="less" scoped>
 	@import url("../../assets/style/common.less");
-	.caHeader {
+	.content-header {
 		display: flex;
 		align-items: center;
-		margin: 0 30px;
+		width: calc(~"100% - 60px");
 		height: 60px;
+		margin: 0 auto;
 		border-bottom: 1px solid @hr-color;
-		.progress,.time {
+		.left,.right {
 			font-size: 16px;
 			flex-grow: 1;
 			line-height: 1;
 			color: @text-secondary;
 		}
-		.progress {
+		.left {
 			text-align: left;
 			span{
 				&:nth-child(2) {
@@ -40,7 +41,7 @@
 				}
 			}
 		}
-		.time {
+		.right {
 			text-align: right;
 		}
 	}

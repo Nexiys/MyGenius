@@ -109,6 +109,33 @@ const routes = [
       needLogin: false
     }
   },
+	// 逻辑游戏一(表象游戏) —— 介绍
+	{
+	  path: '/lointroduce',
+	  name: 'LOIntroduce',
+	  component: () => import('../views/logic/one/index.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
+	// 逻辑游戏一（表象游戏）—— 过渡页面
+	{
+	  path: '/lotransition',
+	  name: 'LOTransition',
+	  component: () => import('../views/logic/one/transition-page.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
+	// 逻辑游戏一（表象游戏）—— 练习阶段
+	{
+	  path: '/lotexercise',
+	  name: 'LOExercise',
+	  component: () => import('../views/logic/one/exercise-stage.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
   {
     path: '/topic',
     name: 'topic',
@@ -172,7 +199,14 @@ const routes = [
   //   meta:{
   //     needLogin: false
   //   }
-  // }
+  // },
+	
+	// 组件 - 内容区的头部，包括 进度、中间标题、总用时
+	{
+	  path: '/content-header',
+	  name: 'ContentHeader',
+	  component: () => import('../components/ContentHeader/index.vue'),
+	},
   
 ]
 const router = createRouter({
