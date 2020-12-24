@@ -36,7 +36,7 @@
 							<span v-for="(item,i) in content">{{item}}</span>
 						</div>
 						<div class="solution">
-							<input  @blur="nex(index)" autofocus type="number" maxlength="1"  v-for="(item,index) in answer" class="border-input" @keyup="nextFocus($event,index)" oninput="if(value.length>1)value=value.slice(0,1)">
+							<input  @blur="nex(index)" autofocus type="tel" maxlength="1"  v-for="(item,index) in answer" class="border-input" @keyup="nextFocus($event,index)" oninput="value=value.replace(/[^\d]/g,'')">
 						</div>
 					</li>
 				</ul>
@@ -120,6 +120,13 @@
  
             },
 		},
+		mounted:function(){
+			if(localStorage.getItem("reload") == undefined){
+				localStorage.setItem('reload',2)
+				location.reload()
+			}
+			
+		}
 	}	
 </script>>
 

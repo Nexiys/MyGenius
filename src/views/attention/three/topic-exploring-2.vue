@@ -49,6 +49,7 @@ import timing from '../../../components/TimingRing/index'
 		},
 		created(){
 			this.getData()
+			localStorage.removeItem("reload");
         },
 		methods:{
 			async getData(){

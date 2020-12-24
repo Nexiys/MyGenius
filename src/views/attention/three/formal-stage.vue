@@ -37,7 +37,7 @@
 							<span v-for="(item,i) in content">{{item}}</span>
 						</div>
 						<div class="solution">
-							<input @blur="nex(index)" autofocus type="number" maxlength="1"  v-for="(item,index) in answer" class="border-input" @keyup="nextFocus($event,index)" oninput="if(value.length>1)value=value.slice(0,1)">							
+							<input @blur="nex(index)" autofocus type="tel" maxlength="1"  v-for="(item,index) in answer" class="border-input" @keyup="nextFocus($event,index)" oninput="value=value.replace(/[^\d]/g,'')">							
 						</div>
 					</li>
 					<li v-for="(item,i) in lastanswer">
@@ -74,7 +74,7 @@
 				timelimit:60,
 				model : 0,
 				timer:null,
-				update:true
+				update:true,
 			}
 		},
 		created(){	
@@ -83,14 +83,13 @@
 			console.log(a)
 			this.getData()
 			this.timeFun()
-	
-        },
+		},
 		methods:{
 			async getData(){
                 const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/02_zywdxyx', {params: {api_token: window.localStorage.data},})
                 if(data.data.code !== 200){
                     console.log("获取数据失败")
-                    return false
+                    this.$router.push("login")
 				}
 				this.stage_tit=data.data.data[2].stage_tit	
 				this.des_con = data.data.data[2].des_con
@@ -106,6 +105,32 @@
 				this.lastanswer = data.data.data[2].data.content.splice(1)
 						
 			},
+			timeFun() {
+				let time = this.timelimit;
+				this.timer = setInterval(() => {
+					if (time <= 1) {
+						clearInterval(this.timer);
+						
+						time = this.timelimit
+						this.timeFun()
+						this.page = this.page+1
+						var a = document.getElementsByTagName("input");
+			            for (var i = 0; i < a.length; i++) {
+			                 a[i].value='';
+							a[0].focus()
+			            }
+						this.answer = this.lastanswer[this.thisindex]
+						this.content = this.lastanswer[this.thisindex]
+						this.lastanswer =this.lastanswer.splice(1)
+						if(this.page == 6){
+							window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+						}
+					} else {
+						time--;
+						//console.log(time)
+					}
+				},1000);
+			},
 			nex(i){
 				this.model=0
 				var a = document.getElementsByTagName("input");
@@ -115,13 +140,16 @@
 	                }
 	            }
 				if(this.model==0){
+					clearInterval(this.timer);
+					this.timeFun()
 					this.page = this.page+1
 					var a = document.getElementsByTagName("input");
 		            for (var i = 0; i < a.length; i++) {
 		                 a[i].value='';
 						a[0].focus()
 		            }
-					clearInterval(this.timer);
+					// this.timeFun()
+					// 
 					this.update = false
 					this.$nextTick(() => {
 						this.update = true
@@ -131,37 +159,10 @@
 					this.lastanswer =this.lastanswer.splice(1)
 					if(this.page == 6){
 						window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+						localStorage.removeItem("reload");
 					}
 				} 
 			},
-			timeFun() {
-				
-				let time = this.timelimit;
-				let timer = setInterval(() => {
-					if (time <= 1) {
-						clearInterval(timer);
-						time = this.timelimit
-						this.timeFun()
-						console.log(1)
-							this.page = this.page+1
-							var a = document.getElementsByTagName("input");
-				            for (var i = 0; i < a.length; i++) {
-				                 a[i].value='';
-								a[0].focus()
-				            }
-							this.answer = this.lastanswer[this.thisindex]
-							this.content = this.lastanswer[this.thisindex]
-							this.lastanswer =this.lastanswer.splice(1)
-							if(this.page == 6){
-								window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
-							}
-					} else {
-						time--;
-					}
-				},1000);
-			},
-
-
 			nextFocus(el,index) {
                 var dom = document.getElementsByClassName("border-input"),
                     currInput = dom[index],
@@ -183,6 +184,13 @@
                 }
  
             },
+		},
+		mounted:function(){
+			if(localStorage.getItem("reload") == undefined){
+				localStorage.setItem('reload',2)
+				location.reload()
+			}
+			
 		}
 	}	
 

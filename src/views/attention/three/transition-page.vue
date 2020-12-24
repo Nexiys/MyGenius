@@ -46,7 +46,7 @@ import timing from '../../../components/TimingRing/index'
 			}
 		},
 		created(){
-
+localStorage.removeItem("reload");
         },
 		methods:{
 		},

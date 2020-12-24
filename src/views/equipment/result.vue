@@ -16,7 +16,7 @@
 			<i v-if="code=='2'" class="icon-test_fail abnormal-color"></i> 
 			<span v-if="code=='1'">当前没有问题，可以正常测评</span>
 			<span  v-if="code=='2'">存在以下问题，会影响测评</span>
-			<router-link v-if="code=='1'" to="/one">({{times}})开始测评</router-link>
+			<router-link v-if="code=='1'" to="/one">({{times}}s)开始测评</router-link>
 			<router-link v-if="code=='2'" to="/equipment">重新检测设备</router-link>
 		
 		</div>
