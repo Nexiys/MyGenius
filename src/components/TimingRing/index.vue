@@ -52,8 +52,60 @@
 				mefun:this.timeFun
 			}
 		},
+		methods:{
+			funtime(){
+				let intervalTime = 1000
+				// 初时间始
+				let time = this.originProgressText
+				// 如果时间为小数
+				if (!Number.isInteger(this.originProgressText)) {
+					time = this.originProgressText * 50
+					intervalTime = 20
+				}
+				this.interval = setInterval(() => {
+					time--
+					// 时间结束，切换到下一题
+					if (time <= 0) {
+						// if(this.$route.path =="/topic"){
+						// 	this.$router.push("exercisrstage")
+						// }
+						// if(this.$route.path =="/transitionpage"){
+						// 	this.$router.push("topicexploring")
+						// }
+						// if(this.$route.path =="/topicexploring"){
+						// 	this.$router.push("formalstage")
+						// }
+						if(this.$route.path =="/exercisrstage"){
+							
+							//this.$router.push("transitionpage")
+							time = 30
+						}
+						
+						this.$emit('time-end')
+						clearInterval(this.interval)
+					}
+					// 还剩3秒变色
+					if (Number.isInteger(this.originProgressText) && time <= 3) {
+						this.color = '#dd6559'
+					}
+
+					let percent = time / this.originProgressText
+
+					if (!Number.isInteger(this.originProgressText)) {
+						this.progressText = parseFloat(time / 50).toFixed(1)
+						percent = time / (this.originProgressText * 50)
+					} else {
+						this.progressText = time
+						percent = time / this.originProgressText
+					}
+					// 圆的周长
+					const perimeter = Math.PI * 2 * this.radius
+					this.dashArray = `${perimeter * percent}px, ${perimeter}px`
+				}, intervalTime)				
+				}
+		},
 		mounted () {
-			console.log(this.$route.path)
+			//console.log(this.$route.path)
 			// 设置倒计时间隔
 			let intervalTime = 1000
 			// 初时间始
@@ -67,14 +119,15 @@
 				time--
 				// 时间结束，切换到下一题
 				if (time <= 0) {
-					if(this.$route.path =="/topic"){
-						this.$router.push("exercisrstage")
+					if(this.$route.path =="/exercisrstage"){
+						this.$router.push("transitionpage")
+						
 					}
-					if(this.$route.path =="/transitionpage"){
-						this.$router.push("topicexploring")
-					}
-					if(this.$route.path =="/topicexploring"){
-						this.$router.push("formalstage")
+					if(this.$route.path =="/formalstage"){
+						this.funtime()
+						this.color = '#47A1FE'
+						 time = 60
+						//this.$router.push("transitionpage")
 					}
 					
 					this.$emit('time-end')

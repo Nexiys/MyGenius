@@ -132,17 +132,6 @@
                     this.$router.push("threeindex")
                 } 
                 this.isShow = this.desnum
-                if(this.isShow==3 || this.isShow==2){
-                    let time = 3;
-                    let timer = setInterval(() => {
-                        if (time == 0) {
-                            clearInterval(timer);
-                            this.isShow = 1
-                        } else {
-                            time--;
-                        }
-                    },1000);
-                }
                 if(this.desnum <= 3){   
                 //拿到数据默认显示第一条
                 this.quesData = data.data.data // 所有题数据 

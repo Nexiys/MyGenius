@@ -25,7 +25,8 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
 			<h2 class="guide-tit">{{answer_guide}}</h2>
-			<div class="timing-ring-wrap">{{time_limit}}</div>
+			<!-- <div class="timing-ring-wrap">{{time_limit}}</div> -->
+			<timing :originProgressText ="timelimit"  class="timling"></timing>
 			<!-- 答题页面中,下面元素需要添加 flex 样式 -->
 			<div class="main flex">
 				<!-- 增加一层 answer-area , 方便布局 -->
@@ -45,7 +46,9 @@
 </template>
 
 <script>
+    import timing from '../../../components/TimingRing/index'
 	export default {
+		components: {timing},
 		name: "exercisrstage",
 		data(){
 			return{
@@ -56,16 +59,14 @@
 				time_limit:'',   // 时间限制
 				content:[],      // 问题数组
 				answer:[],       // 答案数组
-				model:0        // Model ?
+				model:0,        // Model ?
+				timelimit:30
 			}
 		},
 		created(){
-			
 			this.getData()
-			//alert($('input'))
-			 
-        },
-		methods:{
+		},
+		methods:{	
 			async getData(){
                 const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/02_zywdxyx', {params: {api_token: window.localStorage.data},})
                 if(data.data.code !== 200){
@@ -83,7 +84,7 @@
 			},
 
 			nex(i){
-				console.log(i)
+
 				this.model=0
 				var a = document.getElementsByTagName("input");
 	            for (var i = 0; i < a.length; i++) {
@@ -118,7 +119,7 @@
                 }
  
             },
-		}
+		},
 	}	
 </script>>
 

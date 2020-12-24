@@ -25,7 +25,8 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
 			<h2 class="guide-tit">{{answer_guide}}</h2>
-			<div class="timing-ring-wrap">{{time_limit}}</div>
+			<!-- <div class="timing-ring-wrap">{{time_limit}}</div> -->
+			<timing v-if="update" :originProgressText ="timelimit"  class="timling"></timing>
 			<!-- 答题页面中,下面元素需要添加 flex 样式 -->
 			<div class="main flex">
 				<!-- 增加一层 answer-area , 方便布局 -->
@@ -51,7 +52,9 @@
 </template>
 
 <script>
+    import timing from '../../../components/TimingRing/index'
 	export default {
+		components: {timing},
 		name: "formalstage",
 		data(){
 			return{
@@ -61,18 +64,26 @@
 				content:[],
 				page:1,
 				pagenum:0,
-				model:[],
 				datalist:[],
 				des_con:'',
 				guide_tit:'',
 				answer_guide:'',
 				stage_tit:'',
 				time_limit:'',	
-				content:[]
+				content:[],
+				timelimit:60,
+				model : 0,
+				timer:null,
+				update:true
 			}
 		},
-		created(){
+		created(){	
+			
+			var a = document.getElementsByTagName("input");
+			console.log(a)
 			this.getData()
+			this.timeFun()
+	
         },
 		methods:{
 			async getData(){
@@ -95,22 +106,26 @@
 				this.lastanswer = data.data.data[2].data.content.splice(1)
 						
 			},
-
 			nex(i){
-				
-				this.model=[]
+				this.model=0
 				var a = document.getElementsByTagName("input");
 	            for (var i = 0; i < a.length; i++) {
-	                if (a[i].value !== "") {
-					 this.model.push(i)
+	                if (a[i].value == "") {
+					 this.model=1
 	                }
 	            }
-				if(this.model.length==19){
+				if(this.model==0){
 					this.page = this.page+1
 					var a = document.getElementsByTagName("input");
 		            for (var i = 0; i < a.length; i++) {
 		                 a[i].value='';
+						a[0].focus()
 		            }
+					clearInterval(this.timer);
+					this.update = false
+					this.$nextTick(() => {
+						this.update = true
+					})
 					this.answer = this.lastanswer[this.thisindex]
 					this.content = this.lastanswer[this.thisindex]
 					this.lastanswer =this.lastanswer.splice(1)
@@ -119,9 +134,35 @@
 					}
 				} 
 			},
+			timeFun() {
+				
+				let time = this.timelimit;
+				let timer = setInterval(() => {
+					if (time <= 1) {
+						clearInterval(timer);
+						time = this.timelimit
+						this.timeFun()
+						console.log(1)
+							this.page = this.page+1
+							var a = document.getElementsByTagName("input");
+				            for (var i = 0; i < a.length; i++) {
+				                 a[i].value='';
+								a[0].focus()
+				            }
+							this.answer = this.lastanswer[this.thisindex]
+							this.content = this.lastanswer[this.thisindex]
+							this.lastanswer =this.lastanswer.splice(1)
+							if(this.page == 6){
+								window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+							}
+					} else {
+						time--;
+					}
+				},1000);
+			},
+
 
 			nextFocus(el,index) {
-				
                 var dom = document.getElementsByClassName("border-input"),
                     currInput = dom[index],
                     nextInput = dom[index + 1],
@@ -142,7 +183,7 @@
                 }
  
             },
-		},
+		}
 	}	
 
 </script>

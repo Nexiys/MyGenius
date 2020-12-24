@@ -30,7 +30,7 @@
 		        <p>练习结束，正式游戏开始。<br/>请尽可能快速准确地完成游戏～</p>		
 		    </div>
 			<router-link to="topicexploring">开始答题</router-link>
-			<timing :originProgressText ="timelimit" :timeFun = "kais" class="timling"></timing>
+			<!-- <timing :originProgressText ="timelimit" :timeFun = "kais" class="timling"></timing> -->
 		</div>
 	</section>
 </template>
@@ -55,7 +55,5 @@ import timing from '../../../components/TimingRing/index'
 
 <style lang="less">
 	@import '~@/assets/style/attention-three.less';
-	.timling{
-		display: none;
-	}
+
 </style>
