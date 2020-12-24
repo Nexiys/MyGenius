@@ -23,10 +23,19 @@
 				</div>
 			</div>
 			
-			
+			<div class="question">
+				<h2 class="stage-tit">练习阶段</h2>
+				<h2 class="answer-guide">请选择旋转后可以与以下图形重合的选项</h2>
+				<div class="question-box">
+					<i class="icon-surface_1B3"></i>
+				</div>
+			</div>
 		</div>
 		<div class="apart-bottom">
-			
+			<a href="#">A<i class="icon-surface_1B4"></i></a>
+			<a href="#">B<i class="icon-surface_1A1"></i></a>
+			<a href="#">C<i class="icon-surface_1A5"></i></a>
+			<a href="#">D<i class="icon-surface_1A2"></i></a>
 		</div>
 	</section>
 </template>
