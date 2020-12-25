@@ -24,25 +24,56 @@
 			</div>
 			
 			<div class="question">
-				<h2 class="stage-tit">练习阶段</h2>
-				<h2 class="answer-guide">请选择旋转后可以与以下图形重合的选项</h2>
+				<span class="stage-tit">{{ stage_tit }}</span>
+				<span class="answer-guide">{{ answer_guide }}</span>
 				<div class="question-box">
 					<i class="icon-surface_1B3"></i>
 				</div>
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a href="#">A<i class="icon-surface_1B4"></i></a>
-			<a href="#">B<i class="icon-surface_1A1"></i></a>
-			<a href="#">C<i class="icon-surface_1A5"></i></a>
-			<a href="#">D<i class="icon-surface_1A2"></i></a>
+			<router-link to="lotransition">A<i class="icon-surface_1B4"></i></router-link>
+			<router-link to="lotransition">B<i class="icon-surface_1B1"></i></router-link>
+			<router-link to="lotransition">C<i class="icon-surface_1A5"></i></router-link>
+			<router-link to="lotransition">D<i class="icon-surface_1A2"></i></router-link>
 		</div>
 	</section>
 </template>
 
 <script>
 	export default {
-		name:'LOExercise'
+		name:'LOExercise',
+		data() {
+			return {
+				stage_tit: String,        // 阶段标题
+				answer_guide: String,     // 答题阶段指导标题
+				question: Array,          // 问题数组   
+				answer: Array,            // 答案选项数组
+			}
+		},
+		created() {
+			this.getData();
+		},
+		methods:{
+			async getData(){
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/08_bxyx', {params: {api_token: window.localStorage.data},})
+				if(data.data.code !== 200){
+					console.log("数据获取失败！");
+					this.$router.push("login")
+					return false
+				}
+				// 阶段标题
+				this.stage_tit = data.data.data[1].stage_tit;
+				let stage_tit = this.stage_tit;
+				console.log(stage_tit)
+				// 答题阶段指导标题
+				this.answer_guide = data.data.data[1].answer_guide;
+				let answer_guide = this.answer.answer_guide;
+				// 问题数组
+				this.question = this.answer_guide = data.data.data[1].data;
+				console.log(this.question[0].content);
+			},
+		},
 	}
 </script>
 

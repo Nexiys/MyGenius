@@ -28,7 +28,7 @@
 				<div class="i-con">
 					<h2>{{ title }}</h2>
 					<p v-html="introductions"></p>
-					<router-link to="topic">开始答题</router-link>
+					<router-link to="loexercise">开始答题</router-link>
 				</div>
 			</div>
 		</div>
@@ -45,12 +45,12 @@
 			}
 		},
 		created() {
-			this.getData()
+			this.getData();
 			localStorage.removeItem("reload");
     },
 		methods:{
 			async getData(){
-				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/02_zywdxyx', {params: {api_token: window.localStorage.data},})
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/08_bxyx', {params: {api_token: window.localStorage.data},})
 				if(data.data.code !== 200){
 					this.$router.push("login")
 					return false

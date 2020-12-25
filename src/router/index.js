@@ -129,9 +129,18 @@ const routes = [
 	},
 	// 逻辑游戏一（表象游戏）—— 练习阶段
 	{
-	  path: '/lotexercise',
+	  path: '/loexercise',
 	  name: 'LOExercise',
 	  component: () => import('../views/logic/one/exercise-stage.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
+	// 逻辑游戏一（表象游戏）—— 正式阶段
+	{
+	  path: '/loformal',
+	  name: 'LOFormal',
+	  component: () => import('../views/logic/one/formal-stage.vue'),
 	  meta:{
 	    needLogin: false
 	  }

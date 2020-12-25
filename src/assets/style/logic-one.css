@@ -338,6 +338,12 @@ header .h-operate a:nth-child(2),
   color: #33363E;
   font-size: 180px;
 }
+.apart-body .apart-top .question .question-box img {
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+}
 .apart-body .apart-bottom {
   width: 100%;
   height: 200px;
@@ -364,6 +370,12 @@ header .h-operate a:nth-child(2),
 .apart-body .apart-bottom a i {
   display: inline-block;
   font-size: 120px;
+}
+.apart-body .apart-bottom a img {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
 }
 .apart-body .apart-bottom a:hover {
   background: #DEEBFF;

@@ -25,7 +25,6 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
 			<h2 class="guide-tit">{{answer_guide}}</h2>
-			<!-- <div class="timing-ring-wrap">{{time_limit}}</div> -->
 			<timing :originProgressText ="timelimit"  class="timling"></timing>
 			<!-- 答题页面中,下面元素需要添加 flex 样式 -->
 			<div class="main flex">
@@ -46,7 +45,7 @@
 </template>
 
 <script>
-    import timing from '../../../components/TimingRing/index'
+  import timing from '../../../components/TimingRing/index'
 	export default {
 		components: {timing},
 		name: "exercisrstage",
@@ -59,8 +58,8 @@
 				time_limit:'',   // 时间限制
 				content:[],      // 问题数组
 				answer:[],       // 答案数组
-				model:0,        // Model ?
-				timelimit:30
+				model:0,         // Model 
+				timelimit:30     // 限时时间
 			}
 		},
 		created(){

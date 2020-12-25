@@ -25,7 +25,6 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">{{stage_tit}}</h2>
 			<h2 class="guide-tit">{{answer_guide}}</h2>
-			<!-- <div class="timing-ring-wrap">{{time_limit}}</div> -->
 			<timing v-if="update" :originProgressText ="timelimit"  class="timling"></timing>
 			<!-- 答题页面中,下面元素需要添加 flex 样式 -->
 			<div class="main flex">
@@ -61,7 +60,6 @@
 				thisindex:0,
 				answer:[],
 				lastanswer:[],
-				content:[],
 				page:1,
 				pagenum:0,
 				datalist:[],

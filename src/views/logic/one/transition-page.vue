@@ -25,11 +25,11 @@
 		
 		<div class="exercise-end-content">
 		    <img src="../../../assets/img/reaction.png" alt="">
-		    <h1>非常好</h1>
+		    <h1>非常好！</h1>
 		    <div class="explain">
-		        <p>练习结束，正式游戏开始。<br/>请尽可能快速准确地完成游戏～</p>		
+		        <p>练习结束，正式游戏开始。<br/>请尽可能快速准确地完成游戏～</p>
 		    </div>
-			<router-link to="topicexploring">开始答题</router-link>
+			<router-link to="loformal">开始答题</router-link>
 		</div>
 	</section>
 </template>
