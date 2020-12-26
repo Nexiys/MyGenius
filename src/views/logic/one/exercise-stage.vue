@@ -45,10 +45,11 @@
 		name:'LOExercise',
 		data() {
 			return {
-				stage_tit: String,        // 阶段标题
-				answer_guide: String,     // 答题阶段指导标题
-				question: Array,          // 问题数组   
-				answer: Array,            // 答案选项数组
+				stage_tit: '',        // 阶段标题
+				answer_guide: '',     // 答题阶段指导标题
+				question: [],         // 问题数组   
+				answer: [],           // 答案选项数组
+				test:[],
 			}
 		},
 		created() {
@@ -70,8 +71,8 @@
 				this.answer_guide = data.data.data[1].answer_guide;
 				let answer_guide = this.answer.answer_guide;
 				// 问题数组
-				this.question = this.answer_guide = data.data.data[1].data;
-				console.log(this.question[0].content);
+				// this.test = this.answer_guide = data.data.data[1].data.question_num;
+				// console.log(this.test);
 			},
 		},
 	}
