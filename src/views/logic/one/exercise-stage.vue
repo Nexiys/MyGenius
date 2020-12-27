@@ -26,16 +26,16 @@
 			<div class="question">
 				<span class="stage-tit">{{ stage_tit }}</span>
 				<span class="answer-guide">{{ answer_guide }}</span>
-				<div class="question-box">
-					<i class="icon-surface_1B3"></i>
+				<div class="question-box"  v-html="dataList.content">
+					
 				</div>
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<router-link to="lotransition">A<i class="icon-surface_1B4"></i></router-link>
-			<router-link to="lotransition">B<i class="icon-surface_1B1"></i></router-link>
-			<router-link to="lotransition">C<i class="icon-surface_1A5"></i></router-link>
-			<router-link to="lotransition">D<i class="icon-surface_1A2"></i></router-link>
+			<a href="#"  @click="toNext(dataList.question_num,dataList.answer_1)" v-html="dataList.option_1"></a>
+			<a href="#" @click="toNext(dataList.question_num,dataList.answer_2)" v-html="dataList.option_2"></a>
+			<a href="#" @click="toNext(dataList.question_num,dataList.answer_3)" v-html="dataList.option_3"></a>
+			<a href="" @click="toNext(dataList.question_num,dataList.answer_4)" v-html="dataList.option_4"></a>
 		</div>
 	</section>
 </template>
@@ -49,6 +49,10 @@
 				answer_guide: '',     // 答题阶段指导标题
 				question: [],         // 问题数组   
 				answer: [],           // 答案选项数组
+				test:[],
+				newData:'',
+				dataList:'',
+				index:0
 			}
 		},
 		created() {
@@ -65,13 +69,31 @@
 				// 阶段标题
 				this.stage_tit = data.data.data[1].stage_tit;
 				let stage_tit = this.stage_tit;
+				console.log(stage_tit)
 				// 答题阶段指导标题
 				this.answer_guide = data.data.data[1].answer_guide;
 				let answer_guide = this.answer.answer_guide;
-				
+				// console.log(data.data.data[1].data)
+				this.newData = data.data.data[1].data
+				this.dataList = data.data.data[1].data
+				this.dataList =this.dataList[this.index] 
+				console.log(this.dataList)
 				// 问题数组
-				
+				// this.test = this.answer_guide = data.data.data[1].data.question_num;
+				// console.log(this.test);
 			},
+			toNext(a,b){
+				
+				// this.dataList= this.dataList[a]
+				// console.log(this.dataList)
+				if(a == this.newData.length){
+					this.$router.push("lotransition")
+				}else{
+					
+					this.dataList = this.newData[a]
+				}
+
+			}
 		},
 	}
 </script>
