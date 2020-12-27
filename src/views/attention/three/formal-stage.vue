@@ -121,7 +121,7 @@
 						this.content = this.lastanswer[this.thisindex]
 						this.lastanswer =this.lastanswer.splice(1)
 						if(this.page == 6){
-							window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+							this.$router.push("lointroduce")
 						}
 					} else {
 						time--;
@@ -156,7 +156,7 @@
 					this.content = this.lastanswer[this.thisindex]
 					this.lastanswer =this.lastanswer.splice(1)
 					if(this.page == 6){
-						window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+						this.$router.push("lointroduce")
 						localStorage.removeItem("reload");
 					}
 				} 

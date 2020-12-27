@@ -14,8 +14,8 @@
 			<div class="content-header">
 				<div class="left">
 					<span>进度：</span>
-					<span>1</span>
-					<span>/12</span>
+					<span>{{num}}</span>
+					<span>/{{maxnum}}</span>
 				</div>
 				<div class="right">
 					<span>用时：</span>
@@ -24,25 +24,77 @@
 			</div>
 			
 			<div class="question">
-				<h2 class="stage-tit">正式答题</h2>
-				<h2 class="answer-guide">请选择旋转后可以与以下图形重合的选项</h2>
-				<div class="question-box">
-					<i class="icon-surface_1B3"></i>
+				<span class="stage-tit">{{ stage_tit }}</span>
+				<span class="answer-guide">{{ answer_guide }}</span>
+				<div class="question-box" v-html="dataList.content">
+					
 				</div>
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a href="#">A<i class="icon-surface_1B4"></i></a>
-			<a href="#">B<i class="icon-surface_1A1"></i></a>
-			<a href="#">C<i class="icon-surface_1A5"></i></a>
-			<a href="#">D<i class="icon-surface_1A2"></i></a>
+			<a href="#"  @click="toNext(dataList.question_num,dataList.answer_1)" v-html="dataList.option_1"></a>
+			<a href="#" @click="toNext(dataList.question_num,dataList.answer_2)" v-html="dataList.option_2"></a>
+			<a href="#" @click="toNext(dataList.question_num,dataList.answer_3)" v-html="dataList.option_3"></a>
+			<a href="" @click="toNext(dataList.question_num,dataList.answer_4)" v-html="dataList.option_4"></a>
 		</div>
 	</section>
 </template>
 
 <script>
 	export default {
-		name:'LOFormal'
+		name:'LOFormal',
+		data() {
+			return {
+				stage_tit: '',        // 阶段标题
+				answer_guide: '',     // 答题阶段指导标题
+				question: [],         // 问题数组   
+				answer: [],           // 答案选项数组
+				newData:'',
+				dataList:'',
+				index:0,
+				num:1,
+				maxnum:1
+			}
+		},
+		created() {
+			this.getData();
+		},
+		methods:{
+			async getData(){
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/08_bxyx', {params: {api_token: window.localStorage.data},})
+				if(data.data.code !== 200){
+					console.log("数据获取失败！");
+					this.$router.push("login")
+					return false
+				}
+				// 阶段标题
+				this.stage_tit = data.data.data[2].stage_tit;
+				let stage_tit = this.stage_tit;
+				// 答题阶段指导标题
+				this.answer_guide = data.data.data[2].answer_guide;
+				let answer_guide = this.answer.answer_guide;
+				
+				this.newData = data.data.data[2].data
+				this.dataList = data.data.data[2].data
+
+
+				this.maxnum = this.newData.length
+				console.log(this.maxnum)
+				this.dataList =this.dataList[this.index] 
+				// 问题数组
+			},
+			toNext(a,b){
+				this.num = this.num + 1
+				// this.dataList= this.dataList[a]
+				// console.log(this.dataList)
+				if(a == this.newData.length-1){
+					 window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+				}else{
+					this.dataList = this.newData[a]
+				}
+
+			}
+		},
 	}
 </script>
 

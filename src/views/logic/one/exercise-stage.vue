@@ -49,7 +49,6 @@
 				answer_guide: '',     // 答题阶段指导标题
 				question: [],         // 问题数组   
 				answer: [],           // 答案选项数组
-				test:[],
 			}
 		},
 		created() {
@@ -66,13 +65,12 @@
 				// 阶段标题
 				this.stage_tit = data.data.data[1].stage_tit;
 				let stage_tit = this.stage_tit;
-				console.log(stage_tit)
 				// 答题阶段指导标题
 				this.answer_guide = data.data.data[1].answer_guide;
 				let answer_guide = this.answer.answer_guide;
+				
 				// 问题数组
-				// this.test = this.answer_guide = data.data.data[1].data.question_num;
-				// console.log(this.test);
+				
 			},
 		},
 	}
