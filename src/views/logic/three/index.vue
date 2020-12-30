@@ -1,5 +1,5 @@
 <template>
-	<!-- 逻辑游戏一（表象游戏）介绍页面 -->
+	<!-- 逻辑游戏三（归纳推理）介绍页面 -->
 	<section class="header">
 		<div class="logo-modular">
 			<a href="#"><img src="../../../assets/img/logo.png" ></a>
@@ -28,7 +28,7 @@
 				<div class="i-con">
 					<h2>{{ title }}</h2>
 					<p v-html="introductions"></p>
-					<router-link to="loexercise">开始答题</router-link>
+					<router-link to="lthformal">开始答题</router-link>
 				</div>
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 
 <script>
 	export default {
-		name: "LOIntroduce",
+		name: "LTHIntroduce",
 		data(){
 			return{
 				title:'',						// 介绍页标题
@@ -50,7 +50,7 @@
     },
 		methods:{
 			async getData(){
-				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/08_bxyx', {params: {api_token: window.localStorage.data},})
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/10_gntl', {params: {api_token: window.localStorage.data},})
 				if(data.data.code !== 200){
 					this.$router.push("login")
 					return false

@@ -118,15 +118,6 @@ const routes = [
 	    needLogin: false
 	  }
 	},
-	// 逻辑游戏一（表象游戏）—— 过渡页面
-	{
-	  path: '/lotransition',
-	  name: 'LOTransition',
-	  component: () => import('../views/logic/one/transition-page.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
 	// 逻辑游戏一（表象游戏）—— 练习阶段
 	{
 	  path: '/loexercise',
@@ -136,11 +127,56 @@ const routes = [
 	    needLogin: false
 	  }
 	},
+	// 逻辑游戏一（表象游戏）—— 过渡页面
+	{
+	  path: '/lotransition',
+	  name: 'LOTransition',
+	  component: () => import('../views/logic/one/transition-page.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
 	// 逻辑游戏一（表象游戏）—— 正式阶段
 	{
 	  path: '/loformal',
 	  name: 'LOFormal',
 	  component: () => import('../views/logic/one/formal-stage.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
+	// 逻辑游戏二(演绎推理) —— 介绍
+	{
+	  path: '/ltintroduce',
+	  name: 'LTIntroduce',
+	  component: () => import('../views/logic/two/index.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
+	// 逻辑游戏二（演绎推理）—— 正式阶段
+	{
+	  path: '/ltformal',
+	  name: 'LTFormal',
+	  component: () => import('../views/logic/two/formal-stage.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
+	// 逻辑游戏三(归纳推理) —— 介绍
+	{
+	  path: '/lthintroduce',
+	  name: 'LTHIntroduce',
+	  component: () => import('../views/logic/three/index.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
+	// 逻辑游戏三（归纳推理）—— 正式阶段
+	{
+	  path: '/lthformal',
+	  name: 'LTHFormal',
+	  component: () => import('../views/logic/three/formal-stage.vue'),
 	  meta:{
 	    needLogin: false
 	  }

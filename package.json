@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "lib-flexible": "^0.3.2",
+    "postcss-px2rem-exclude": "0.0.6",
     "vue": "^3.0.0",
     "vue-axios": "^3.2.0",
     "vue-router": "^4.0.0-0",
@@ -25,6 +27,15 @@
     "less": "^3.0.4",
     "less-loader": "^5.0.0"
   },
+	"postcss": {
+		"plugins": {
+			"autoprefixer": {},
+			"postcss-px2rem-exclude": {
+				"remUnit": 192,
+				"exclude": "/node_modules|floder_name/i"
+			}
+		}
+	},
   "eslintConfig": {
     "root": true,
     "env": {

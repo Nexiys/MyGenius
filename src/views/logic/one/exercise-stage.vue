@@ -32,10 +32,10 @@
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a href="#"  @click="toNext(dataList.question_num,dataList.answer_1)" v-html="dataList.option_1"></a>
-			<a href="#" @click="toNext(dataList.question_num,dataList.answer_2)" v-html="dataList.option_2"></a>
-			<a href="#" @click="toNext(dataList.question_num,dataList.answer_3)" v-html="dataList.option_3"></a>
-			<a href="" @click="toNext(dataList.question_num,dataList.answer_4)" v-html="dataList.option_4"></a>
+			<a href="#"  @click="toNext(dataList.question_num)" v-html="dataList.option_1"></a>
+			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_2"></a>
+			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_3"></a>
+			<a href="" @click="toNext(dataList.question_num)" v-html="dataList.option_4"></a>
 		</div>
 	</section>
 </template>
@@ -69,30 +69,19 @@
 				// 阶段标题
 				this.stage_tit = data.data.data[1].stage_tit;
 				let stage_tit = this.stage_tit;
-				console.log(stage_tit)
 				// 答题阶段指导标题
 				this.answer_guide = data.data.data[1].answer_guide;
 				let answer_guide = this.answer.answer_guide;
-				// console.log(data.data.data[1].data)
 				this.newData = data.data.data[1].data
 				this.dataList = data.data.data[1].data
 				this.dataList =this.dataList[this.index] 
-				console.log(this.dataList)
-				// 问题数组
-				// this.test = this.answer_guide = data.data.data[1].data.question_num;
-				// console.log(this.test);
 			},
-			toNext(a,b){
-				
-				// this.dataList= this.dataList[a]
-				// console.log(this.dataList)
-				if(a == this.newData.length){
-					this.$router.push("lotransition")
-				}else{
-					
-					this.dataList = this.newData[a]
-				}
 
+
+
+	    toNext(a,b){
+			this.dataList = this.newData[a]	
+			this.$router.push({path:"lotransition"})
 			}
 		},
 	}

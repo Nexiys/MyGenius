@@ -5,7 +5,7 @@ import store from './store'              // 引入 store 资源 （src/store）
 import axios from 'axios'                // 引入 axios 插件
 import VueAxios from 'vue-axios'         // 引入 vue-axios Vue 集成的 axios 作用方法
 
-import '@/assets/js/viewport.js'   	     //  可视窗口适配方法
+import '@/assets/js/flexible.js'   	     //  可视窗口适配方法
 import '@/assets/style/base.css'   	     //  初始化样式文件
 import '@/assets/style/iconFont.css'     //  引入字体图标样式
 

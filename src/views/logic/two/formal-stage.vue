@@ -1,5 +1,5 @@
 <template>
-	<!-- 逻辑游戏一（表象游戏）正式阶段 -->
+	<!-- 逻辑游戏二（演绎推理）正式阶段 -->
 	<section class="header">
 		<div class="logo-modular">
 			<a href="#"><img src="../../../assets/img/logo.png" ></a>
@@ -14,8 +14,8 @@
 			<div class="content-header">
 				<div class="left">
 					<span>进度：</span>
-					<span>{{num== 11? 10 : num}}</span>
-					<span>/{{maxnum}}</span>
+					<span>0</span>
+					<span>/12</span>
 				</div>
 				<div class="right">
 					<span>用时：</span>
@@ -24,25 +24,24 @@
 			</div>
 			
 			<div class="question">
-				<span class="stage-tit">{{ stage_tit }}</span>
-				<span class="answer-guide">{{ answer_guide }}</span>
-				<div class="question-box" v-html="dataList.content">
-					
+				<span class="answer-guide">请推理出正确答案并选择</span>
+				<div class="question-box">
+					<p>1、达芬奇是哲学家，达芬奇也是画家，所以（     ）</p>
 				</div>
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a href="#"  @click="toNext(dataList.question_num,dataList.answer_1, new Date().getTime())" v-html="dataList.option_1"></a>
-			<a href="#" @click="toNext(dataList.question_num,dataList.answer_2,new Date().getTime())" v-html="dataList.option_2"></a>
-			<a href="#" @click="toNext(dataList.question_num,dataList.answer_3,new Date().getTime())" v-html="dataList.option_3"></a>
-			<a href="#" @click="toNext(dataList.question_num,dataList.answer_4,new Date().getTime())" v-html="dataList.option_4"></a>
+			<a href="#">A、哲学家大部分都是画家</a>
+			<a href="#">B、画家中绝大部分是哲学家</a>
+			<a href="#">C、有的哲学家是画家</a>
+			<a href="#">D、由所给内容推不出任何结论</a>
 		</div>
 	</section>
 </template>
 
 <script>
 	export default {
-		name:'LOFormal',
+		name:'LTFormal',
 		data() {
 			return {
 				stage_tit: '',        // 阶段标题
@@ -118,5 +117,5 @@
 </script>
 
 <style lang="less">
-	@import '~@/assets/style/logic-one.less';
+	@import '~@/assets/style/logic-two.less';
 </style>
