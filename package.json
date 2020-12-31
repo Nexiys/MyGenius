@@ -31,7 +31,7 @@
 		"plugins": {
 			"autoprefixer": {},
 			"postcss-px2rem-exclude": {
-				"remUnit": 192,
+				"remUnit": 179,
 				"exclude": "/node_modules|floder_name/i"
 			}
 		}

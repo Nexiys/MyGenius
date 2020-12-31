@@ -1,5 +1,5 @@
 <template>
-	<!-- 逻辑游戏三（归纳推理）正式阶段 -->
+	<!-- 注意游戏五（注意）练习阶段 -->
 	<section class="header">
 		<div class="logo-modular">
 			<a href="#"><img src="../../../assets/img/logo.png" ></a>
@@ -24,13 +24,11 @@
 			</div>
 			
 			<div class="question">
+				<span class="stage-tit">练习阶段</span>
+				<span class="answer-guide">请判断屏幕中出现图形的形状或颜色并快速点击选择</span>
 				<div class="question-box">
-					<!-- 此题中如果遇到没有图片的,需要把下面的 P 标签放到下面类名 .img-box 的元素内 -->
-					<p>1、如图是一个五角星灯连续旋转闪烁所成的三个图形，以此规律，下一个呈现的图形是（  ）</p>
-					<div class="img-box">
-						<img src="../../../assets/img/induce-01.png">
-						<!-- <p>10、把数列依次按第一个括号一个数，第二个括号两个数，第三个括号三个数，…循环即为：(3)，(5,7)，(9,11,13)，(15,17,19,21)，…，则2017在第n个括号内，则n＝（         ）</p> -->
-					</div>
+					<!-- <img src='http://www.ruggear.mobi/img/zyzyyx/circular.png' /> -->
+					<p>8&nbsp;7</p>
 				</div>
 			</div>
 		</div>
@@ -45,10 +43,10 @@
 
 <script>
 	export default {
-		name:'LTHFormal',
+		name:'AFIExercise',
 	}
 </script>
 
 <style lang="less">
-	@import '~@/assets/style/logic-three.less';
+	@import '~@/assets/style/attention-five.less';
 </style>

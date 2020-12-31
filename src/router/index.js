@@ -181,6 +181,33 @@ const routes = [
 	    needLogin: false
 	  }
 	},
+	// 注意游戏五（注意转移游戏）—— 介绍页面
+	{
+	  path: '/afintroduce',
+	  name: 'AFIntroduce',
+	  component: () => import('../views/attention/five/index.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
+	// 注意游戏五（注意转移游戏）—— 练习阶段
+	{
+	  path: '/afiexercise',
+	  name: 'AFIExercise',
+	  component: () => import('../views/attention/five/exercise-stage.vue'),
+	  meta:{
+	    needLogin: false
+	  }
+	},
+	// 注意游戏五（注意转移游戏）—— 过渡阶段
+		{
+		  path: '/afitransition',
+		  name: 'AFITransition',
+		  component: () => import('../views/attention/five/transition-page.vue'),
+		  meta:{
+		    needLogin: false
+		  }
+		},
   {
     path: '/topic',
     name: 'topic',

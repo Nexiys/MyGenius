@@ -1,5 +1,5 @@
 <template>
-	<!-- 逻辑游戏三（归纳推理）介绍页面 -->
+	<!-- 注意游戏五（注意转移游戏）介绍页面 -->
 	<section class="header">
 		<div class="logo-modular">
 			<a href="#"><img src="../../../assets/img/logo.png" ></a>
@@ -37,7 +37,7 @@
 
 <script>
 	export default {
-		name: "LTHIntroduce",
+		name: "AFIntroduce",
 		data(){
 			return{
 				title:'',						// 介绍页标题
@@ -50,7 +50,7 @@
     },
 		methods:{
 			async getData(){
-				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/10_gntl', {params: {api_token: window.localStorage.data},})
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/05_zyzyyx', {params: {api_token: window.localStorage.data},})
 				if(data.data.code !== 200){
 					this.$router.push("login")
 					return false
@@ -66,5 +66,5 @@
 </script>
 
 <style lang="less">
-	@import '~@/assets/style/logic-three.less';
+	@import '~@/assets/style/attention-five.less';
 </style>
