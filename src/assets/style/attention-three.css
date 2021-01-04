@@ -27,6 +27,10 @@ body {
   display: block;
   cursor: pointer;
 }
+.header .logo-modular a img {
+  width: 146px;
+  height: 46px;
+}
 .header .h-operate {
   float: right;
 }

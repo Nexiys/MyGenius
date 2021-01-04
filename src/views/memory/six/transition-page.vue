@@ -1,5 +1,5 @@
 <template>
-	<!-- 逻辑游戏一（表象游戏）过渡页面 -->
+	<!-- 记忆游戏六（记忆复述策略）过渡页面 -->
 	<section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../../assets/img/logo.png" ></a>
@@ -24,22 +24,22 @@
 		</div>
 		
 		<div class="exercise-end-content">
-		    <img src="../../../assets/img/reaction.png" alt="">
-		    <h1>非常好！</h1>
-		    <div class="explain">
-		        <p>练习结束，正式游戏开始。<br/>请尽可能快速准确地完成游戏～</p>
-		    </div>
-			<router-link to="loformal">开始游戏</router-link>
+			<img src="../../../assets/img/reaction.png" alt="">
+			<h1>非常好！</h1>
+			<div class="explain">
+					<p>练习结束，正式游戏开始。<br/>请尽可能快速准确地完成游戏～</p>
+			</div>
+			<router-link to="msiformal">开始游戏</router-link>
 		</div>
 	</section>
 </template>
 
 <script>
 	export default {
-		name: "LOTransition",
+		name: "MSITransition",
 	}	
 </script>
 
 <style lang="less">
-	@import '~@/assets/style/logic-one.less';
+	@import '~@/assets/style/memory-six.less';
 </style>

@@ -28,7 +28,7 @@
 			<div class="main">
 				<div class="main-box">
 					<p class="des-con" v-html="des_con"></p>
-					<button class="start-btn" @click="routergo">开始答题</button>
+					<button class="start-btn" @click="routergo">开始游戏</button>
 				</div>
 			</div>
 		</div>

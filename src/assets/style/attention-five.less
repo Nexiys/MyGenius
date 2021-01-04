@@ -27,6 +27,10 @@ header,.header,#header {
 		a {
 			display: block;
 			cursor: pointer;
+			img {
+				width: 146px;
+				height: 46px;
+			}
 		}
 	}
 	.h-operate {
@@ -285,8 +289,36 @@ header,.header,#header {
 			}
 		}
 	}
+	.apart-bottom {
+		width: 100%;
+		height: 120px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		a {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			background: @white;
+			box-shadow: 0 20px 40px -10px rgba(33,120,215,0.40);
+			border-radius: 8px;
+			font-size: 22px;
+			color: @text-minor;
+			line-height: 120px;
+			text-align: center;
+			&:hover{
+				background:#DEEBFF;
+			}
+			&:active{
+				background: #47A1FE;
+				color: @white;
+			}
+			&:not(:first-child){
+				.ml-20
+			}
+		}
+	}
 }
-
 
 // 过渡页面
 .exercise-end-content {

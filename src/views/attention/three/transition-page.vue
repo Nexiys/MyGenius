@@ -29,7 +29,7 @@
 		    <div class="explain">
 		        <p>练习结束，正式游戏开始。<br/>请尽可能快速准确地完成游戏～</p>		
 		    </div>
-			<router-link to="topicexploring">开始答题</router-link>
+			<router-link to="topicexploring">开始游戏</router-link>
 			<!-- <timing :originProgressText ="timelimit" :timeFun = "kais" class="timling"></timing> -->
 		</div>
 	</section>

@@ -33,6 +33,12 @@ header .logo-modular a,
   display: block;
   cursor: pointer;
 }
+header .logo-modular a img,
+.header .logo-modular a img,
+#header .logo-modular a img {
+  width: 146px;
+  height: 46px;
+}
 header .h-operate,
 .header .h-operate,
 #header .h-operate {
@@ -297,6 +303,35 @@ header .h-operate a:nth-child(2),
   color: #565A66;
   text-align: justify;
   text-align-last: justify;
+}
+.apart-body .apart-bottom {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.apart-body .apart-bottom a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 20px 40px -10px rgba(33, 120, 215, 0.4);
+  border-radius: 8px;
+  font-size: 22px;
+  color: #33363E;
+  line-height: 120px;
+  text-align: center;
+}
+.apart-body .apart-bottom a:hover {
+  background: #DEEBFF;
+}
+.apart-body .apart-bottom a:active {
+  background: #47A1FE;
+  color: #fff;
+}
+.apart-body .apart-bottom a:not(:first-child) {
+  margin-left: 20px !important;
 }
 .exercise-end-content {
   width: calc(100% - 608px);

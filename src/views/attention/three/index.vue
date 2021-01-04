@@ -28,7 +28,7 @@
 				<div class="i-con">
 					<h2>{{ title }}</h2>
 					<p v-html="introductions"></p>
-					<router-link to="topic">开始答题</router-link>
+					<router-link to="topic">开始游戏</router-link>
 				</div>
 			</div>
 		</div>

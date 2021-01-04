@@ -5,7 +5,7 @@
 		<div class="explain">
 		    <p>练习结束，正式游戏开始。<br/>请尽可能快速准确地完成游戏～</p>		
 		</div>
-		<button class="button-default">开始答题</button>
+		<button class="button-default">开始游戏</button>
 	</section>
 </template>
 

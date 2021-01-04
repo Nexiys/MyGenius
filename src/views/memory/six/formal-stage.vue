@@ -1,5 +1,5 @@
 <template>
-	<!-- 注意游戏五（注意）练习阶段 -->
+	<!-- 记忆游戏六（记忆复述策略）正式阶段 -->
 	<section class="header">
 		<div class="logo-modular">
 			<a href="#"><img src="../../../assets/img/logo.png" ></a>
@@ -45,10 +45,10 @@
 
 <script>
 	export default {
-		name:'AFIExercise',
+		name:'MSIFormal',
 	}
 </script>
 
 <style lang="less">
-	@import '~@/assets/style/attention-five.less';
+	@import '~@/assets/style/memory-six.less';
 </style>

@@ -6,7 +6,7 @@
 		<div class="in-right">
 			<h2>人格倾向测评</h2>
 			<p>接下来，你将看到三组题目，请分别按照要求作答。第一阶段题目中，你将看到一组题目，请选择哪一答案最接近地描述了你通常的思考和行为方式。</p>
-			<button class="button-default">开始答题</button>
+			<button class="button-default">开始游戏</button>
 		</div>
 	</section>
 </template>

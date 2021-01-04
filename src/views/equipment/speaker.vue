@@ -28,8 +28,8 @@
 			</div>
 			<div class="right-side">
 				<i v-if="istype ==1" class="icon-test_unknown"></i>
-				<img v-else-if="istype ==2" src="../../assets/img/laugh.png" alt="">
-				<img v-else-if="istype ==3" src="../../assets/img/sad.png" alt="">
+				<img v-else-if="istype ==2" src="../../assets/img/laugh.png">
+				<img v-else-if="istype ==3" src="../../assets/img/sad.png">
 				<span>操作正常吗 ？</span>
 				<router-link to="/keyboard" @mouseover="selectStyle (2)"  @click="to('正常')" @mouseout="select(1)">能听到</router-link>
 				<router-link to="/keyboard" @mouseover="selectStyle (3)"  @click="to('异常')" @mouseout="select(1)">不能听到</router-link> 

@@ -200,14 +200,59 @@ const routes = [
 	  }
 	},
 	// 注意游戏五（注意转移游戏）—— 过渡阶段
-		{
-		  path: '/afitransition',
-		  name: 'AFITransition',
-		  component: () => import('../views/attention/five/transition-page.vue'),
-		  meta:{
-		    needLogin: false
-		  }
-		},
+	{
+		path: '/afitransition',
+		name: 'AFITransition',
+		component: () => import('../views/attention/five/transition-page.vue'),
+		meta:{
+			needLogin: false
+		}
+	},
+	// 记忆游戏六(记忆复述策略) —— 介绍页面
+	{
+		path: '/msintroduce',
+		name: 'MSIntroduce',
+		component: () => import('../views/memory/six/index.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
+	// 记忆游戏六(记忆复述策略) —— 学习阶段
+	{
+		path: '/msistudy',
+		name: 'MSIStudy',
+		component: () => import('../views/memory/six/study-stage.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
+	// 记忆游戏六(记忆复述策略) —— 练习阶段
+	{
+		path: '/msiexercise',
+		name: 'MSIExercise',
+		component: () => import('../views/memory/six/exercise-stage.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
+	// 记忆游戏六(记忆复述策略) —— 过渡页面
+	{
+		path: '/msitransition',
+		name: 'MSITransition',
+		component: () => import('../views/memory/six/transition-page.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
+	// 记忆游戏六(记忆复述策略) —— 过渡页面
+	{
+		path: '/msiformal',
+		name: 'MSIFormal',
+		component: () => import('../views/memory/six/formal-stage.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
   {
     path: '/topic',
     name: 'topic',

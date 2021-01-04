@@ -33,6 +33,12 @@ header .logo-modular a,
   display: block;
   cursor: pointer;
 }
+header .logo-modular a img,
+.header .logo-modular a img,
+#header .logo-modular a img {
+  width: 146px;
+  height: 46px;
+}
 header .h-operate,
 .header .h-operate,
 #header .h-operate {

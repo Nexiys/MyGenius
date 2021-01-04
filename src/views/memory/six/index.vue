@@ -1,5 +1,5 @@
 <template>
-	<!-- 逻辑游戏三（归纳推理）介绍页面 -->
+	<!-- 记忆游戏六（记忆复述策略）介绍页面 -->
 	<section class="header">
 		<div class="logo-modular">
 			<a href="#"><img src="../../../assets/img/logo.png" ></a>
@@ -28,7 +28,7 @@
 				<div class="i-con">
 					<h2>{{ title }}</h2>
 					<p v-html="introductions"></p>
-					<router-link to="lthexercise">开始游戏</router-link>
+					<router-link to="msistudy">开始游戏</router-link>
 				</div>
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 
 <script>
 	export default {
-		name: "LTHIntroduce",
+		name: "MSIntroduce",
 		data(){
 			return{
 				title:'',						// 介绍页标题
@@ -50,14 +50,14 @@
     },
 		methods:{
 			async getData(){
-				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/10_gntl', {params: {api_token: window.localStorage.data},})
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/evaluation_intro?num=11', {params: {api_token: window.localStorage.data},})
 				if(data.data.code !== 200){
 					this.$router.push("login")
 					return false
 				}
 				
-				this.title = data.data.data.introduce.title;
-				this.introductions = data.data.data.introduce.introductions;
+				this.title = data.data.data.title;
+				this.introductions = data.data.data.intro;
 				let title = this.title;
 				let introductions = this.introductions;
 			},
@@ -66,5 +66,5 @@
 </script>
 
 <style lang="less">
-	@import '~@/assets/style/logic-three.less';
+	@import '~@/assets/style/memory-six.less';
 </style>
