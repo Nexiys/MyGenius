@@ -39,18 +39,38 @@
 				type: Number,
 				default: 6
 			},
-			timeFun:''
 		},
 		data () {
 			return {
+				startTime: 0,
 				interval: null,
 				radius: 45, // 可变
 				color: '#47A1FE',
-				dashArray: 0,
+				dashArray: Math.PI * 90,
 				dashoffset: 0,
-				progressText: this.originProgressText,
-				mefun:this.timeFun
+				progressText: this.originProgressText
 			}
+		},
+		computed: {
+		  isPaused () {
+		    return this.$store.state.isPausedFlag
+		  }
+		},
+		watch: {
+		  isPaused (newVal, oldVal) {
+		    console.log(newVal, 'isPaused')
+		    if (newVal) {
+		      this.stopSvgTime()
+		    } else {
+		      this.startSvgTime()
+		    }
+		  }
+		},
+		mounted () {
+		  this.startSvgTime()
+		},
+		destroyed () {
+		  clearInterval(this.interval)
 		},
 		methods:{
 			funtime(){
@@ -169,9 +189,9 @@
       position: relative;
     }
     .progress {
-      transition: stroke-dashoffset 0.35s ease;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
+			transition: stroke-dasharray 1s linear;
     }
     .progress-text {
       position: absolute;

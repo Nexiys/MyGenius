@@ -32,10 +32,10 @@
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a href="#"  @click="toNext(dataList.question_num)" v-html="dataList.option_1"></a>
+			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_1"></a>
 			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_2"></a>
 			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_3"></a>
-			<a href="" @click="toNext(dataList.question_num)" v-html="dataList.option_4"></a>
+			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_4"></a>
 		</div>
 	</section>
 </template>
@@ -47,7 +47,7 @@
 			return {
 				stage_tit: '',        // 阶段标题
 				answer_guide: '',     // 答题阶段指导标题
-				question: [],         // 问题数组   
+				question: [],         // 问题数组 
 				answer: [],           // 答案选项数组
 				test:[],
 				newData:'',
@@ -75,6 +75,7 @@
 				this.newData = data.data.data[1].data
 				this.dataList = data.data.data[1].data
 				this.dataList =this.dataList[this.index] 
+				console.log(this.newData);
 			},
 
 
