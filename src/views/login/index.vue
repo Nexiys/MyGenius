@@ -172,7 +172,6 @@ export default {
 					mobile: this.phone,
 				})
 				.then(res => {
-				
 					console.log(res.data.msg)
 				});
 			}
