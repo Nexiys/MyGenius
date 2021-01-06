@@ -200,6 +200,65 @@ header,.header,#header {
 			}
 		}
 	}
+	
+	// 读题(规则说明)页面
+	.topic-exploring-area {
+		position: relative;
+		width: 100%;
+		height: calc(~"760px - 61px");
+		padding: 24px 30px;
+		margin: 0 auto;
+		text-align: center;
+		h2 {
+			font-size: 26px;
+			color: @text-minor;
+			letter-spacing: 0;
+			line-height: 26px;
+			font-weight: normal;
+		}
+		.stage-tit {
+			text-align: left;
+		}
+		.guide-tit {
+			text-align: center;
+			margin-top: 24px;
+		}
+		// 倒计时占位
+		.timing-ring-wrap {
+			position: absolute;
+			left: 50%;
+			top: 120px;
+			margin-left: -50px;
+			width: 100px;
+			height: 100px;
+			box-sizing: border-box;
+			border-radius: 100%;
+			text-align: center;
+			line-height: 88px;
+			z-index: 1;
+			background: @white;
+			font-size: 42px;
+			color: @text-color;
+		}
+		// 主要内容
+		.main {
+			box-sizing: border-box;
+			position: relative;
+			width: 100%;
+			height: 430px;
+			border: 2px solid @main-border;
+			border-radius: 8px;
+			margin-top: 61px;
+			text-align: center;
+		}
+		.start-btn {
+			width: 280px;
+			height: 60px;
+			margin: 24px auto 0;
+			font-size: 24px;
+			.button-default
+		}	
+	}
 }
 
 // 过渡页面
