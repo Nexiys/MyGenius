@@ -217,6 +217,80 @@ header .h-operate a:nth-child(2),
   content: '';
   transform: rotate(45deg);
 }
+.content-area .topic-exploring-area {
+  position: relative;
+  width: 100%;
+  height: calc(760px - 61px);
+  padding: 24px 30px;
+  margin: 0 auto;
+  text-align: center;
+}
+.content-area .topic-exploring-area h2 {
+  font-size: 26px;
+  color: #33363E;
+  letter-spacing: 0;
+  line-height: 26px;
+  font-weight: normal;
+}
+.content-area .topic-exploring-area .stage-tit {
+  text-align: left;
+}
+.content-area .topic-exploring-area .guide-tit {
+  text-align: center;
+  margin-top: 24px;
+}
+.content-area .topic-exploring-area .timing-ring-wrap {
+  position: absolute;
+  left: 50%;
+  top: 120px;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 88px;
+  z-index: 1;
+  background: #fff;
+  font-size: 42px;
+  color: #565A66;
+}
+.content-area .topic-exploring-area .main {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 430px;
+  border: 2px solid #CBD6E5;
+  border-radius: 8px;
+  margin-top: 61px;
+  text-align: center;
+}
+.content-area .topic-exploring-area .start-btn {
+  width: 280px;
+  height: 60px;
+  margin: 24px auto 0;
+  font-size: 24px;
+  background: #47A1FE;
+  border-radius: 6px;
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 1;
+  color: #fff;
+}
+.content-area .topic-exploring-area .start-btn:hover,
+.content-area .topic-exploring-area .start-btn .hover {
+  background: #50B2FF;
+  color: #fff;
+}
+.content-area .topic-exploring-area .start-btn:active,
+.content-area .topic-exploring-area .start-btn .active {
+  background: #1583D6;
+  color: #fff;
+}
+.content-area .topic-exploring-area .start-btn .disabled {
+  background: #C3CEDE;
+  color: #fff;
+}
 .exercise-end-content {
   width: calc(100% - 608px);
   height: auto;

@@ -2,43 +2,36 @@
 	<!-- 记忆游戏六（记忆复述策略）学习阶段 -->
 	<section class="header">
 		<div class="logo-modular">
-			<a href="#"><img src="../../../assets/img/logo.png" ></a>
+			<a href=""><img src="../../../assets/img/logo.png" ></a>
 		</div>
 		<div class="h-operate">
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div> 
 	</section>
-	<section class="apart-body">
-		<div class="apart-top">
-			<div class="content-header">
-				<div class="left">
-					<span>进度：</span>
-					<span>0</span>
-					<span>/00</span>
-				</div>
-				<div class="right">
-					<span>用时：</span>
-					<span>02:28:00</span>
-				</div>
+	<section class="content-area">
+		<div class="c-header">
+			<div class="c-h-left">
+				<em>进度：</em>
+				<em>0</em>
+				<em>/00</em>
 			</div>
-			
-			<div class="question">
-				<span class="stage-tit">练习阶段</span>
-				<span class="answer-guide">请判断屏幕中出现图形的形状或颜色并快速点击选择</span>
-				<div class="question-box">
-					<!-- 此处 img/p 取自 content 字段的值 -->
-					<img src='http://www.ruggear.mobi/img/zyzyyx/circular.png' />
-					<!-- <p>8&nbsp;7</p> -->
-				</div>
+			<div class="c-h-middle"></div>
+			<div class="c-h-right">
+				<em>用时：</em>
+				<em>02:28:00</em>
 			</div>
 		</div>
-		<div class="apart-bottom">
-			<a href="#">三角形</a>
-			<a href="#">正方形</a>
-			<a href="#">梯形</a>
-			<a href="#">菱形</a>
-			<a href="#">圆形</a>
+		<div class="topic-exploring-area">
+			<h2 class="stage-tit">练习阶段</h2>
+			<h2 class="guide-tit">请先认真读题</h2>
+			<div class="main">
+				<div class="main-box">
+					<p class="des-con">请您在屏幕中出现的“线索——目标”词对应的右侧方框中输入目标词
+输入后按下“下一组”按钮，跳转至下一组线索词</p>
+				</div>
+			</div>
+			<button class="start-btn" @click="routergo">开始游戏</button>
 		</div>
 	</section>
 </template>
