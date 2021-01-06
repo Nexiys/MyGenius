@@ -27,15 +27,15 @@
     "less": "^3.0.4",
     "less-loader": "^5.0.0"
   },
-	"postcss": {
-		"plugins": {
-			"autoprefixer": {},
-			"postcss-px2rem-exclude": {
-				"remUnit": 179,
-				"exclude": "/node_modules|floder_name/i"
-			}
-		}
-	},
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-px2rem-exclude": {
+        "remUnit": 179,
+        "exclude": "/node_modules|floder_name/i"
+      }
+    }
+  },
   "eslintConfig": {
     "root": true,
     "env": {

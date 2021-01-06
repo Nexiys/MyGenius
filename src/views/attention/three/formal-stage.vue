@@ -100,7 +100,7 @@
 				this.content = data.data.data[2].data.content[this.thisindex]
 				this.datalist = data.data.data[2].data.content
 				
-				this.lastanswer = data.data.data[2].data.content.splice(1)
+				this.lastanswer = data.data.data[2].data.answer.splice(1)
 						
 			},
 			timeFun() {
