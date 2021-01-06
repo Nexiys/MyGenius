@@ -226,6 +226,15 @@ const routes = [
 			needLogin: false
 		}
 	},
+	// 记忆游戏六(记忆复述策略) —— 读题阶段
+	{
+		path: '/msiread',
+		name: 'MSIRead',
+		component: () => import('../views/memory/six/read-question.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
 	// 记忆游戏六(记忆复述策略) —— 练习阶段
 	{
 		path: '/msiexercise',
@@ -244,7 +253,16 @@ const routes = [
 			needLogin: false
 		}
 	},
-	// 记忆游戏六(记忆复述策略) —— 过渡页面
+	// 记忆游戏六(记忆复述策略) —— 正式阶段 —— 干扰项答题（有提示）
+	{
+		path: '/msiformaldisturb',
+		name: 'MSIFormalDisturb',
+		component: () => import('../views/memory/six/formal-stage-disturb.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
+	// 记忆游戏六(记忆复述策略) —— 正式阶段 —— 正式答题
 	{
 		path: '/msiformal',
 		name: 'MSIFormal',

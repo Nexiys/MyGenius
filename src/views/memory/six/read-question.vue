@@ -1,5 +1,5 @@
 <template>
-	<!-- 记忆游戏六（记忆复述策略）过渡页面 -->
+	<!-- 记忆游戏六（记忆复述策略）学习阶段 -->
 	<section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../../assets/img/logo.png" ></a>
@@ -22,22 +22,24 @@
 				<em>02:28:00</em>
 			</div>
 		</div>
-		
-		<div class="exercise-end-content">
-		    <img src="../../../assets/img/reaction.png" alt="">
-		    <h1>非常好</h1>
-		    <div class="explain">
-		        <p>练习结束，正式游戏开始。<br/>请尽可能快速准确地完成游戏～</p>		
-		    </div>
-			<router-link to="msiformaldisturb">开始游戏</router-link>
+		<div class="topic-exploring-area">
+			<h2 class="stage-tit">练习阶段</h2>
+			<h2 class="guide-tit">请先认真读题</h2>
+			<div class="main">
+				<div class="main-box">
+					<p class="des-con">请您在屏幕中出现的“线索——目标”词对应的右侧方框中输入目标词
+输入后按下“下一组”按钮，跳转至下一组线索词</p>
+				</div>
+			</div>
+			<router-link class="start-btn" to="msiexercise">开始游戏</router-link>
 		</div>
 	</section>
 </template>
 
 <script>
 	export default {
-		name: "MSITransition",
-	}	
+		name:'MSIRead',
+	}
 </script>
 
 <style lang="less">
