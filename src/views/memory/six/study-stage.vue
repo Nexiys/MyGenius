@@ -30,7 +30,7 @@
 					
 				</div>
 			</div>
-			<router-link class="start-btn" to="msiread">开始游戏</router-link>
+			<router-link class="start-btn" to="msiread">进入测试</router-link>
 		</div>
 	</section>
 </template>

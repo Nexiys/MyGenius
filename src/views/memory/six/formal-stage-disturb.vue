@@ -23,9 +23,8 @@
 				</div>
 			</div>
 			<div class="topic-exploring-area">
-				<h2 class="stage-tit">练习阶段</h2>
-				<h2 class="guide-tit">请您学习看到的“线索—目标”配对词组</h2>
-				<TimingRing :originProgressText ="8"></TimingRing>
+				<h2 class="stage-tit">正式阶段</h2>
+				<h2 class="guide-tit">请您先完成两则混合运算的计算题</h2>
 				<div class="main">
 					<!-- 正确答案,增加 success-disturb 类,错误答案,增加 wrong-disturb 类 -->
 					<div class="main-box not-flex success-disturb">
@@ -33,7 +32,7 @@
 							<!-- span 标签内为 content 字段中的值 -->
 							<span class="question-con">12+42÷6=</span>
 							<!-- input value 需要与 answer 中值作对比,正确显示笑脸,错误显示哭脸 -->
-							<input autofocus type="text" class="answer-con" value="19">
+							<input autofocus type="text" class="answer-con" value="">
 						</div>
 						<!-- 笑脸 or 哭脸,默认不显示（接口返回空）, src 取值 correct_icon 和 wrong_icon 字段 -->
 						<img src="../../../assets/img/smile.png" />
@@ -41,7 +40,7 @@
 						<span class="tips">回答正确！进入正式答题。</span>
 					</div>
 				</div>
-				<router-link class="start-btn" to="msiexercise">下一组</router-link>
+				<router-link class="start-btn disabled" to="msiformal">提交进入答题</router-link>
 			</div>
 		</section>
 </template>
@@ -49,7 +48,7 @@
 <script>
 	export default {
 		name:'MSIFormalDisturb',
-		data() {
+		data(){
 			
 		}
 	}

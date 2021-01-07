@@ -1,5 +1,5 @@
 <template>
-	<!-- 记忆游戏六（记忆复述策略）学习阶段 -->
+	<!-- 记忆游戏六（记忆复述策略）学习阶段 —— 读题 -->
 	<section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../../assets/img/logo.png" ></a>

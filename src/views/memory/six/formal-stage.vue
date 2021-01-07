@@ -1,46 +1,49 @@
 <template>
 	<!-- 记忆游戏六（记忆复述策略）正式阶段 -->
 	<section class="header">
-		<div class="logo-modular">
-			<a href="#"><img src="../../../assets/img/logo.png" ></a>
-		</div>
-		<div class="h-operate">
-			<a href="#"><i class="icon-pause"></i>暂停</a>
-			<a href="#"><i class="icon-quit"></i>退出</a>
-		</div> 
-	</section>
-	<section class="apart-body">
-		<div class="apart-top">
-			<div class="content-header">
-				<div class="left">
-					<span>进度：</span>
-					<span>0</span>
-					<span>/00</span>
+			<div class="logo-modular">
+				<a href=""><img src="../../../assets/img/logo.png" ></a>
+			</div>
+			<div class="h-operate">
+				<a href="#"><i class="icon-pause"></i>暂停</a>
+				<a href="#"><i class="icon-quit"></i>退出</a>
+			</div> 
+		</section>
+		<section class="content-area">
+			<div class="c-header">
+				<div class="c-h-left">
+					<em>进度：</em>
+					<em>0</em>
+					<em>/00</em>
 				</div>
-				<div class="right">
-					<span>用时：</span>
-					<span>02:28:00</span>
+				<div class="c-h-middle"></div>
+				<div class="c-h-right">
+					<em>用时：</em>
+					<em>02:28:00</em>
 				</div>
 			</div>
-			
-			<div class="question">
-				<span class="stage-tit">练习阶段</span>
-				<span class="answer-guide">请判断屏幕中出现图形的形状或颜色并快速点击选择</span>
-				<div class="question-box">
-					<!-- 此处 img/p 取自 content 字段的值 -->
-					<img src='http://www.ruggear.mobi/img/zyzyyx/circular.png' />
-					<!-- <p>8&nbsp;7</p> -->
+			<div class="topic-exploring-area">
+				<h2 class="stage-tit">练习阶段</h2>
+				<h2 class="guide-tit">请您学习看到的“线索—目标”配对词组</h2>
+				<TimingRing :originProgressText ="8"></TimingRing>
+				<div class="main">
+					<!-- 正确答案,增加 success 类,错误答案,增加 wrong 类 -->
+					<div class="main-box not-flex success">
+						<div class="main-con">
+							<!-- span 标签内为 content 字段中的值 -->
+							<span class="question-con">文化 -</span>
+							<!-- input value 需要与 answer 中值作对比,正确显示笑脸,错误显示哭脸 -->
+							<input autofocus type="text" class="answer-con" value="教育">
+						</div>
+						<!-- 笑脸 or 哭脸,默认不显示（接口返回空）, src 取值 correct_icon 和 wrong_icon 字段 -->
+						<img src="../../../assets/img/smile.png" />
+						<!-- 回答正确与否,默认不显示（接口返回空）, 文字内容取值 correct_tips 和 wrong_tips 字段 -->
+						<span class="tips">回答正确！进入测试。</span>
+					</div>
 				</div>
+				<router-link class="start-btn" to="#">下一组</router-link>
 			</div>
-		</div>
-		<div class="apart-bottom">
-			<a href="#">三角形</a>
-			<a href="#">正方形</a>
-			<a href="#">梯形</a>
-			<a href="#">菱形</a>
-			<a href="#">圆形</a>
-		</div>
-	</section>
+		</section>
 </template>
 
 <script>

@@ -427,6 +427,11 @@ header .h-operate a:nth-child(2),
   background: #C3CEDE;
   color: #fff;
 }
+.content-area .topic-exploring-area .disabled {
+  background: #C3CEDE;
+  border: none;
+  color: #fff;
+}
 .exercise-end-content {
   width: calc(100% - 608px);
   height: auto;
