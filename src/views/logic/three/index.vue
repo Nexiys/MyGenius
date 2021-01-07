@@ -28,7 +28,7 @@
 				<div class="i-con">
 					<h2>{{ title }}</h2>
 					<p v-html="introductions"></p>
-					<router-link to="lthexercise">开始游戏</router-link>
+					<router-link to="LTHFormal">开始游戏</router-link>
 				</div>
 			</div>
 		</div>
