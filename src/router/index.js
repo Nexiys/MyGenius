@@ -108,170 +108,6 @@ const routes = [
     meta:{
       needLogin: false
     }
-<<<<<<< HEAD
-  },
-	// 逻辑游戏一(表象游戏) —— 介绍
-	{
-	  path: '/lointroduce',
-	  name: 'LOIntroduce',
-	  component: () => import('../views/logic/one/index.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 逻辑游戏一（表象游戏）—— 练习阶段
-	{
-	  path: '/loexercise',
-	  name: 'LOExercise',
-	  component: () => import('../views/logic/one/exercise-stage.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 逻辑游戏一（表象游戏）—— 过渡页面
-	{
-	  path: '/lotransition',
-	  name: 'LOTransition',
-	  component: () => import('../views/logic/one/transition-page.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 逻辑游戏一（表象游戏）—— 正式阶段
-	{
-	  path: '/loformal',
-	  name: 'LOFormal',
-	  component: () => import('../views/logic/one/formal-stage.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 逻辑游戏二(演绎推理) —— 介绍
-	{
-	  path: '/ltintroduce',
-	  name: 'LTIntroduce',
-	  component: () => import('../views/logic/two/index.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 逻辑游戏二（演绎推理）—— 正式阶段
-	{
-	  path: '/ltformal',
-	  name: 'LTFormal',
-	  component: () => import('../views/logic/two/formal-stage.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 逻辑游戏三(归纳推理) —— 介绍
-	{
-	  path: '/lthintroduce',
-	  name: 'LTHIntroduce',
-	  component: () => import('../views/logic/three/index.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 逻辑游戏三（归纳推理）—— 正式阶段
-	{
-	  path: '/lthformal',
-	  name: 'LTHFormal',
-	  component: () => import('../views/logic/three/formal-stage.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 注意游戏五（注意转移游戏）—— 介绍页面
-	{
-	  path: '/afintroduce',
-	  name: 'AFIntroduce',
-	  component: () => import('../views/attention/five/index.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 注意游戏五（注意转移游戏）—— 练习阶段
-	{
-	  path: '/afiexercise',
-	  name: 'AFIExercise',
-	  component: () => import('../views/attention/five/exercise-stage.vue'),
-	  meta:{
-	    needLogin: false
-	  }
-	},
-	// 注意游戏五（注意转移游戏）—— 过渡阶段
-	{
-		path: '/afitransition',
-		name: 'AFITransition',
-		component: () => import('../views/attention/five/transition-page.vue'),
-		meta:{
-			needLogin: false
-		}
-	},
-	// 记忆游戏六(记忆复述策略) —— 介绍页面
-	{
-		path: '/msintroduce',
-		name: 'MSIntroduce',
-		component: () => import('../views/memory/six/index.vue'),
-		meta: {
-			needLogin: false
-		}
-	},
-	// 记忆游戏六(记忆复述策略) —— 学习阶段
-	{
-		path: '/msistudy',
-		name: 'MSIStudy',
-		component: () => import('../views/memory/six/study-stage.vue'),
-		meta: {
-			needLogin: false
-		}
-	},
-	// 记忆游戏六(记忆复述策略) —— 读题阶段
-	{
-		path: '/msiread',
-		name: 'MSIRead',
-		component: () => import('../views/memory/six/read-question.vue'),
-		meta: {
-			needLogin: false
-		}
-	},
-	// 记忆游戏六(记忆复述策略) —— 练习阶段
-	{
-		path: '/msiexercise',
-		name: 'MSIExercise',
-		component: () => import('../views/memory/six/exercise-stage.vue'),
-		meta: {
-			needLogin: false
-		}
-	},
-	// 记忆游戏六(记忆复述策略) —— 过渡页面
-	{
-		path: '/msitransition',
-		name: 'MSITransition',
-		component: () => import('../views/memory/six/transition-page.vue'),
-		meta: {
-			needLogin: false
-		}
-	},
-	// 记忆游戏六(记忆复述策略) —— 正式阶段 —— 干扰项答题（有提示）
-	{
-		path: '/msiformaldisturb',
-		name: 'MSIFormalDisturb',
-		component: () => import('../views/memory/six/formal-stage-disturb.vue'),
-		meta: {
-			needLogin: false
-		}
-	},
-	// 记忆游戏六(记忆复述策略) —— 正式阶段 —— 正式答题
-	{
-		path: '/msiformal',
-		name: 'MSIFormal',
-		component: () => import('../views/memory/six/formal-stage.vue'),
-		meta: {
-			needLogin: false
-		}
-=======
   },
 	// 逻辑游戏一(表象游戏) —— 介绍
 	{
@@ -399,6 +235,15 @@ const routes = [
 			needLogin: false
 		}
 	},
+	// 记忆游戏六(记忆复述策略) —— 练习阶段 —— 读题
+	{
+		path: '/msiread',
+		name: 'MSIRead',
+		component: () => import('../views/memory/six/read-question.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
 	// 记忆游戏六(记忆复述策略) —— 练习阶段
 	{
 		path: '/msiexercise',
@@ -417,6 +262,15 @@ const routes = [
 			needLogin: false
 		}
 	},
+	// 记忆游戏六(记忆复述策略) —— 正式阶段 —— 干扰项
+	{
+		path: '/msiformaldisturb',
+		name: 'MSIFormalDisturb',
+		component: () => import('../views/memory/six/formal-stage-disturb.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
 	// 记忆游戏六(记忆复述策略) —— 过渡页面
 	{
 		path: '/msiformal',
@@ -425,7 +279,6 @@ const routes = [
 		meta: {
 			needLogin: false
 		}
->>>>>>> 3d547ac36e9ead5bbe0b24f2ff220379f5baa60c
 	},
   {
     path: '/topic',
