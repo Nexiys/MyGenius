@@ -40,14 +40,14 @@
 		name: "LTIntroduce",
 		data(){
 			return{
-				title:'',						// 介绍页标题
+				title:'',	// 介绍页标题
 				introductions:''    // 介绍页内容
 			}
 		},
 		created() {
 			this.getData();
 			localStorage.removeItem("reload");
-    },
+   		},
 		methods:{
 			async getData(){
 				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/09_yytl', {params: {api_token: window.localStorage.data},})

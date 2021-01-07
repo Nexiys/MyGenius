@@ -14,8 +14,8 @@
 			<div class="content-header">
 				<div class="left">
 					<span>进度：</span>
-					<span>0</span>
-					<span>/00</span>
+					<span>{{number}}</span>
+					<span>/{{total}}</span>
 				</div>
 				<div class="right">
 					<span>用时：</span>
@@ -24,21 +24,15 @@
 			</div>
 			
 			<div class="question">
-				<div class="question-box">
-					<!-- 此题中如果遇到没有图片的,需要把下面的 P 标签放到下面类名 .img-box 的元素内 -->
-					<p>1、如图是一个五角星灯连续旋转闪烁所成的三个图形，以此规律，下一个呈现的图形是（  ）</p>
-					<div class="img-box">
-						<img src="../../../assets/img/induce-01.png">
-						<!-- <p>10、把数列依次按第一个括号一个数，第二个括号两个数，第三个括号三个数，…循环即为：(3)，(5,7)，(9,11,13)，(15,17,19,21)，…，则2017在第n个括号内，则n＝（         ）</p> -->
-					</div>
+				<div class="question-box" v-html="topicList.content">
 				</div>
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a href="#">A、&nbsp;&nbsp;<img src ='../../../assets/img/induce-01A.png' /></a>
-			<a href="#">B、&nbsp;&nbsp;<img src ='../../../assets/img/induce-01B.png' /></a>
-			<a href="#">C、&nbsp;&nbsp;<img src ='../../../assets/img/induce-01C.png' /></a>
-			<a href="#">D、&nbsp;&nbsp;<img src ='../../../assets/img/induce-01D.png' /></a>
+			<a @click="toNext(topicList.question_num,topicList.answer_1, new Date().getTime())" v-html="topicList.option_1"></a>
+			<a @click="toNext(topicList.question_num,topicList.answer_2, new Date().getTime())" v-html="topicList.option_2"></a>
+			<a @click="toNext(topicList.question_num,topicList.answer_3, new Date().getTime())" v-html="topicList.option_3"></a>
+			<a @click="toNext(topicList.question_num,topicList.answer_4, new Date().getTime())" v-html="topicList.option_4"></a>
 		</div>
 	</section>
 </template>
@@ -46,6 +40,55 @@
 <script>
 	export default {
 		name:'LTHFormal',
+		data(){
+			return{
+				number:1, //进度
+				total:'', //总题数
+				topicList:[], //题
+				sub : 0, //下标
+				list:[], //备用数组
+				thisTime:new Date().getTime(),
+				dataAll:[] //回传数组			
+			}
+		},
+		created() {
+			this.getData();
+			localStorage.removeItem("reload");
+   		},
+		methods:{
+			async getData(){
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/10_gntl', {params: {api_token: window.localStorage.data},})
+				if(data.data.code !== 200){
+					this.$router.push("login")
+					return false
+				}
+				
+				this.total = data.data.data.question_total;
+				this.topicList = data.data.data[1].data[this.sub];
+				this.list = data.data.data[1].data
+				console.log(this.list)
+			},
+			toNext(a,b,c){
+
+				this.react =(c -this.thisTime )/1000
+				console.log(this.react)
+				let data = {question_num:a,answer:b,react:this.react}
+				this.dataAll.push(data)
+				this.num = this.num + 1
+				this.thisTime = c
+				if(this.number == this.total){
+					this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/10_gntl_input',{
+						 data:this.dataAll,
+						 api_token: window.localStorage.data
+					})
+					this.$router.push("AFIntroduce")
+				}else{
+					this.number = this.number+1
+					this.sub = this.sub+1
+					this.topicList = this.list[this.sub]
+				}
+			}
+		},
 	}
 </script>
 

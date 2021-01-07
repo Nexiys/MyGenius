@@ -14,8 +14,8 @@
 			<div class="content-header">
 				<div class="left">
 					<span>进度：</span>
-					<span>0</span>
-					<span>/00</span>
+					<span>{{number}}</span>
+					<span>/{{total}}</span>
 				</div>
 				<div class="right">
 					<span>用时：</span>
@@ -24,21 +24,19 @@
 			</div>
 			
 			<div class="question">
-				<span class="stage-tit">练习阶段</span>
-				<span class="answer-guide">请判断屏幕中出现图形的形状或颜色并快速点击选择</span>
-				<div class="question-box">
-					<!-- 此处 img/p 取自 content 字段的值 -->
-					<img src='http://www.ruggear.mobi/img/zyzyyx/circular.png' />
-					<!-- <p>8&nbsp;7</p> -->
+				<span class="stage-tit">{{tip}}</span>
+				<span class="answer-guide">{{topicList.title}}</span>
+				<div class="question-box" v-html="topicList.content">
+				
 				</div>
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a href="#">三角形</a>
-			<a href="#">正方形</a>
-			<a href="#">梯形</a>
-			<a href="#">菱形</a>
-			<a href="#">圆形</a>
+			<a @click="toNext()" >{{topicList.option[0].triangle}}</a>
+			<a @click="toNext()" >{{topicList.option[1].square}}</a>
+			<a @click="toNext()" >{{topicList.option[2].trapezoid}}</a>
+			<a @click="toNext()" >{{topicList.option[3].diamond}}</a>
+			<a @click="toNext()" >{{topicList.option[4].circular}}</a>
 		</div>
 	</section>
 </template>
@@ -46,6 +44,54 @@
 <script>
 	export default {
 		name:'AFIExercise',
+		data(){
+			return{
+				number:1, //进度
+				total:'', //总题数
+				topicList:[], //题
+				sub : 0, //下标
+				list:[], //备用数组
+				thisTime:new Date().getTime(),
+				dataAll:[], //回传数组,
+				tip:'', //标题
+
+			}
+		},
+		created() {
+			this.getData();
+			localStorage.removeItem("reload");
+   		},
+		methods:{
+			async getData(){
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/05_zyzyyx', {params: {api_token: window.localStorage.data},})
+				if(data.data.code !== 200){
+					this.$router.push("login")
+					return false
+				}
+				
+				this.total = data.data.data[1][0].total_num
+				this.tip =data.data.data[1][0].stage_type
+				console.log(this.total)
+				this.topicList = data.data.data[1][0].data[this.sub];
+				this.list = data.data.data[1][0].data
+				console.log(this.topicList.option[0].triangle)
+			},
+			toNext(a,b,c){
+
+				
+				if(this.number == this.total){
+					// this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/18_gzjyzh_input',{
+					// 	 data:this.dataAll,
+					// 	 api_token: window.localStorage.data
+					// })
+					this.$router.push("AFITransition")
+				}else{
+					this.number = this.number+1
+					this.sub = this.sub+1
+					this.topicList = this.list[this.sub]
+				}
+			}
+		},
 	}
 </script>
 

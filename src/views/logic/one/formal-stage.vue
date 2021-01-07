@@ -32,10 +32,10 @@
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a href="#"  @click="toNext(dataList.question_num,dataList.answer_1, new Date().getTime())" v-html="dataList.option_1"></a>
-			<a href="#" @click="toNext(dataList.question_num,dataList.answer_2,new Date().getTime())" v-html="dataList.option_2"></a>
-			<a href="#" @click="toNext(dataList.question_num,dataList.answer_3,new Date().getTime())" v-html="dataList.option_3"></a>
-			<a href="#" @click="toNext(dataList.question_num,dataList.answer_4,new Date().getTime())" v-html="dataList.option_4"></a>
+			<a  @click="toNext(dataList.question_num,dataList.answer_1, new Date().getTime())" v-html="dataList.option_1"></a>
+			<a  @click="toNext(dataList.question_num,dataList.answer_2,new Date().getTime())" v-html="dataList.option_2"></a>
+			<a  @click="toNext(dataList.question_num,dataList.answer_3,new Date().getTime())" v-html="dataList.option_3"></a>
+			<a  @click="toNext(dataList.question_num,dataList.answer_4,new Date().getTime())" v-html="dataList.option_4"></a>
 		</div>
 	</section>
 </template>
@@ -106,9 +106,13 @@
 					 this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/08_bxyx_input',{
 						 data:this.dataAll,
 						 api_token: window.localStorage.data
+						 
 					 } )
-					 window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+					this.$router.push("LTIntroduce")
+					 
+					 //window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
 				}else{
+					
 					this.dataList = this.newData[a]
 				}
 
