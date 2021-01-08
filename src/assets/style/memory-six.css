@@ -308,6 +308,12 @@ header .h-operate a:nth-child(2),
   float: left;
   font-family: "\5FAE\8F6F\96C5\9ED1";
 }
+.content-area .topic-exploring-area .main .main-box .container {
+  width: 100%;
+  height: 100%;
+  background-color: #81d8d0;
+  overflow-y: hidden;
+}
 .content-area .topic-exploring-area .main .not-flex {
   display: inline-block;
   position: relative;
