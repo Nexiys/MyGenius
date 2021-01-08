@@ -24,7 +24,14 @@
 			</div>
 			
 			<div class="question">
+				<!-- <div class="question-box" v-html="topicList.content">
+					<p>1、如图是一个五角星灯连续旋转闪烁所成的三个图形，以此规律，下一个呈现的图形是（  ）</p>
+					<div class="img-box">
+						<img src="../../../assets/img/induce-01.png">
+					</div>
+				</div> -->
 				<div class="question-box" v-html="topicList.content">
+					
 				</div>
 			</div>
 		</div>

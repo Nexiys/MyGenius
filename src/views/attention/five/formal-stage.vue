@@ -32,11 +32,14 @@
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[0].triangle}}</a>
-			<a @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[1].square}}</a>
-			<a @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[2].trapezoid}}</a>
-			<a @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[3].diamond}}</a>
-			<a @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[4].circular}}</a>
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[0].triangle}}</a>
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[1].square}}</a>
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[2].trapezoid}}</a>
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[3].diamond}}</a>
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[4].circular}}</a>
+			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[0].attribute_1 || topicList.option[0].attribute_2 || topicList.option[0].attribute_3}}</a>
+			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[1].attribute_1 || topicList.option[1].attribute_2 || topicList.option[1].attribute_3}}</a>
+			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[2].attribute_1 || topicList.option[2].attribute_2 || topicList.option[2].attribute_3}}</a>
 		</div>
 	</section>
 </template>
@@ -70,26 +73,24 @@
 				
 				this.total = data.data.data[2][0].total_num
 				this.tip =data.data.data[2][0].stage_type
-				
 				this.topicList = data.data.data[2][0].data[this.sub];
 				this.list = data.data.data[2][0].data
 				
 			},
-			toNext(a,b,c){
-				let data = {question_num:a,answer:b,react:this.react}
+		    async toNext(a,b,c){
+				let data = {question_num:a,answer:b,type:c}
 				this.dataAll.push(data)
-				
 				if(this.number == this.total){
-					// this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/18_gzjyzh_input',{
-					// 	 data:this.dataAll,
-					// 	 api_token: window.localStorage.data
-					// })
-					this.$router.push("AFITransition")
+
+					this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/05_zyzyyx_input',{
+						 data:this.dataAll,
+						 api_token: window.localStorage.data
+					}) 
+					//this.$router.push("AFITransition")
 				}else{
 					this.number = this.number+1
 					this.sub = this.sub+1
-                    this.topicList = this.list[this.sub]
-                    console.log( this.topicList )
+					this.topicList = this.list[this.sub]
 				}
 			}
 		},
