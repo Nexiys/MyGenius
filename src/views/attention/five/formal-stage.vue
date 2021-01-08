@@ -86,7 +86,7 @@
 						 data:this.dataAll,
 						 api_token: window.localStorage.data
 					}) 
-					//this.$router.push("AFITransition")
+					this.$router.push("MSIntroduce")
 				}else{
 					this.number = this.number+1
 					this.sub = this.sub+1
