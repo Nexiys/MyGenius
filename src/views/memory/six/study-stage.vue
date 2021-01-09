@@ -29,9 +29,13 @@
 			<div class="main">
 				<div class="main-box">
 					<div class="container">
-						<div class="prev"></div>
+						<div class="prev"><i class="icon-page-left"></i></div>
 						<div class="study-con"></div>
-						
+						<ul class="page-num">
+							<li class="num">1</li>
+							<li class="num">2</li>
+						</ul>
+						<div class="next"><i class="icon-page-right"></i></div>
 					</div>
 				</div>
 			</div>

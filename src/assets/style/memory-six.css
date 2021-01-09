@@ -309,10 +309,27 @@ header .h-operate a:nth-child(2),
   font-family: "\5FAE\8F6F\96C5\9ED1";
 }
 .content-area .topic-exploring-area .main .main-box .container {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-color: #81d8d0;
   overflow-y: hidden;
+}
+.content-area .topic-exploring-area .main .main-box .container .prev,
+.content-area .topic-exploring-area .main .main-box .container .next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 100px;
+  border-radius: 0 50px 50px 0;
+  line-height: 100px;
+  color: #CBD6E5;
+  border: 2px solid #CBD6E5;
+}
+.content-area .topic-exploring-area .main .main-box .container .prev i,
+.content-area .topic-exploring-area .main .main-box .container .next i {
+  font-size: 34px;
+  font-weight: 600;
 }
 .content-area .topic-exploring-area .main .not-flex {
   display: inline-block;
