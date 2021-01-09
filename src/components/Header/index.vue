@@ -1,14 +1,16 @@
 <template>
 	<header class="header">
+		<!-- 公司 logo -->
 		<div class="logo">
 			<img src="../../assets/img/LOGO-1.png" alt="天生我才测评系统">
 		</div>
+		<!-- 右侧暂停、退出控制按钮 -->
 		<div class="buttons">
-			<button class="button-default-white">
+			<button class="button-default-white" @click="pauseClickHandle">
 				<i class="icon-pause"></i>
 				<span>暂停</span>
 			</button>
-			<button class="button-default-white">
+			<button class="button-default-white" @click="quitClickHandle">
 				<i class="icon-quit"></i>
 				<span>退出</span>
 			</button>
@@ -19,6 +21,16 @@
 <script>
 	export default {
 		name: "Header",
+		methods: {
+			// 暂停处理
+			pauseClickHandle () {
+			  this.$emit('pause')
+			},
+			// 退出处理
+			quitClickHandle () {
+			  this.$emit('quit')
+			}
+		}
 	}
 </script>
 

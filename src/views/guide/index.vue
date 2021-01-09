@@ -1,6 +1,6 @@
 <template>
 	<!-- 测评引导页面 -->
-	<section class="header">
+	<!-- <section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../assets/img/logo.png" ></a>
 		</div>
@@ -8,7 +8,9 @@
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div>
-	</section>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
 	<section class="content-area-matters">
 		<div class="illustrati w-480"></div>
 		<div class="caption mt-170">
@@ -20,14 +22,15 @@
 </template>
 
 <script>
-export default {
+	import Header from '../../components/Header/index.vue'
+	export default {
   name: 'Guide',
-created(){
-	
-	this.getData()
-	//alert($('input'))
-		
-},
+	components: {
+		Header,
+	},
+	created() {
+		this.getData()	
+	},
   methods:{
 			async getData(){
 			const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/00_rgqxcp', {params: {api_token: window.localStorage.data},})
