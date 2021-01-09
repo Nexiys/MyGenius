@@ -7,7 +7,7 @@
 		<div class="h-operate">
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
-		</div> 
+		</div>
 	</section>
 	<section class="content-area">
 		<div class="c-header">

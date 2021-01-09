@@ -30,13 +30,28 @@
 				<div class="main-box">
 					<div class="container">
 						<div class="prev"><i class="icon-page-left"></i></div>
-						<div class="study-con"></div>
-						<ul class="page-num">
-							<li class="num">1</li>
-							<li class="num">2</li>
-						</ul>
+						<div class="study-con">
+							<span>文化 - 教育</span>
+							<span>今天 - 明天</span>
+							<span>良师 - 益友</span>
+							<span>工人 - 农民</span>
+							<span>报刊 - 书籍</span>
+							<span>报纸 - 杂志</span>
+							<span>老师 - 同学</span>
+							<span>电脑 - 硬件</span>
+							<span>企业 - 论坛</span>
+							<span>市场 - 产品</span>
+							<span>调查 - 研究</span>
+							<span>关心 - 支持</span>
+						</div>
+						
 						<div class="next"><i class="icon-page-right"></i></div>
+						
 					</div>
+					<ul class="page-num">
+						<li class="num focus">1</li>
+						<li class="num">2</li>
+					</ul>
 				</div>
 			</div>
 			<router-link class="start-btn" to="msiread">进入测试</router-link>
