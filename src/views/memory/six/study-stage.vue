@@ -29,28 +29,17 @@
 			<div class="main">
 				<div class="main-box">
 					<div class="container">
-						<div class="prev"><i class="icon-page-left"></i></div>
+						<div class="prev"><i class="icon-page-left" @click="nex(0)"></i></div>
 						<div class="study-con">
-							<span>文化 - 教育</span>
-							<span>今天 - 明天</span>
-							<span>良师 - 益友</span>
-							<span>工人 - 农民</span>
-							<span>报刊 - 书籍</span>
-							<span>报纸 - 杂志</span>
-							<span>老师 - 同学</span>
-							<span>电脑 - 硬件</span>
-							<span>企业 - 论坛</span>
-							<span>市场 - 产品</span>
-							<span>调查 - 研究</span>
-							<span>关心 - 支持</span>
+							<span v-for="(item) in listData">{{item}}</span>
 						</div>
 						
-						<div class="next"><i class="icon-page-right"></i></div>
+						<div class="next"><i class="icon-page-right" @click="nex(1)"></i></div>
 						
 					</div>
 					<ul class="page-num">
-						<li class="num focus">1</li>
-						<li class="num">2</li>
+						<li class="num" @click="nex(0)"  v-bind:class="{ focus: isActive==0 }">1</li>
+						<li class="num" @click="nex(1)" v-bind:class="{ focus: isActive==1 }">2</li> 
 					</ul>
 				</div>
 			</div>
@@ -64,6 +53,37 @@
 	export default {
 		components: { TimingRing },
 		name:'MSIStudy',
+		data(){
+			return{
+				isActive:0,
+				title:'',	// 介绍页标题
+				introductions:'',    // 介绍页内容
+				listData:'', // 数据
+				thisIndex:0, // 下标
+				spareData:'' //备用数据
+			}
+		},
+		created() {
+			this.getData();
+			localStorage.removeItem("reload");
+    	},
+		methods:{
+			async getData(){
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/11_jyfscl', {params: {api_token: window.localStorage.data},})
+				if(data.data.code !== 200){
+					this.$router.push("login")
+					return false
+				}
+				this.spareData =  data.data.data.practice.study.content
+				this.listData = data.data.data.practice.study.content[this.thisIndex]
+			},
+			nex(x){
+				this.thisIndex = x 
+				this.isActive = x
+				this.listData =this.spareData[this.thisIndex]
+			
+			}
+		},
 	}
 </script>
 

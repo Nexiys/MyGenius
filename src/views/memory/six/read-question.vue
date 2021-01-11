@@ -13,8 +13,8 @@
 		<div class="c-header">
 			<div class="c-h-left">
 				<em>进度：</em>
-				<em>0</em>
-				<em>/00</em>
+				<em>{{index}}</em>
+				<em>/{{length}}</em>
 			</div>
 			<div class="c-h-middle"></div>
 			<div class="c-h-right">
@@ -26,9 +26,8 @@
 			<h2 class="stage-tit">练习阶段</h2>
 			<h2 class="guide-tit">请先认真读题</h2>
 			<div class="main">
-				<div class="main-box">
-					<p class="des-con">请您在屏幕中出现的“线索——目标”词对应的右侧方框中输入目标词
-输入后按下“下一组”按钮，跳转至下一组线索词</p>
+				<div class="main-box" v-html="content">
+
 				</div>
 			</div>
 			<router-link class="start-btn" to="msiexercise">开始游戏</router-link>
@@ -39,6 +38,29 @@
 <script>
 	export default {
 		name:'MSIRead',
+		data(){
+			return{	
+				content:'', //提示主体内容
+				index:1,
+				length:0
+			}
+		},
+		created() {
+			this.getData();
+			localStorage.removeItem("reload");
+    	},
+		methods:{
+			async getData(){
+				const data = await this.axios.get('http://www.ruggear.mobi/api/v0.9/evaluation/11_jyfscl', {params: {api_token: window.localStorage.data},})
+				if(data.data.code !== 200){
+					this.$router.push("login")
+					return false
+				}
+				
+				this.content = data.data.data.practice.question.data[0].content
+				this.length = data.data.data.practice.question.data.length
+			}
+		},
 	}
 </script>
 

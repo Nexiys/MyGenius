@@ -32,14 +32,17 @@
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[0].triangle}}</a>
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[1].square}}</a>
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[2].trapezoid}}</a>
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[3].diamond}}</a>
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[4].circular}}</a>
-			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[0].attribute_1 || topicList.option[0].attribute_2 || topicList.option[0].attribute_3}}</a>
-			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[1].attribute_1 || topicList.option[1].attribute_2 || topicList.option[1].attribute_3}}</a>
-			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type)" >{{topicList.option[2].attribute_1 || topicList.option[2].attribute_2 || topicList.option[2].attribute_3}}</a>
+			<!-- ,Object.keys(topicList.option[0])[0]) 获取答题属性值 -->
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[0])[0])" >{{topicList.option[0].triangle}}</a> 
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[1])[0])" >{{topicList.option[1].square}}</a>
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[2])[0])" >{{topicList.option[2].trapezoid}}</a>
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[3])[0])" >{{topicList.option[3].diamond}}</a>
+			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[4])[0])" >{{topicList.option[4].circular}}</a>
+
+
+			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[0])[0])" >{{topicList.option[0].attribute_1 || topicList.option[0].attribute_2 || topicList.option[0].attribute_3}}</a>
+			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[1])[0])" >{{topicList.option[1].attribute_1 || topicList.option[1].attribute_2 || topicList.option[1].attribute_3}}</a>
+			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[2])[0])" >{{topicList.option[2].attribute_1 || topicList.option[2].attribute_2 || topicList.option[2].attribute_3}}</a>
 		</div>
 	</section>
 </template>
@@ -56,7 +59,6 @@
 				list:[], //备用数组
 				dataAll:[], //回传数组,
 				tip:'', //标题
-
 			}
 		},
 		created() {
@@ -77,8 +79,9 @@
 				this.list = data.data.data[2][0].data
 				
 			},
-		    async toNext(a,b,c){
-				let data = {question_num:a,answer:b,type:c}
+		    async toNext(a,b,c,d){
+				console.log(d)
+				let data = {question_num:a,answer:b == d?1:0,type:c}  
 				this.dataAll.push(data)
 				if(this.number == this.total){
 

@@ -40,7 +40,7 @@
 		name: "MSIntroduce",
 		data(){
 			return{
-				title:'',						// 介绍页标题
+				title:'',	// 介绍页标题
 				introductions:''    // 介绍页内容
 			}
 		},
