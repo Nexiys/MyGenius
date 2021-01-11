@@ -1,6 +1,6 @@
 <template>
 	<!-- 逻辑游戏三（归纳推理）正式阶段 -->
-	<section class="header">
+	<!-- <section class="header">
 		<div class="logo-modular">
 			<a href="#"><img src="../../../assets/img/logo.png" ></a>
 		</div>
@@ -8,7 +8,9 @@
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div> 
-	</section>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
 	<section class="apart-body">
 		<div class="apart-top">
 			<div class="content-header">
@@ -45,8 +47,12 @@
 </template>
 
 <script>
+	import Header from '../../../components/Header/index.vue'
 	export default {
 		name:'LTHFormal',
+		components: {
+			Header,
+		},
 		data(){
 			return{
 				number:1, //进度

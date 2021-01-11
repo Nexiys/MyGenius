@@ -1,6 +1,6 @@
 <template>
 	<!-- 设备检测结果，正常或异常 -->
-	<section class="header">
+	<!-- <section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../assets/img/logo.png" ></a>
 		</div>
@@ -8,7 +8,9 @@
 			<a href=""><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div> 
-	</section>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
 	<section class="content-area-normal">
 		<h2>设备检测</h2>
 		<div class="progress">
@@ -48,8 +50,12 @@
 </template>
 
 <script>
+	import Header from '../../components/Header/index.vue'
 	export default {
 		name: "Result",
+		components: {
+			Header,
+		},
 		data(){
 			return{
 				speaker:window.localStorage.equipment,

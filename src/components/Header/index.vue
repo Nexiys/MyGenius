@@ -36,7 +36,7 @@
 
 <style lang="less" scoped>
 	@import url("../../assets/style/common.less");
-	header,.header {
+	header,.header,#header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;

@@ -8,60 +8,6 @@ body {
   background: url(../img/evaluation-bg.png) no-repeat;
   background-size: cover;
 }
-.header {
-  width: 100%;
-  height: 70px;
-  background: #fff;
-  padding: 0 40px 0;
-  line-height: 70px;
-}
-.header .logo-modular {
-  float: left;
-}
-.header .logo-modular a {
-  display: block;
-  cursor: pointer;
-}
-.header .logo-modular a img {
-  width: 146px;
-  height: 46px;
-}
-.header .h-operate {
-  float: right;
-}
-.header .h-operate a {
-  font-family: MicrosoftYaHei;
-  font-size: 16px;
-  width: 100px;
-  height: 38px;
-  line-height: 38px;
-  background: #fff;
-  border: 1px solid #47A1FE;
-  color: #47A1FE;
-  border-radius: 4px;
-  display: inline-block;
-  text-align: center;
-  letter-spacing: 1px;
-}
-.header .h-operate a:hover,
-.header .h-operate a:active {
-  border: none;
-  color: #fff;
-}
-.header .h-operate a:hover {
-  background: #47A1FE;
-}
-.header .h-operate a:active {
-  background: #1583D6;
-}
-.header .h-operate a:nth-child(2) {
-  margin-left: 24px !important;
-}
-.header .h-operate a i {
-  display: inline-block;
-  vertical-align: middle;
-  margin: -3px 10px 0 0;
-}
 .content-area-induce {
   position: absolute;
   top: 50%;

@@ -1,6 +1,6 @@
 <template>
 	<!-- 设备检测--键盘检测 -->
-	<section class="header" >
+	<!-- <section class="header" >
 		<div class="logo-modular">
 			<a href=""><img src="../../assets/img/logo.png" ></a>
 		</div>
@@ -8,7 +8,9 @@
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div>
-	</section>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
 	<section class="content-area-keyboard"  @keyup="onContextMenu" ref="listBox">
 		<h2>设备检测</h2>
 		<div class="progress">
@@ -50,109 +52,112 @@
 </template>
 
 <script>
-export default {
-	name: 'Keyboard',
-	data(){
-		return{
-			adopt:false,
-			isup:false,
-			isdown:false,
-			isleft:false,
-			isright:false,
-			isf:false,
-			isj:false,
-			isk:false,
-			num:0,
-			time:"300",
-			bedisabO:true,
-			bedisabT:true,
-			hover:0,
-			hovero:false,
-			hovert:false,
-			istype:1,
-			mouse:false,
-			timer:null
-		}
-	},
-	created: function() {
-        var _this = this;
-        document.onkeydown = function(e) {
-			let key = window.event.keyCode;
-			
-            _this.submit(key)
-        };
-    },
-	methods: {
-		validateBtn() {
-			this.time = '300'
-			this.timer = setInterval(() => {
-				if (this.time == 0) {
-					clearInterval(this.timer);
-					if(this.isup==true && this.isdown==true && this.isleft==true && this.isright==true && this.isf==true && this.isj==true && this.isk==true){
-					
-						this.hovero=true
-						this.hovert=false
-						this.istype = 2
-					}else{
+	import Header from '../../components/Header/index.vue'
+	export default {
+		name: 'Keyboard',
+		components: {
+			Header,
+		},
+		data(){
+			return{
+				adopt:false,
+				isup:false,
+				isdown:false,
+				isleft:false,
+				isright:false,
+				isf:false,
+				isj:false,
+				isk:false,
+				num:0,
+				time:"300",
+				bedisabO:true,
+				bedisabT:true,
+				hover:0,
+				hovero:false,
+				hovert:false,
+				istype:1,
+				mouse:false,
+				timer:null
+			}
+		},
+		created: function() {
+					var _this = this;
+					document.onkeydown = function(e) {
+				let key = window.event.keyCode;
 				
-						this.hovert=true
-						this.hovero=false
-						this.istype = 3
+							_this.submit(key)
+					};
+			},
+		methods: {
+			validateBtn() {
+				this.time = '300'
+				this.timer = setInterval(() => {
+					if (this.time == 0) {
+						clearInterval(this.timer);
+						if(this.isup==true && this.isdown==true && this.isleft==true && this.isright==true && this.isf==true && this.isj==true && this.isk==true){
+						
+							this.hovero=true
+							this.hovert=false
+							this.istype = 2
+						}else{
 					
+							this.hovert=true
+							this.hovero=false
+							this.istype = 3
+						
+						}
+					} else if (this.time < 300 && this.time !== 0) {
+						if(this.isup==true && this.isdown==true && this.isleft==true && this.isright==true && this.isf==true && this.isj==true && this.isk==true){
+						
+							this.hovero=true
+							this.hovert=false
+							this.istype = 2
+						}
+						this.time--;
+				
+						
+					}else{
+						this.time--;
+				
 					}
-				} else if (this.time < 300 && this.time !== 0) {
-					if(this.isup==true && this.isdown==true && this.isleft==true && this.isright==true && this.isf==true && this.isj==true && this.isk==true){
-					
-						this.hovero=true
-						this.hovert=false
-						this.istype = 2
+				},100);
+			},		
+			submit: function(key) {
+				clearInterval(this.timer);
+				this.funTimeCode()
+				if(this.mouse){
+					this.validateBtn()
+					if(key==38){
+						this.isup=true
+					}else if(key==40){
+						this.isdown=true
+					}else if(key==37){
+						this.isleft=true
+					}else if(key==39){
+						this.isright=true
+					}else if(key==70){
+						this.isf=true
+					}else if(key==74){
+						this.isj=true
+					}else if(key==32){
+						this.isk=true
 					}
-					this.time--;
-			
-					
-				}else{
-					this.time--;
-			
 				}
-			},100);
-		},		
-		submit: function(key) {
-			clearInterval(this.timer);
-			this.funTimeCode()
-			if(this.mouse){
-				this.validateBtn()
-				if(key==38){
-					this.isup=true
-				}else if(key==40){
-					this.isdown=true
-				}else if(key==37){
-					this.isleft=true
-				}else if(key==39){
-					this.isright=true
-				}else if(key==70){
-					this.isf=true
-				}else if(key==74){
-					this.isj=true
-				}else if(key==32){
-					this.isk=true
-				}
-			}
-			
+				
 
-		},
-		funTimeCode(){
-			if(this.time != 0 ){
-				this.mouse = true
-			}else{
-				this.mouse = false
+			},
+			funTimeCode(){
+				if(this.time != 0 ){
+					this.mouse = true
+				}else{
+					this.mouse = false
+				}
+			},
+			to(e){
+				window.localStorage.setItem('keyboard', e);		
 			}
-		},
-		to(e){
-			window.localStorage.setItem('keyboard', e);		
 		}
 	}
-
-}
 </script>
 
 <style lang="less">

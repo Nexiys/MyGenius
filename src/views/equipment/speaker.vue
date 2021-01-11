@@ -1,6 +1,6 @@
 <template>
 	<!-- 设备检测--声音检测 -->
-	<section class="header">
+	<!-- <section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../assets/img/logo.png" ></a>
 		</div>
@@ -8,7 +8,9 @@
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div>
-	</section>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
 	<section class="content-area-speaker">
 		<h2>设备检测</h2>
 		<div class="progress">
@@ -39,27 +41,31 @@
 </template>
 
 <script>
-export default {
-  name: 'Speaker',
-	data() {
-		return {
-			istype : 1
-		};
-	},  
-  methods:{
-	  selectStyle(e){
+	import Header from '../../components/Header/index.vue'
+	export default {
+		name: 'Speaker',
+		components: {
+			Header,
+		},
+		data() {
+			return {
+				istype : 1
+			};
+		},  
+		methods:{
+			selectStyle(e){
 
-		  this.istype = e
-	  },
-	  	  select(e){
-	
-		  this.istype = e
-	  },
-	  to(e){
-			window.localStorage.setItem('equipment', e);		
-	  }
-  }
-}
+				this.istype = e
+			},
+					select(e){
+		
+				this.istype = e
+			},
+			to(e){
+				window.localStorage.setItem('equipment', e);		
+			}
+		}
+	}
 </script>
 
 <style lang="less">

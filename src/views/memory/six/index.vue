@@ -1,6 +1,6 @@
 <template>
 	<!-- 记忆游戏六（记忆复述策略）介绍页面 -->
-	<section class="header">
+	<!-- <section class="header">
 		<div class="logo-modular">
 			<a href="#"><img src="../../../assets/img/logo.png" ></a>
 		</div>
@@ -8,7 +8,9 @@
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div> 
-	</section>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
 	<section class="content-area">
 		<div class="c-header">
 			<div class="c-h-left">
@@ -36,8 +38,12 @@
 </template>
 
 <script>
+	import Header from '../../../components/Header/index.vue'
 	export default {
 		name: "MSIntroduce",
+		components: {
+			Header,
+		},
 		data(){
 			return{
 				title:'',	// 介绍页标题

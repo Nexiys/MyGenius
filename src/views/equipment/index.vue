@@ -1,6 +1,6 @@
 <template>
 	<!-- 设备检测首页 -->
-	<section class="header">
+	<!-- <section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../assets/img/logo.png" ></a>
 		</div>
@@ -8,7 +8,9 @@
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div>
-	</section>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
 	<section class="content-area">
 		<div class="illustrati"></div>
 		<div class="caption mt-120">
@@ -24,12 +26,16 @@
 </template>
 
 <script>
-export default {
-  name: 'Equipment',
-  methods:{
-	  
-  }
-}
+	import Header from '../../components/Header/index.vue'
+	export default {
+		name: 'Equipment',
+		components: {
+			Header,
+		},
+		methods:{
+			
+		}
+	}
 </script>
 
 <style lang="less">

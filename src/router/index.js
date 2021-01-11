@@ -210,8 +210,8 @@ const routes = [
   },
   	// 注意游戏五（注意转移游戏）—— 正式阶段
 	{
-		path: '/formalstagefive',
-		name: 'Formalstagefive',
+		path: '/afiformal',
+		name: 'AFIFormal',
 		component: () => import('../views/attention/five/formal-stage.vue'),
 		meta:{
 			needLogin: false
@@ -271,11 +271,38 @@ const routes = [
 			needLogin: false
 		}
 	},
-	// 记忆游戏六(记忆复述策略) —— 过渡页面
+	// 记忆游戏六(记忆复述策略) —— 正式页面
 	{
 		path: '/msiformal',
 		name: 'MSIFormal',
 		component: () => import('../views/memory/six/formal-stage.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
+	// 组件 - 退出页面弹窗
+	{
+		path: '/exitdialog',
+		name: 'ExitDialog',
+		component: () => import('../components/Exit/index.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
+	// 组件 - 暂停页面弹窗
+	{
+		path: '/pausedialog',
+		name: 'PauseDialog',
+		component: () => import('../components/Pause/index.vue'),
+		meta: {
+			needLogin: false
+		}
+	},
+	// 组件 - 内容区的头部，包括 进度、中间标题、总用时
+	{
+	  path: '/contentheader',
+	  name: 'ContentHeader',
+	  component: () => import('../components/ContentHeader/index.vue'),
 		meta: {
 			needLogin: false
 		}
@@ -345,13 +372,6 @@ const routes = [
   //   }
   // },
 	
-	// 组件 - 内容区的头部，包括 进度、中间标题、总用时
-	{
-	  path: '/content-header',
-	  name: 'ContentHeader',
-	  component: () => import('../components/ContentHeader/index.vue'),
-	},
-  
 ]
 const router = createRouter({
   mode:"hash",

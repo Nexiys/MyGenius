@@ -1,6 +1,6 @@
 <template>
 	<!-- 人格测评介绍页面 -->
-	<section class="header">
+	<!-- <section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../assets/img/logo.png" ></a>
 		</div>
@@ -8,36 +8,42 @@
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div> 
-	</section>
-    <section class="content-area-induce">
-         <div class="c-header">
-            <div class="c-h-left">
-                <em>进度：</em>
-                <em>0</em>
-                <em>/{{question_total}}</em>
-            </div>
-            <div class="c-h-middle"></div>
-            <div class="c-h-right">
-                <em>用时：</em>
-                <em>02:28:00</em>
-            </div>
-        </div>
-				
-				<div class="introduce">
-					<div class="i-box">
-						<div class="i-con">
-							<h2>{{ title }}</h2>
-							<p v-html="introductions"></p>
-							<router-link to="/quiet" @click="desnum()">开始测评</router-link>
-						</div>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
+	<section class="content-area-induce">
+			 <div class="c-header">
+					<div class="c-h-left">
+							<em>进度：</em>
+							<em>0</em>
+							<em>/{{question_total}}</em>
+					</div>
+					<div class="c-h-middle"></div>
+					<div class="c-h-right">
+							<em>用时：</em>
+							<em>02:28:00</em>
+					</div>
+			</div>
+			
+			<div class="introduce">
+				<div class="i-box">
+					<div class="i-con">
+						<h2>{{ title }}</h2>
+						<p v-html="introductions"></p>
+						<router-link to="/quiet" @click="desnum()">开始测评</router-link>
 					</div>
 				</div>
-				
-    </section>
+			</div>
+			
+	</section>
 </template>
 <script>
+	import Header from '../../components/Header/index.vue'
 	export default {
 		name: "one",
+		components: {
+			Header,
+		},
 		data(){
 			return{
 				title:'',						// 介绍页标题
