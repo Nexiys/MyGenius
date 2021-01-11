@@ -44,7 +44,7 @@
 						<span class="tips" v-if="iShow=='tip2'&& tip2!==undefined">{{tip2}}</span>
 					</div>
 				</div>
-				<a class="start-btn" v-bind:class="{ disabled: isActive }"  @click='btn(1)'>下一组</a>
+				<a class="start-btn" v-bind:class="{ disabled: isActive }"  @click='btn(1)'>进入正式答题</a>
 			</div>
 		</section>
 </template>
@@ -105,24 +105,7 @@
 				
 			},
 			btn(e){
-				if(this.answerVal == ''){
-					return false
-				}else{
-					this.answerVal=''
-					this.isActive = true
-					this.iShow=false
-					this.index = this.index+e
-					if(this.index == this.length){
-						// this.$router.push("MSITransition")
-						window.href="http://www.ruggear.mobi/tianshengwocai/#/question"
-					}else{
-						this.content = this.content1[this.index].content
-						this.answerValhttp = this.answerValhttpVal[this.index].answer
-						this.contentTitle = this.contentTitleVal[this.index].title
-						this.tip1 = this.tip1Val[this.index].if_tips.correct_tips
-						this.tip2 = this.tip2Val[this.index].if_tips.wrong_tips
-					}
-				}
+				this.$router.push("msiformal")
 			},
 			valFun(){
 				this.iShow = false
