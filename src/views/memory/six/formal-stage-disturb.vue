@@ -49,7 +49,8 @@
 		</section>
 </template>
 
-<script>
+<script> 
+	import Header from '../../../components/Header/index.vue'
 	export default {
 		name:'MSIFormalDisturb',
 		components: {
