@@ -42,7 +42,7 @@
 						<span class="tips">回答正确！进入正式答题。</span>
 					</div>
 				</div>
-				<router-link class="start-btn disabled" to="msiformal">提交进入答题</router-link>
+				<router-link class="start-btn disabled" to="msiformal">提交进入测试</router-link>
 			</div>
 		</section>
 </template>
