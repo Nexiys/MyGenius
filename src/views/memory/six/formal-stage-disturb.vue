@@ -1,6 +1,6 @@
 <template>
 	<!-- 记忆游戏六（记忆复述策略）正式阶段 —— 干扰项答题（有提示）-->
-	<section class="header">
+	<!-- <section class="header">
 			<div class="logo-modular">
 				<a href=""><img src="../../../assets/img/logo.png" ></a>
 			</div>
@@ -8,7 +8,9 @@
 				<a href="#"><i class="icon-pause"></i>暂停</a>
 				<a href="#"><i class="icon-quit"></i>退出</a>
 			</div> 
-		</section>
+		</section> -->
+		<!-- 头部组件：logo、暂停、退出 -->
+		<Header />
 		<section class="content-area">
 			<div class="c-header">
 				<div class="c-h-left">
@@ -46,8 +48,12 @@
 </template>
 
 <script>
+	import Header from '../../../components/Header/index.vue'
 	export default {
 		name:'MSIFormalDisturb',
+		components: {
+			Header,
+		},
 		data(){
 			
 		}

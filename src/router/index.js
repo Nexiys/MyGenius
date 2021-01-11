@@ -210,8 +210,8 @@ const routes = [
   },
   	// 注意游戏五（注意转移游戏）—— 正式阶段
 	{
-		path: '/formalstagefive',
-		name: 'Formalstagefive',
+		path: '/afiformal',
+		name: 'AFIFormal',
 		component: () => import('../views/attention/five/formal-stage.vue'),
 		meta:{
 			needLogin: false

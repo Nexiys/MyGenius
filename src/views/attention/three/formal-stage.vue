@@ -1,6 +1,6 @@
 <template>
 	<!-- 注意游戏三（注意稳定性游戏）正式答题阶段 -->
-	<section class="header">
+	<!-- <section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../../assets/img/logo.png" ></a>
 		</div>
@@ -8,7 +8,9 @@
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div>
-	</section>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
 	<section class="content-area">
 		<div class="c-header">
 			<div class="c-h-left">
@@ -51,9 +53,13 @@
 </template>
 
 <script>
-    import timing from '../../../components/TimingRing/index'
+	import Header from '../../../components/Header/index.vue'
+  import timing from '../../../components/TimingRing/index'
 	export default {
-		components: {timing},
+		components: {
+			Header,
+			timing,
+		},
 		name: "formalstage",
 		data(){
 			return{

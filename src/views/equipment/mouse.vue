@@ -1,6 +1,6 @@
 <template>
 	<!-- 设备检测--鼠标检测 -->
-	<section class="header">
+	<!-- <section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../assets/img/logo.png" ></a>
 		</div>
@@ -8,7 +8,9 @@
 			<a href="#"><i class="icon-pause"></i>暂停</a>
 			<a href="#"><i class="icon-quit"></i>退出</a>
 		</div>
-	</section>
+	</section> -->
+	<!-- 头部组件：logo、暂停、退出 -->
+	<Header />
 	<section class="content-area-mouse" @mouseup="onContextMenu" ref="listBox">
 		<h2>设备检测</h2>
 		<div class="progress">
@@ -50,81 +52,85 @@
 </template>
 
 <script>
-export default {
-  name: 'Mouse',
-  data(){
-	  return{
-		  istype:1,
-		  hovero:false,
-		  hovert:false,
-		  dishovert:1,
-		  dishovero:1,
-		  time:"300",
-		  behoverd:false,
-		  behovert:false,
-		  mouse:false,
-		  timer:null
-	  }
-  },
-    methods:{
-		validateBtn() {
-			this.time = '300'
-			this.timer = setInterval(() => {
-				if (this.time == 0) {
-					clearInterval(this.timer);
-					if(this.hovero==true && this.hovert==true){
-						this.istype = 2
-						this.behoverd = true
-					}else{
-						this.istype = 3
-						this.behovert = true
-					}
-				} else if (this.time <= 300 && this.time !== 0) {
-					if(this.hovero==true && this.hovert==true){
-						this.istype = 2
-						this.behoverd = true
-					}
-					this.time--;
-				}else{
-					this.time--;
-				}
-				
-			},100);
-		},	
-		funTimeCode(){
-			if(this.time != 0 ){
-				this.mouse = true
-			}else{
-				this.mouse = false
+	import Header from '../../components/Header/index.vue'
+	export default {
+		name: 'Mouse',
+		components: {
+			Header,
+		},
+		data(){
+			return{
+				istype:1,
+				hovero:false,
+				hovert:false,
+				dishovert:1,
+				dishovero:1,
+				time:"300",
+				behoverd:false,
+				behovert:false,
+				mouse:false,
+				timer:null
 			}
 		},
+			methods:{
+			validateBtn() {
+				this.time = '300'
+				this.timer = setInterval(() => {
+					if (this.time == 0) {
+						clearInterval(this.timer);
+						if(this.hovero==true && this.hovert==true){
+							this.istype = 2
+							this.behoverd = true
+						}else{
+							this.istype = 3
+							this.behovert = true
+						}
+					} else if (this.time <= 300 && this.time !== 0) {
+						if(this.hovero==true && this.hovert==true){
+							this.istype = 2
+							this.behoverd = true
+						}
+						this.time--;
+					}else{
+						this.time--;
+					}
+					
+				},100);
+			},	
+			funTimeCode(){
+				if(this.time != 0 ){
+					this.mouse = true
+				}else{
+					this.mouse = false
+				}
+			},
 
-      preventMouse () {
-        this.$refs.listBox.oncontextmenu =  () =>  false
-      },
-	  //获取当前鼠标值
-      onContextMenu (e) {
-		clearInterval(this.timer);
-		this.funTimeCode()
-		if(this.mouse){
-			this.validateBtn()
-			this.preventMouse()
-			if(e.button == 0){
-				this.hovero = true
-				this.dishovero = 2
-			}else if(e.button == 2){
-				this.hovert = true
-				this.dishovert = 2
+				preventMouse () {
+					this.$refs.listBox.oncontextmenu =  () =>  false
+				},
+			//获取当前鼠标值
+				onContextMenu (e) {
+			clearInterval(this.timer);
+			this.funTimeCode()
+			if(this.mouse){
+				this.validateBtn()
+				this.preventMouse()
+				if(e.button == 0){
+					this.hovero = true
+					this.dishovero = 2
+				}else if(e.button == 2){
+					this.hovert = true
+					this.dishovert = 2
+				}
+			}else{
+				return false
 			}
-		}else{
-			return false
+				},
+			to(e){
+				window.localStorage.setItem('mouse', e);		
+			}
 		}
-      },
-	  to(e){
-			window.localStorage.setItem('mouse', e);		
-	  }
-  }
-}
+	}
 </script>
 
 <style lang="less">
