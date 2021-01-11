@@ -27,7 +27,7 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">练习阶段</h2>
 			<h2 class="guide-tit">请您学习看到的“线索—目标”配对词组</h2>
-			<TimingRing :originProgressText ="60"></TimingRing>
+			<!-- <TimingRing :originProgressText ="60"></TimingRing> -->
 			<div class="main">
 				<div class="main-box">
 					<div class="container">

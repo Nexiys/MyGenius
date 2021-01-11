@@ -15,7 +15,7 @@
 			<div class="c-header">
 				<div class="c-h-left">
 					<em>进度：</em>
-					<em>{{index}}</em>
+					<em>{{index>length-1?index-1:index}}</em>
 					<em>/{{length-1}}</em>
 				</div>
 				<div class="c-h-middle"></div>
@@ -99,7 +99,6 @@
 				this.answerValhttpVal = data.data.data.formal.question.data
 				this.content1 = data.data.data.formal.question.data
 				this.content = data.data.data.formal.question.data[this.index]
-				console.log(this.content )
 				this.imgUrl1 = data.data.data.formal.question.data[this.index].if_tips.correct_icon
 				this.imgUrl2 = data.data.data.formal.question.data[this.index].if_tips.wrong_icon
 				this.tip1 = data.data.data.formal.question.data[this.index].if_tips.correct_tips
@@ -125,7 +124,7 @@
 							api_token: window.localStorage.data
 						}) 
 						// this.$router.push("MSITransition")
-						//window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+						window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
 					}else{
 						this.content = this.content1[this.index]
 						this.answerValhttp = this.answerValhttpVal[this.index].answer

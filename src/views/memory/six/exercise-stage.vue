@@ -27,7 +27,7 @@
 			<div class="topic-exploring-area">
 				<h2 class="stage-tit">练习阶段</h2>
 				<h2 class="guide-tit">{{contentTitle}}</h2>
-				<TimingRing :originProgressText ="8"></TimingRing>
+				<!-- <TimingRing :originProgressText ="8"></TimingRing> -->
 				<div class="main">
 					<!-- 正确答案,增加 success 类,错误答案,增加 wrong 类 -->
 					<div class="main-box not-flex success">
