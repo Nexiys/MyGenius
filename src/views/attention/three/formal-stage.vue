@@ -79,6 +79,7 @@
 				model : 0,
 				timer:null,
 				update:true,
+				answerVal:''
 			}
 		},
 		created(){	
@@ -103,10 +104,10 @@
 
 				this.pagenum = data.data.data[2].data.answer.length;
 				this.answer = data.data.data[2].data.answer[this.thisindex]
+				this.answerVal = data.data.data[2].data.answer
 				this.content = data.data.data[2].data.content[this.thisindex]
 				this.datalist = data.data.data[2].data.content
-				this.lastcontent = data.data.data[2].data.content.splice(1)
-				this.lastanswer = data.data.data[2].data.answer.splice(1)
+				this.lastanswer = data.data.data[2].data.content.splice(1)
 				console.log(this.answer)
 						
 			},
@@ -125,7 +126,7 @@
 							a[0].focus()
 			            }
 						console.log(this.answer)
-						this.answer = this.lastanswer[this.thisindex]
+						this.answer = this.answerVal[this.thisindex]
 						this.content = this.datalist[this.thisindex]
 						this.lastanswer =this.lastanswer.splice(1)
 						if(this.page == 6){
@@ -160,7 +161,7 @@
 					this.$nextTick(() => {
 						this.update = true
 					})
-					this.answer = this.lastanswer[this.thisindex]
+					this.answer = this.answerVal[this.thisindex]
 					this.content = this.datalist[this.thisindex]
 					this.lastanswer =this.lastanswer.splice(1)
 					if(this.page == 6){
