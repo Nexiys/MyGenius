@@ -30,7 +30,7 @@
 				<!-- <TimingRing :originProgressText ="8"></TimingRing> -->
 				<div class="main">
 					<!-- 正确答案,增加 success 类,错误答案,增加 wrong 类 -->
-					<div class="main-box not-flex success">
+					<div class="main-box not-flex" v-bind:class="[Tosuccess==1?'success':(Tosuccess==2?'wrong':'') ]">
 						<div class="main-con">
 							<!-- span 标签内为 content 字段中的值 -->
 							<span class="question-con">{{content}}</span>
@@ -72,7 +72,8 @@
 				index:1,
 				length:0,
 				disabled:false,
-				content1:''
+				content1:'',
+				Tosuccess:0
 			}
 		},
 		created() {
@@ -99,8 +100,10 @@
 			changeInput(){
 				if(this.answerVal == this.answerValhttp){
 					this.iShow='tip1'
+					this.Tosuccess = 1
 				}else{
 					this.iShow='tip2'
+					this.Tosuccess = 2
 				}
 			},
 			btn(e){
@@ -109,6 +112,7 @@
 				}else{
 					this.answerVal=''
 					this.iShow=false
+					this.Tosuccess = 0
 					this.index = this.index+e
 					if(this.index == this.length){
 						this.$router.push("MSITransition")

@@ -44,7 +44,7 @@
 						<span class="tips" v-if="iShow=='tip2'&& tip2!==undefined">{{tip2}}</span>
 					</div>
 				</div>
-				<a class="start-btn" v-bind:class="{ disabled: isActive }"  @click='btn(1,content.question_num)'>下一组</a>
+				<a class="start-btn"  @click='btn(1,content.question_num)'>下一组</a>
 			</div>
 		</section>
 </template>
@@ -75,7 +75,7 @@
 				length:0,
 				disabled:false,
 				content1:'',
-				isActive:true,
+			
 				answerValhttpVal:'',
 				contentTitleVal:'',
 				beAnswer:'',
@@ -111,11 +111,9 @@
 			btn(e,n){
 				let data = {question_num:n,answer:this.beAnswer}
 				this.dataAll.push(data)
-				if(this.answerVal == ''){
-					return false
-				}else{
+				
 					this.answerVal=''
-					this.isActive = true
+				
 					this.iShow=false
 					this.index = this.index+e
 					if(this.index == this.length){
@@ -132,21 +130,21 @@
 						this.tip1 = this.tip1Val[this.index].if_tips.correct_tips
 						this.tip2 = this.tip2Val[this.index].if_tips.wrong_tips
 					}
-				}
+			
 			},
 			valFun(){
 				this.iShow = false
-				this.isActive = true
+			
 				if(this.answerVal.length>=1){
 					console.log(this.answerVal)
 					console.log(this.answerValhttp)
 					if(this.answerVal == this.answerValhttp){
 						this.iShow='tip1'
-						this.isActive = false
+					
 						this.beAnswer = 1
 					}else{
 						this.iShow='tip2'
-						this.isActive = false
+					
 						this.beAnswer = 0
 					}
 
