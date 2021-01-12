@@ -22,12 +22,12 @@
 			<div class="main">
 				<div class="main-box">
 					<div class="container">
-						<div class="prev"><i class="icon-page-left" @click="tonex(0)"></i></div>
+						<div class="prev" @click="tonex(0)"><i class="icon-page-left"></i></div>
 						<div class="study-con">
 							<span v-for="(item) in listData">{{item}}</span>
 						</div>
 						
-						<div class="next"><i class="icon-page-right" @click="tonex(0)"></i></div>
+						<div class="next" @click="tonex(0)"><i class="icon-page-right"></i></div>
 						
 					</div>
 					<ul class="page-num">
@@ -91,9 +91,6 @@
 					this.isActive = x
 					this.listData =this.spareData[this.thisIndex]
 				}
-					
-				
-				
 			}
 		},
 	}
