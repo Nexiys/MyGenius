@@ -64,3 +64,6 @@
 <style lang="less" scoped>
 	@import '~@/assets/style/memory-six.less';
 </style>
+<style scoped>
+	@import '~@/assets/style/memory-six.css';
+</style>

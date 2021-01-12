@@ -129,3 +129,6 @@
 <style lang="less" scoped>
 	@import '~@/assets/style/attention-three.less';
 </style>
+<style  scoped>
+	@import '~@/assets/style/attention-three.css';
+</style>

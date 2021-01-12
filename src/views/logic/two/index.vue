@@ -64,4 +64,5 @@
 
 <style lang="less" scoped>
 	@import '~@/assets/style/logic-two.less';
+	@import '~@/assets/style/logic-two.css';
 </style>

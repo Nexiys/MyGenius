@@ -196,7 +196,7 @@ body {
 }
 .apart-body .apart-top .question .question-box {
   height: 100%;
-}
+} 
 .apart-body .apart-top .question .question-box p {
   font-size: 24px;
   line-height: 40px;
@@ -208,7 +208,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ;
+}
+.apart-body .apart-top .question .question-box img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
 }
 .apart-body .apart-top .question .question-box .img-box p {
   font-size: 24px;

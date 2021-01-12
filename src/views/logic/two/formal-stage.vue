@@ -46,12 +46,14 @@
 				sub : 0, //下标
 				list:[], //备用数组
 				thisTime:new Date().getTime(),
-				dataAll:[] //回传数组			
+				dataAll:[], //回传数组	
+					
 			}
 		},
 		created() {
 			this.getData();
 			localStorage.removeItem("reload");
+			this.read()
    		},
 		methods:{
 			async getData(){
@@ -66,8 +68,15 @@
 				this.list = data.data.data[1].data
 				console.log(this.list)
 			},
+			read(){
+		
+				if(localStorage.getItem("job") == undefined){
+					localStorage.setItem("job", "basketballplayer")
+					 location.reload() 
+				}
+			},
 			toNext(a,b,c){
-
+				localStorage.removeItem("job")
 				this.react =(c -this.thisTime )/1000
 				console.log(this.react)
 				let data = {question_num:a,answer:b,react:this.react}
@@ -92,4 +101,5 @@
 
 <style lang="less" scoped>
 	@import '~@/assets/style/logic-two.less';
+	@import '~@/assets/style/logic-two.css';
 </style>

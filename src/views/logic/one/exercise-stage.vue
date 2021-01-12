@@ -95,3 +95,6 @@
 <style lang="less" scoped>
 	@import '~@/assets/style/logic-one.less';
 </style>
+<style  scoped>
+	@import '~@/assets/style/logic-one.css';
+</style>

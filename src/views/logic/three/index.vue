@@ -65,3 +65,6 @@
 <style lang="less" scoped>
 	@import '~@/assets/style/logic-three.less';
 </style>
+<style  scoped>
+	@import '~@/assets/style/logic-three.css';
+</style>

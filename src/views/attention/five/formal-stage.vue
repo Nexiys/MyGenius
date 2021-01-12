@@ -100,3 +100,6 @@
 <style lang="less" scoped>
 	@import '~@/assets/style/attention-five.less';
 </style>
+<style scoped>
+	@import '~@/assets/style/attention-five.css';
+</style>

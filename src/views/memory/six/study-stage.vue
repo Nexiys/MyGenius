@@ -22,13 +22,11 @@
 			<div class="main">
 				<div class="main-box">
 					<div class="container">
-						<div class="prev"><i class="icon-page-left" @click="tonex(0)"></i></div>
+						<div class="prev" @click="tonex(0)"><i class="icon-page-left"></i></div>
 						<div class="study-con">
 							<span v-for="(item) in listData">{{item}}</span>
 						</div>
-						
-						<div class="next"><i class="icon-page-right" @click="tonex(0)"></i></div>
-						
+						<div class="next" @click="tonex(0)"><i class="icon-page-right"></i></div>
 					</div>
 					<ul class="page-num">
 						<li class="num" @click="nex(0)"  v-bind:class="{ focus: isActive==0 }">1</li>
@@ -91,9 +89,6 @@
 					this.isActive = x
 					this.listData =this.spareData[this.thisIndex]
 				}
-					
-				
-				
 			}
 		},
 	}
@@ -101,4 +96,7 @@
 
 <style lang="less" scoped>
 	@import '~@/assets/style/memory-six.less';
+</style>
+<style scoped>
+	@import '~@/assets/style/memory-six.css';
 </style>

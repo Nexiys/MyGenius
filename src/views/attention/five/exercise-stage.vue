@@ -25,11 +25,11 @@
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[0].triangle == undefined?1:2}}</a>
-			<a @click="toNext()" v-if="topicList && topicList.option"  >{{topicList.option[1].square== undefined?1:2}}</a>
-			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[2].trapezoid== undefined?1:2}}</a>
-			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[3].diamond == undefined?1:2}}</a>
-			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[4].circular == undefined?1:2}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[0].triangle}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option"  >{{topicList.option[1].square}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[2].trapezoid}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[3].diamond}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[4].circular}}</a>
 		</div>
 	</section>
 </template>
@@ -57,6 +57,7 @@
 		created() {
 			this.getData();
 			localStorage.removeItem("reload");
+			this.read()
    		},
 		methods:{
 			async getData(){
@@ -73,9 +74,15 @@
 				this.list = data.data.data[1][0].data
 				console.log(this.topicList.option[0].triangle)
 			},
+			read(){
+		
+				if(localStorage.getItem("job") == undefined){
+					localStorage.setItem("job", "basketballplayer")
+					 location.reload() 
+				}
+			},
 			toNext(a,b,c){
-
-				
+				localStorage.removeItem("job")
 				if(this.number == this.total){
 					// this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/18_gzjyzh_input',{
 					// 	 data:this.dataAll,
@@ -94,4 +101,7 @@
 
 <style lang="less" scoped>
 	@import '~@/assets/style/attention-five.less';
+</style>
+<style scoped>
+	@import '~@/assets/style/attention-five.css';
 </style>
