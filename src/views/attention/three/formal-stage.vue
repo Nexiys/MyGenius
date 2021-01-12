@@ -105,8 +105,9 @@
 				this.answer = data.data.data[2].data.answer[this.thisindex]
 				this.content = data.data.data[2].data.content[this.thisindex]
 				this.datalist = data.data.data[2].data.content
-				
+				this.lastcontent = data.data.data[2].data.content.splice(1)
 				this.lastanswer = data.data.data[2].data.answer.splice(1)
+				console.log(this.answer)
 						
 			},
 			timeFun() {
@@ -123,8 +124,9 @@
 			                 a[i].value='';
 							a[0].focus()
 			            }
+						console.log(this.answer)
 						this.answer = this.lastanswer[this.thisindex]
-						this.content = this.lastanswer[this.thisindex]
+						this.content = this.datalist[this.thisindex]
 						this.lastanswer =this.lastanswer.splice(1)
 						if(this.page == 6){
 							this.$router.push("lointroduce")
@@ -159,7 +161,7 @@
 						this.update = true
 					})
 					this.answer = this.lastanswer[this.thisindex]
-					this.content = this.lastanswer[this.thisindex]
+					this.content = this.datalist[this.thisindex]
 					this.lastanswer =this.lastanswer.splice(1)
 					if(this.page == 6){
 						this.$router.push("lointroduce")
