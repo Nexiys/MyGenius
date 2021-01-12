@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 	<!-- 记忆游戏六（记忆复述策略）介绍页面 -->
 	<!-- <section class="header">
 		<div class="logo-modular">
@@ -10,6 +11,10 @@
 		</div> 
 	</section> -->
 	<!-- 头部组件：logo、暂停、退出 -->
+=======
+	<!-- 记忆游戏六（记忆复述策略）介绍页面 -->
+	<!-- 头部组件：logo、暂停、退出 -->
+>>>>>>> a0d7174751046a1bddc7ba0fe459bec2e57b2476
 	<Header />
 	<section class="content-area">
 		<div class="c-header">

@@ -1,14 +1,5 @@
 <template>
 	<!-- 注意游戏三（注意稳定性游戏）过渡页面 -->
-	<!-- <section class="header">
-		<div class="logo-modular">
-			<a href=""><img src="../../../assets/img/logo.png" ></a>
-		</div>
-		<div class="h-operate">
-			<a href="#"><i class="icon-pause"></i>暂停</a>
-			<a href="#"><i class="icon-quit"></i>退出</a>
-		</div> 
-	</section> -->
 	<!-- 头部组件：logo、暂停、退出 -->
 	<Header />
 	<section class="content-area">

@@ -1,14 +1,5 @@
 <template>
-	<!-- 注意游戏五（注意）练习阶段 -->
-	<!-- <section class="header">
-		<div class="logo-modular">
-			<a href="#"><img src="../../../assets/img/logo.png" ></a>
-		</div>
-		<div class="h-operate">
-			<a href="#"><i class="icon-pause"></i>暂停</a>
-			<a href="#"><i class="icon-quit"></i>退出</a>
-		</div> 
-	</section> -->
+	<!-- 注意游戏五（注意转移游戏）练习阶段 -->
 	<!-- 头部组件：logo、暂停、退出 -->
 	<Header />
 	<section class="apart-body">
