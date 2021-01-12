@@ -26,9 +26,7 @@
 						<div class="study-con">
 							<span v-for="(item) in listData">{{item}}</span>
 						</div>
-						
 						<div class="next" @click="tonex(0)"><i class="icon-page-right"></i></div>
-						
 					</div>
 					<ul class="page-num">
 						<li class="num" @click="nex(0)"  v-bind:class="{ focus: isActive==0 }">1</li>
