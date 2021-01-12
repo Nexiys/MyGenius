@@ -23,7 +23,7 @@
 					<span>用时：</span>
 					<span>02:28:00</span>
 				</div>
-			</div>
+			</div> 
 			
 			<div class="question">
 				<span class="stage-tit">{{ stage_tit }}</span>
@@ -127,6 +127,6 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	@import '~@/assets/style/logic-one.less';
 </style>

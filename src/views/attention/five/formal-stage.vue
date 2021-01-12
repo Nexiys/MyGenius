@@ -35,16 +35,16 @@
 		</div>
 		<div class="apart-bottom">
 			<!-- ,Object.keys(topicList.option[0])[0]) 获取答题属性值 -->
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[0])[0])" >{{topicList.option[0].triangle}}</a> 
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[1])[0])" >{{topicList.option[1].square}}</a>
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[2])[0])" >{{topicList.option[2].trapezoid}}</a>
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[3])[0])" >{{topicList.option[3].diamond}}</a>
-			<a v-if="topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[4])[0])" >{{topicList.option[4].circular}}</a>
+			<a v-if="topicList && topicList.option && topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[0])[0])" >{{topicList.option[0].triangle}}</a> 
+			<a v-if=" topicList && topicList.option && topicList.option[0].triangle !== undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[1])[0])" >{{topicList.option[1].square}}</a>
+			<a v-if=" topicList && topicList.option && topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[2])[0])" >{{topicList.option[2].trapezoid}}</a>
+			<a v-if=" topicList && topicList.option && topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[3])[0])" >{{topicList.option[3].diamond}}</a>
+			<a v-if=" topicList && topicList.option && topicList.option[0].triangle !== undefined"  @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[4])[0])" >{{topicList.option[4].circular}}</a>
 
 
-			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[0])[0])" >{{topicList.option[0].attribute_1 || topicList.option[0].attribute_2 || topicList.option[0].attribute_3}}</a>
-			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[1])[0])" >{{topicList.option[1].attribute_1 || topicList.option[1].attribute_2 || topicList.option[1].attribute_3}}</a>
-			<a v-if="topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[2])[0])" >{{topicList.option[2].attribute_1 || topicList.option[2].attribute_2 || topicList.option[2].attribute_3}}</a>
+			<a v-if=" topicList && topicList.option && topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[0])[0])" >{{topicList.option[0].attribute_1 || topicList.option[0].attribute_2 || topicList.option[0].attribute_3}}</a>
+			<a v-if=" topicList && topicList.option && topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[1])[0])" >{{topicList.option[1].attribute_1 || topicList.option[1].attribute_2 || topicList.option[1].attribute_3}}</a>
+			<a v-if=" topicList && topicList.option && topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[2])[0])" >{{topicList.option[2].attribute_1 || topicList.option[2].attribute_2 || topicList.option[2].attribute_3}}</a>
 		</div>
 	</section>
 </template>
@@ -106,6 +106,6 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	@import '~@/assets/style/attention-five.less';
 </style>

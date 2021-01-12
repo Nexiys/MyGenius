@@ -34,11 +34,11 @@
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a @click="toNext()" >{{topicList.option[0].triangle}}</a>
-			<a @click="toNext()" >{{topicList.option[1].square}}</a>
-			<a @click="toNext()" >{{topicList.option[2].trapezoid}}</a>
-			<a @click="toNext()" >{{topicList.option[3].diamond}}</a>
-			<a @click="toNext()" >{{topicList.option[4].circular}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[0].triangle == undefined?1:2}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option"  >{{topicList.option[1].square== undefined?1:2}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[2].trapezoid== undefined?1:2}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[3].diamond == undefined?1:2}}</a>
+			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[4].circular == undefined?1:2}}</a>
 		</div>
 	</section>
 </template>
@@ -77,7 +77,7 @@
 				
 				this.total = data.data.data[1][0].total_num
 				this.tip =data.data.data[1][0].stage_type
-				console.log(this.total)
+				
 				this.topicList = data.data.data[1][0].data[this.sub];
 				this.list = data.data.data[1][0].data
 				console.log(this.topicList.option[0].triangle)
@@ -101,6 +101,6 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	@import '~@/assets/style/attention-five.less';
 </style>

@@ -126,6 +126,6 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	@import '~@/assets/style/memory-six.less';
 </style>

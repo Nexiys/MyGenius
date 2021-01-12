@@ -203,7 +203,7 @@
 
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	@import '~@/assets/style/attention-three.less';
 </style>
 

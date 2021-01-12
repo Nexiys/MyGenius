@@ -16,8 +16,8 @@
 			<div class="content-header">
 				<div class="left">
 					<span>进度：</span>
-					<span>0</span>
-					<span>/00</span>
+					<span>{{index+1}}</span>
+					<span>/{{allNum}}</span>
 				</div>
 				<div class="right">
 					<span>用时：</span>
@@ -34,10 +34,10 @@
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_1"></a>
-			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_2"></a>
-			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_3"></a>
-			<a href="#" @click="toNext(dataList.question_num)" v-html="dataList.option_4"></a>
+			<a  @click="toNext(dataList.question_num)" v-html="dataList.option_1"></a>
+			<a  @click="toNext(dataList.question_num)" v-html="dataList.option_2"></a>
+			<a  @click="toNext(dataList.question_num)" v-html="dataList.option_3"></a>
+			<a  @click="toNext(dataList.question_num)" v-html="dataList.option_4"></a>
 		</div>
 	</section>
 </template>
@@ -58,7 +58,8 @@
 				test:[],
 				newData:'',
 				dataList:'',
-				index:0
+				index:0,
+				allNum:''
 			}
 		},
 		created() {
@@ -81,19 +82,25 @@
 				this.newData = data.data.data[1].data
 				this.dataList = data.data.data[1].data
 				this.dataList =this.dataList[this.index] 
-				console.log(this.newData);
+				this.allNum = this.newData.length
+			
 			},
 
 
 
-	    toNext(a,b){
-			this.dataList = this.newData[a]	
-			this.$router.push({path:"lotransition"})
+	    	toNext(a,b){
+				if(this.index == this.allNum -1 ){
+					this.$router.push({path:"lotransition"})
+				}else{
+					this.index = this.index+a
+					this.dataList = this.newData[a]	
+					
+				}
 			}
 		},
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	@import '~@/assets/style/logic-one.less';
 </style>
