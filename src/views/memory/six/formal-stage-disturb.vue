@@ -32,7 +32,7 @@
 					<div class="main-box not-flex success-disturb">
 						<div class="main-con">
 							<!-- span 标签内为 content 字段中的值 -->
-							<span class="question-con">{{content}}</span>
+							<span class="question-con">{{content}} = </span>
 							<!-- input value 需要与 answer 中值作对比,正确显示笑脸,错误显示哭脸 -->
 							<input autofocus type="text" class="answer-con"  v-model="answerVal"  @input="valFun()">
 						</div>
@@ -120,10 +120,8 @@
 						this.iShow='tip2'
 						this.isActive = false
 					}
-
 				}
 			}
-
 		},
 	}
 </script>

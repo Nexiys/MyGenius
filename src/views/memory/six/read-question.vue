@@ -28,8 +28,8 @@
 			<h2 class="stage-tit">练习阶段</h2>
 			<h2 class="guide-tit">请先认真读题</h2>
 			<div class="main">
-				<div class="main-box" v-html="content">
-
+				<div class="main-box">
+					<p class="des-con" v-html="content"></p>
 				</div>
 			</div>
 			<router-link class="start-btn" to="msiexercise">开始游戏</router-link>

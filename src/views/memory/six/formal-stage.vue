@@ -28,20 +28,13 @@
 				<h2 class="stage-tit">正式阶段</h2>
 				<h2 class="guide-tit">{{contentTitle}}</h2>
 				<div class="main">
-					<!-- 正确答案,增加 success-disturb 类,错误答案,增加 wrong-disturb 类 -->
-					<div class="main-box not-flex success-disturb">
+					<div class="main-box not-flex">
 						<div class="main-con">
 							<!-- span 标签内为 content 字段中的值 -->
 							<span class="question-con">{{content.content}}</span>
 							<!-- input value 需要与 answer 中值作对比,正确显示笑脸,错误显示哭脸 -->
 							<input autofocus type="text" class="answer-con"  v-model="answerVal"  @input="valFun()">
 						</div>
-						<!-- 笑脸 or 哭脸,默认不显示（接口返回空）, src 取值 correct_icon 和 wrong_icon 字段 -->
-						<img  v-if="iShow=='tip1' && tip1!==undefined" src="../../../assets/img/smile.png" />
-						<img  v-if="iShow=='tip2'&& tip2!==undefined" src="../../../assets/img/cry.png" />
-						<!-- 回答正确与否,默认不显示（接口返回空）, 文字内容取值 correct_tips 和 wrong_tips 字段 -->
-						<span class="tips" v-if="iShow=='tip1'&& tip1!==undefined">{{tip1}}</span>
-						<span class="tips" v-if="iShow=='tip2'&& tip2!==undefined">{{tip2}}</span>
 					</div>
 				</div>
 				<a class="start-btn"  @click='btn(1,content.question_num)'>下一组</a>
