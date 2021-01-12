@@ -115,10 +115,23 @@
 					}else{
 						this.content = this.content1[this.index].content
 					}
-				}
+				} 
 			},
 			valFun(){
 				this.iShow = false
+				this.isActive = true
+				if(this.answerVal.length>=1){
+					console.log(this.answerVal)
+					console.log(this.answerValhttp)
+					if(this.answerVal == this.answerValhttp){
+						this.iShow='tip1'
+						this.isActive = false
+					}else{
+						this.iShow='tip2'
+						this.isActive = false
+					}
+
+				}
 			}
 
 		},
