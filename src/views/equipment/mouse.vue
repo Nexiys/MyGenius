@@ -1,14 +1,5 @@
 <template>
 	<!-- 设备检测--鼠标检测 -->
-	<!-- <section class="header">
-		<div class="logo-modular">
-			<a href=""><img src="../../assets/img/logo.png" ></a>
-		</div>
-		<div class="h-operate">
-			<a href="#"><i class="icon-pause"></i>暂停</a>
-			<a href="#"><i class="icon-quit"></i>退出</a>
-		</div>
-	</section> -->
 	<!-- 头部组件：logo、暂停、退出 -->
 	<Header />
 	<section class="content-area-mouse" @mouseup="onContextMenu" ref="listBox">
