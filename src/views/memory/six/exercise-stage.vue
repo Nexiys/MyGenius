@@ -36,7 +36,7 @@
 					<span class="tips" v-if="iShow=='tip2'">{{tip2}}</span>
 				</div>
 			</div>
-			<a class="start-btn" disabled @click='btn(1)'>下一组</a>
+			<a class="start-btn" v-bind:class="{ disabled: isActive }"  @click='btn(1)'>下一组</a>
 		</div>
 	</section>
 </template>
@@ -64,7 +64,8 @@
 				length:0,
 				disabled:false,
 				content1:'',
-				Tosuccess:0
+				Tosuccess:0,
+				isActive:true
 			}
 		},
 		created() {
