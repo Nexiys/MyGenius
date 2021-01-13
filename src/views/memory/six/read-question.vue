@@ -6,8 +6,8 @@
 		<div class="c-header">
 			<div class="c-h-left">
 				<em>进度：</em>
-				<em>{{index}}</em>
-				<em>/{{length}}</em>
+				<em>0</em>
+				<em>/00</em>
 			</div>
 			<div class="c-h-middle"></div>
 			<div class="c-h-right">

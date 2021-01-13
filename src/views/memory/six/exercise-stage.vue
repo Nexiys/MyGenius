@@ -6,8 +6,8 @@
 		<div class="c-header">
 			<div class="c-h-left">
 				<em>进度：</em>
-				<em>{{index+1}}</em>
-				<em>/{{length}}</em>
+				<em>{{index}}</em>
+				<em>/{{length}}}</em>
 			</div>
 			<div class="c-h-middle"></div>
 			<div class="c-h-right">
@@ -95,13 +95,14 @@
 					this.Tosuccess = 0
 					return false
 				}else{
-					this.answerVal=''
-				    this.iShow=false
-					this.Tosuccess = 0
-					this.index = this.index+e
-					if(this.index == this.length){
+					
+					if(this.index == this.length-1){
 						this.$router.push("MSITransition")
-					}else if(this.answerVal !==''){
+					}else{
+						this.answerVal=''
+						this.iShow=false
+						this.Tosuccess = 0
+						this.index = this.index+e
 						this.content = this.content1[this.index].content
 					}
 				} 
@@ -111,8 +112,7 @@
 				this.isActive = true
 				this.Tosuccess = 0
 				if(this.answerVal.length>=1){
-					console.log(this.answerVal)
-					console.log(this.answerValhttp)
+				
 					if(this.answerVal == this.answerValhttp){
 						this.iShow='tip1'
 						this.isActive = false
