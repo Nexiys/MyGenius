@@ -90,8 +90,8 @@
 				this.length = data.data.data.practice.question.data.length
 			},
 			btn(e){
+				this.isActive = true
 				if(this.answerVal == ''){
-					
 					this.Tosuccess = 0
 					return false
 				}else{
