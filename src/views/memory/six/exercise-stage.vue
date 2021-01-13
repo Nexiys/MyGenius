@@ -133,6 +133,8 @@
 							this.Tosuccess = 0
 							this.index = this.index+1
 							this.content = this.content1[this.index].content
+							this.tip1 =this.content1[this.index].if_tips.correct_tips
+							this.tip2 =this.content1[this.index].if_tips.wrong_tips
 							
 						}
 						
@@ -168,6 +170,8 @@
 						this.Tosuccess = 0
 						this.index = this.index+e
 						this.content = this.content1[this.index].content
+						this.tip1 =this.content1[this.index].if_tips.correct_tips
+						this.tip2 =this.content1[this.index].if_tips.wrong_tips
 					}
 				} 
 			},
