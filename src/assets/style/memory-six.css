@@ -434,6 +434,7 @@ body {
   line-height: 60px !important;
   margin: 24px auto 0;
   font-size: 24px;
+  cursor: pointer;
   background: #47A1FE;
   border-radius: 6px;
   display: inline-block;
@@ -456,6 +457,17 @@ body {
   color: #fff;
 }
 .content-area .topic-exploring-area .disabled {
+  background: #C3CEDE;
+  border: none;
+  color: #fff;
+  cursor: not-allowed;
+}
+.content-area .topic-exploring-area .disabled:hover {
+  background: #C3CEDE;
+  border: none;
+  color: #fff;
+}
+.content-area .topic-exploring-area .disabled:active {
   background: #C3CEDE;
   border: none;
   color: #fff;
