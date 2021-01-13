@@ -18,8 +18,8 @@
 			
 			<div class="question"> 
 				<div class="question-box">
-					<p>{{thisp}}</p>
-					<div class="img-box" v-html="thisimg">
+					<p>{{thisimg!==''?thisp:''   }}</p>
+					<div class="img-box" v-html="thisimg!==''?thisimg:thisp">
 					</div>
 				</div>
 			</div>
