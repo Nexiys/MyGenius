@@ -26,7 +26,7 @@
 						<!-- span 标签内为 content 字段中的值 -->
 						<span class="question-con">{{content}}</span>
 						<!-- input value 需要与 answer 中值作对比,正确显示笑脸,错误显示哭脸 -->
-						<input autofocus type="text" class="answer-con"  v-model="answerVal" @blur="changeInput()" @input="valFun()">
+						<input autofocus type="text" class="answer-con"  v-model="answerVal"  @input="valFun()">
 					</div>
 					<!-- 笑脸 or 哭脸,默认不显示（接口返回空）, src 取值 correct_icon 和 wrong_icon 字段 -->
 					<img  v-if="iShow=='tip1'" src="../../../assets/img/smile.png" />
@@ -89,26 +89,19 @@
 				this.tip2 = data.data.data.practice.question.data[this.index].if_tips.wrong_tips
 				this.length = data.data.data.practice.question.data.length
 			},
-			changeInput(){
-				if(this.answerVal == this.answerValhttp){
-					this.iShow='tip1'
-					this.Tosuccess = 1
-				}else{
-					this.iShow='tip2'
-					this.Tosuccess = 2
-				}
-			},
 			btn(e){
 				if(this.answerVal == ''){
+					
+					this.Tosuccess = 0
 					return false
 				}else{
 					this.answerVal=''
-					this.iShow=false
+				    this.iShow=false
 					this.Tosuccess = 0
 					this.index = this.index+e
 					if(this.index == this.length){
 						this.$router.push("MSITransition")
-					}else{
+					}else if(this.answerVal !==''){
 						this.content = this.content1[this.index].content
 					}
 				} 
@@ -116,15 +109,19 @@
 			valFun(){
 				this.iShow = false
 				this.isActive = true
+				this.Tosuccess = 0
 				if(this.answerVal.length>=1){
 					console.log(this.answerVal)
 					console.log(this.answerValhttp)
 					if(this.answerVal == this.answerValhttp){
 						this.iShow='tip1'
 						this.isActive = false
+						this.Tosuccess = 1
+						
 					}else{
 						this.iShow='tip2'
 						this.isActive = false
+						this.Tosuccess = 2
 					}
 
 				}

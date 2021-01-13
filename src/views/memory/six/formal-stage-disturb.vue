@@ -97,10 +97,14 @@
 				
 			},
 			btn(e){
-				this.$router.push("msiformal")
+				if(this.answerVal !==''){
+					this.$router.push("msiformal")
+				}
+				
 				this.Tosuccess = 0
 			},
 			valFun(){
+				this.Tosuccess = 0
 				this.iShow = false
 				this.isActive = true
 				if(this.answerVal.length>=1){
