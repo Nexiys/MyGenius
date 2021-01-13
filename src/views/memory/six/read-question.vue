@@ -18,7 +18,7 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">练习阶段</h2>
 			<h2 class="guide-tit">请先认真读题</h2>
-			<TimingRing :originProgressText ="timelimit"></TimingRing>
+			<!-- <TimingRing :originProgressText ="timelimit"></TimingRing> -->
 			<div class="main">
 				<div class="main-box">
 					<p class="des-con" v-html="content"></p>
@@ -47,7 +47,7 @@
 			}
 		},
 		created() {
-			this.timeFun()
+			// this.timeFun()
 			this.getData();
 			localStorage.removeItem("reload");
     	},
@@ -62,23 +62,23 @@
 				this.content = data.data.data.practice.question.data[0].content
 				this.length = data.data.data.practice.question.data.length
 			},
-			timeFun() {
-				let time = this.timelimit;
-				console.log( this.timelimit)
-				this.timer = setInterval(() => {
-					if (time ==0) {
-						clearInterval(this.timer);
-						//this.timeFun()
-						this.$router.push("msiexercise")
-						// if(this.page == 6){
-						// 	this.$router.push("lointroduce")
-						// }
-					} else {
-						time--;
-						console.log(time)
-					}
-				},1000);
-			},
+			// timeFun() {
+			// 	let time = this.timelimit;
+			// 	console.log( this.timelimit)
+			// 	this.timer = setInterval(() => {
+			// 		if (time ==0) {
+			// 			clearInterval(this.timer);
+			// 			//this.timeFun()
+			// 			this.$router.push("msiexercise")
+			// 			// if(this.page == 6){
+			// 			// 	this.$router.push("lointroduce")
+			// 			// }
+			// 		} else {
+			// 			time--;
+			// 			console.log(time)
+			// 		}
+			// 	},1000);
+			// },
 			toGo(){
 				clearInterval(this.timer);
 				this.$router.push("msiexercise")

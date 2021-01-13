@@ -18,6 +18,7 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">正式阶段</h2>
 			<h2 class="guide-tit">{{contentTitle}}</h2>
+			<TimingRing :originProgressText ="timelimit"></TimingRing>
 			<div class="main">
 				<div class="main-box not-flex">
 					<div class="main-con">
@@ -59,7 +60,7 @@
 				length:0,
 				disabled:false,
 				content1:'',
-			
+				timelimit:240,
 				answerValhttpVal:'',
 				contentTitleVal:'',
 				beAnswer:'',
@@ -67,6 +68,7 @@
 			}
 		},
 		created() {
+			this.timeFun()
 			this.getData();
 			localStorage.removeItem("reload");
     	},
@@ -92,12 +94,22 @@
 				this.length = data.data.data.formal.question.data.length
 				
 			},
+			timeFun() {
+				let time = this.timelimit;
+				console.log( this.timelimit)
+				this.timer = setInterval(() => {
+					if (time ==1) {
+						clearInterval(this.timer);
+						window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+					} else {
+						time--;
+					}
+				},1000);
+			},
 			btn(e,n){
 				let data = {question_num:n,answer:this.beAnswer}
 				this.dataAll.push(data)
-				
 					this.answerVal=''
-				
 					this.iShow=false
 					this.index = this.index+e
 					if(this.index == this.length){
@@ -107,6 +119,7 @@
 						}) 
 						// this.$router.push("MSITransition")
 						window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+						clearInterval(this.timer);
 					}else{
 						this.content = this.content1[this.index]
 						this.answerValhttp = this.answerValhttpVal[this.index].answer
@@ -118,17 +131,12 @@
 			},
 			valFun(){
 				this.iShow = false
-			
 				if(this.answerVal.length>=1){
-					console.log(this.answerVal)
-					console.log(this.answerValhttp)
 					if(this.answerVal == this.answerValhttp){
 						this.iShow='tip1'
-					
 						this.beAnswer = 1
 					}else{
 						this.iShow='tip2'
-					
 						this.beAnswer = 0
 					}
 
