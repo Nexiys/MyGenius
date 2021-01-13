@@ -6,8 +6,8 @@
 		<div class="c-header">
 			<div class="c-h-left">
 				<em>进度：</em>
-				<em>{{index}}</em>
-				<em>/{{length}}}</em>
+				<em>0</em>
+				<em>/00</em>
 			</div>
 			<div class="c-h-middle"></div>
 			<div class="c-h-right">
@@ -18,7 +18,7 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">练习阶段</h2>
 			<h2 class="guide-tit">{{contentTitle}}</h2>
-			<!-- <TimingRing :originProgressText ="8"></TimingRing> -->
+			<TimingRing v-if="update" :originProgressText ="timelimit"></TimingRing>
 			<div class="main">
 				<!-- 正确答案,增加 success 类,错误答案,增加 wrong 类 -->
 				<div class="main-box not-flex" v-bind:class="[Tosuccess==1?'success':(Tosuccess==2?'wrong':'') ]">
@@ -65,12 +65,15 @@
 				disabled:false,
 				content1:'',
 				Tosuccess:0,
-				isActive:true
+				isActive:true,
+				timelimit:8,
+				update:true
 			}
 		},
 		created() {
 			this.getData();
 			localStorage.removeItem("reload");
+			this.timeFun()
     	},
 		methods:{
 			async getData(){
@@ -88,24 +91,6 @@
 				this.tip1 = data.data.data.practice.question.data[this.index].if_tips.correct_tips
 				this.tip2 = data.data.data.practice.question.data[this.index].if_tips.wrong_tips
 				this.length = data.data.data.practice.question.data.length
-			},
-			btn(e){
-				this.isActive = true
-				if(this.answerVal == ''){
-					this.Tosuccess = 0
-					return false
-				}else{
-					
-					if(this.index == this.length-1){
-						this.$router.push("MSITransition")
-					}else{
-						this.answerVal=''
-						this.iShow=false
-						this.Tosuccess = 0
-						this.index = this.index+e
-						this.content = this.content1[this.index].content
-					}
-				} 
 			},
 			valFun(){
 				this.iShow = false
@@ -125,7 +110,67 @@
 					}
 
 				}
-			}
+			},
+			timeFun() {
+				let time = this.timelimit;
+				console.log( this.timelimit)
+				this.timer = setInterval(() => {
+					
+					if (time ==0) {
+						this.isActive = true
+						this.update = false
+						this.$nextTick(() => {
+							this.update = true
+						})
+						if(this.index == this.length-1){
+							clearInterval(this.timer);
+							this.$router.push("MSITransition")
+						}else{
+							clearInterval(this.timer);
+							this.timeFun()
+							this.answerVal=''
+							this.iShow=false
+							this.Tosuccess = 0
+							this.index = this.index+1
+							this.content = this.content1[this.index].content
+							
+						}
+						
+						//this.$router.push("msiexercise")
+						// if(this.page == 6){
+						// 	this.$router.push("lointroduce")
+						// }
+					} else {
+						time--;
+						console.log(time)
+					}
+				},1000);
+			},
+			btn(e){
+				this.isActive = true
+				if(this.answerVal == ''){
+					this.Tosuccess = 0
+					return false
+				}else{
+					
+					if(this.index == this.length-1){
+						clearInterval(this.timer);
+						this.$router.push("MSITransition")
+					}else{
+						this.update = false
+						this.$nextTick(() => {
+							this.update = true
+						})
+						clearInterval(this.timer);
+						this.timeFun()
+						this.answerVal=''
+						this.iShow=false
+						this.Tosuccess = 0
+						this.index = this.index+e
+						this.content = this.content1[this.index].content
+					}
+				} 
+			},
 
 		},
 	}

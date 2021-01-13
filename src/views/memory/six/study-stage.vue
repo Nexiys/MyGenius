@@ -18,7 +18,7 @@
 		<div class="topic-exploring-area">
 			<h2 class="stage-tit">练习阶段</h2>
 			<h2 class="guide-tit">请您学习看到的“线索—目标”配对词组</h2>
-			<!-- <TimingRing :originProgressText ="60"></TimingRing> -->
+			<TimingRing :originProgressText ="timelimit"></TimingRing>
 			<div class="main">
 				<div class="main-box">
 					<div class="container">
@@ -34,7 +34,7 @@
 					</ul>
 				</div>
 			</div>
-			<router-link class="start-btn" to="msiread">进入测试</router-link>
+			<a class="start-btn" @click="toGo()">进入测试</a>
 		</div>
 	</section>
 </template>
@@ -55,12 +55,14 @@
 				introductions:'',    // 介绍页内容
 				listData:'', // 数据
 				thisIndex:0, // 下标
-				spareData:'' //备用数据
+				spareData:'', //备用数据
+				timelimit:60,
 			}
 		},
 		created() {
 			this.getData();
 			localStorage.removeItem("reload");
+			this.timeFun()
     	},
 		methods:{
 			async getData(){
@@ -71,6 +73,8 @@
 				}
 				this.spareData =  data.data.data.practice.study.content
 				this.listData = data.data.data.practice.study.content[this.thisIndex]
+				this.timelimit =data.data.data.practice.study.time_limit
+				//console.log(this.timelimit)
 			},
 			nex(x){
 				this.thisIndex = x 
@@ -89,6 +93,27 @@
 					this.isActive = x
 					this.listData =this.spareData[this.thisIndex]
 				}
+			},
+			timeFun() {
+				let time = this.timelimit;
+				console.log( this.timelimit)
+				this.timer = setInterval(() => {
+					if (time ==1) {
+						clearInterval(this.timer);
+						//this.timeFun()
+						this.$router.push("msiread")
+						// if(this.page == 6){
+						// 	this.$router.push("lointroduce")
+						// }
+					} else {
+						time--;
+						console.log(time)
+					}
+				},1000);
+			},
+			toGo(){
+				clearInterval(this.timer);
+				this.$router.push("msiread")
 			}
 		},
 	}
