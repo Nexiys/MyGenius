@@ -44,6 +44,7 @@
 		created() {
 			this.getData();
 			localStorage.removeItem("reload");
+			localStorage.removeItem("job")
     },
 		methods:{
 			async getData(){

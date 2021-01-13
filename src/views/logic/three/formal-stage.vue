@@ -17,14 +17,10 @@
 			</div>
 			
 			<div class="question"> 
-				<!-- <div class="question-box" v-html="topicList.content">
-					<p>1、如图是一个五角星灯连续旋转闪烁所成的三个图形，以此规律，下一个呈现的图形是（  ）</p>
-					<div class="img-box">
-						<img src="../../../assets/img/induce-01.png">
+				<div class="question-box">
+					<p>{{thisp}}</p>
+					<div class="img-box" v-html="thisimg">
 					</div>
-				</div> -->
-				<div class="question-box" v-html="topicList.content">
-					
 				</div>
 			</div>
 		</div>
@@ -52,12 +48,15 @@
 				sub : 0, //下标
 				list:[], //备用数组
 				thisTime:new Date().getTime(),
-				dataAll:[] //回传数组			
+				dataAll:[], //回传数组	
+				thisp:'',
+				thisimg:''		
 			}
 		},
 		created() {
 			this.getData();
 			localStorage.removeItem("reload");
+			this.read()
    		},
 		methods:{
 			async getData(){
@@ -70,10 +69,20 @@
 				this.total = data.data.data.question_total;
 				this.topicList = data.data.data[1].data[this.sub];
 				this.list = data.data.data[1].data
-				console.log(this.list)
+				let testp = this.topicList.content.split("</p>")[0]
+				this.thisp = testp.split("<p>")[1]
+				this.thisimg = this.topicList.content.split("</p>")[1]
+				
+			},
+			read(){
+		
+				if(localStorage.getItem("job") == undefined){
+					localStorage.setItem("job", "basketballplayer")
+					 location.reload() 
+				}
 			},
 			toNext(a,b,c){
-
+				localStorage.removeItem("job")
 				this.react =(c -this.thisTime )/1000
 				console.log(this.react)
 				let data = {question_num:a,answer:b,react:this.react}
@@ -90,6 +99,9 @@
 					this.number = this.number+1
 					this.sub = this.sub+1
 					this.topicList = this.list[this.sub]
+					let testp = this.topicList.content.split("</p>")[0]
+					this.thisp = testp.split("<p>")[1]
+					this.thisimg = this.topicList.content.split("</p>")[1]
 				}
 			}
 		},
