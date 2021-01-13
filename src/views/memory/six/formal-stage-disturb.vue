@@ -20,7 +20,7 @@
 			<h2 class="guide-tit">{{contentTitle}}</h2>
 			<div class="main">
 				<!-- 正确答案,增加 success-disturb 类,错误答案,增加 wrong-disturb 类 -->
-				<div class="main-box not-flex success-disturb">
+				<div class="main-box not-flex" v-bind:class="[Tosuccess==1?'success-disturb':(Tosuccess==2?'wrong-disturb':'') ]">
 					<div class="main-con">
 						<!-- span 标签内为 content 字段中的值 -->
 						<span class="question-con">{{content}} = </span>
@@ -66,7 +66,8 @@
 				content1:'',
 				isActive:true,
 				answerValhttpVal:'',
-				contentTitleVal:''
+				contentTitleVal:'',
+				Tosuccess:0,
 			}
 		},
 		created() {
@@ -97,6 +98,7 @@
 			},
 			btn(e){
 				this.$router.push("msiformal")
+				this.Tosuccess = 0
 			},
 			valFun(){
 				this.iShow = false
@@ -107,9 +109,11 @@
 					if(this.answerVal == this.answerValhttp){
 						this.iShow='tip1'
 						this.isActive = false
+						this.Tosuccess = 1
 					}else{
 						this.iShow='tip2'
 						this.isActive = false
+						this.Tosuccess = 2
 					}
 				}
 			}
