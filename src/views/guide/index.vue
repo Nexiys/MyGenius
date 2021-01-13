@@ -1,6 +1,7 @@
 <template>
 	<!-- 测评引导页面 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area-matters">
 		<div class="illustrati w-480"></div>
@@ -10,6 +11,7 @@
 			<router-link to="/equipment" class="normal-btn">开始测评</router-link>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

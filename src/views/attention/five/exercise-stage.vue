@@ -1,6 +1,7 @@
 <template>
 	<!-- 注意游戏五（注意转移游戏）练习阶段 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="apart-body">
 		<div class="apart-top">
@@ -32,6 +33,7 @@
 			<a @click="toNext()" v-if="topicList && topicList.option" >{{topicList.option[4].circular}}</a>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

@@ -1,6 +1,7 @@
 <template>
 	<!-- 注意游戏五（注意转移性游戏）过渡页面 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area">
 		<div class="c-header">
@@ -25,6 +26,7 @@
 			<router-link to="afiformal">开始游戏</router-link>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

@@ -1,6 +1,7 @@
 <template>
 	<!-- 逻辑游戏三（归纳推理）正式阶段 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="apart-body">
 		<div class="apart-top">
@@ -31,6 +32,7 @@
 			<a @click="toNext(topicList.question_num,topicList.answer_4, new Date().getTime())" v-html="topicList.option_4"></a>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

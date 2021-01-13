@@ -1,6 +1,7 @@
 <template>
 	<!-- 设备检测首页 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area">
 		<div class="illustrati"></div>
@@ -14,6 +15,7 @@
 			<!-- <a href="#">跳过检测直接测评</a> -->
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

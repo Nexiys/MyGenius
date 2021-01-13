@@ -1,6 +1,7 @@
 <template>
 	<!-- 记忆游戏六（记忆复述策略）过渡页面 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area">
 		<div class="c-header">
@@ -25,6 +26,7 @@
 			<router-link to="msiformaldisturb">开始游戏</router-link>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

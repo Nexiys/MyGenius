@@ -1,6 +1,7 @@
 <template>
 	<!-- 设备检测--鼠标检测 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area-mouse" @mouseup="onContextMenu" ref="listBox">
 		<h2>设备检测</h2>
@@ -35,11 +36,12 @@
 				<img v-else-if="istype ==2" src="../../assets/img/laugh.png" alt="">
 				<img v-else-if="istype ==3" src="../../assets/img/sad.png" alt="">
 				<span>操作正常吗 ？</span>
-				<router-link to="/result"  @click="to('正常')" v-bind:class="{behover:behoverd}">正常，有笑脸</router-link>
-				<router-link to="/result"  @click="to('异常')" v-bind:class="{behover:behovert}">无笑脸</router-link>
+				<a  @click="to('正常')" v-bind:class="{behover:behoverd}">正常，有笑脸</a>
+				<a @click="to('异常')" v-bind:class="{behover:behovert}">无笑脸</a>
 			</div>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>
@@ -118,7 +120,8 @@
 			}
 				},
 			to(e){
-				window.localStorage.setItem('mouse', e);		
+				window.localStorage.setItem('mouse', e);
+				this.$router.push("result")			
 			}
 		}
 	}

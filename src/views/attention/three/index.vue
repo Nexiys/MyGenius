@@ -1,4 +1,5 @@
 <template>
+<div>
 	<!-- 注意游戏三（注意稳定性游戏）介绍页面 -->
 	<!-- 头部组件：logo、暂停、退出 -->
 	<Header />
@@ -26,6 +27,7 @@
 			</div>
 		</div>
 	</section>
+</div>
 </template>
 
 <script>

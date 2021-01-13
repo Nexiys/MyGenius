@@ -1,6 +1,7 @@
 <template>
 	<!-- 人格测评介绍页面 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area-induce">
 			 <div class="c-header">
@@ -21,12 +22,13 @@
 					<div class="i-con">
 						<h2>{{ title }}</h2>
 						<p v-html="introductions"></p>
-						<router-link to="/quiet" @click="desnum()">开始测评</router-link>
+						<a  @click="desnum()">开始测评</a>
 					</div>
 				</div>
 			</div>
 			
 	</section>
+	</div>
 </template>
 <script>
 	import Header from '../../components/Header/index.vue'
@@ -61,6 +63,7 @@
 				let question_total = this.question_total
 			},       
 			desnum() {
+				this.$router.push("quiet")	
 				sessionStorage.setItem("desnum",1)
 				sessionStorage.setItem("num",0)
 			}

@@ -1,6 +1,7 @@
 <template>
 	<!-- 设备检测结果，正常或异常 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area-normal">
 		<h2>设备检测</h2>
@@ -38,6 +39,7 @@
 			</div>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

@@ -1,6 +1,7 @@
 <template>
 	<!-- 注意游戏五（注意）练习阶段 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="apart-body">
 		<div class="apart-top">
@@ -38,6 +39,7 @@
 			<a v-if=" topicList && topicList.option && topicList.option[0].triangle == undefined" @click="toNext(topicList.question_num,topicList.answer, topicList.type ,Object.keys(topicList.option[2])[0])" >{{topicList.option[2].attribute_1 || topicList.option[2].attribute_2 || topicList.option[2].attribute_3}}</a>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

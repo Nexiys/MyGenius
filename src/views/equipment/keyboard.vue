@@ -1,8 +1,9 @@
 <template>
 	<!-- 设备检测--键盘检测 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
-	<section class="content-area-keyboard"  @keyup="onContextMenu" ref="listBox">
+	<section class="content-area-keyboard"  >
 		<h2>设备检测</h2>
 		<div class="progress">
 			<div class="speaker-icon"><img src="../../assets/img/voice_highlighted.png" alt="speaker"><span>扬声器</span></div>
@@ -34,12 +35,13 @@
 				<!-- <i class="icon-test_unknown"></i>
 				<i class="icon-test_unknown"></i> -->
 				<span>操作正常吗 ？</span>
-				<router-link to="/mouse" @click="to('正常')"   v-bind:class="{ahover:hovero}" :disabled="bedisabO">正常，有笑脸</router-link>
-				<router-link to="/mouse" @click="to('异常')"  v-bind:class="{ahover:hovert}" :disabled="bedisabT">无笑脸</router-link>
+				<a  @click="to('正常')"   v-bind:class="{ahover:hovero}" :disabled="bedisabO">正常，有笑脸</a>
+				<a  @click="to('异常')"  v-bind:class="{ahover:hovert}" :disabled="bedisabT">无笑脸</a>
 				
 			</div>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>
@@ -145,7 +147,9 @@
 				}
 			},
 			to(e){
-				window.localStorage.setItem('keyboard', e);		
+			
+				window.localStorage.setItem('keyboard', e);	
+				this.$router.push("mouse")	
 			}
 		}
 	}

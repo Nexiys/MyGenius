@@ -1,5 +1,6 @@
 <template>
 	<!-- 测评完成页面 -->
+	<div>
 	<section class="header">
 		<div class="logo-modular">
 			<a href=""><img src="../../assets/img/logo.png" ></a>
@@ -20,6 +21,7 @@
 		</div>
 		
 	</section>
+	</div>
 </template>
 <script>
 	export default {

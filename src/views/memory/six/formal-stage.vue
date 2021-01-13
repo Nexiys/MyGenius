@@ -1,6 +1,7 @@
 <template>
 	<!-- 记忆游戏六（记忆复述策略）正式阶段 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area">
 		<div class="c-header">
@@ -32,6 +33,7 @@
 			<a class="start-btn"  @click='btn(1,content.question_num)'>下一组</a>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

@@ -1,6 +1,7 @@
 <template>
 	<!-- 逻辑游戏一（表象游戏）介绍页面 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area">
 		<div class="c-header">
@@ -26,6 +27,7 @@
 			</div>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

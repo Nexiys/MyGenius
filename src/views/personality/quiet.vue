@@ -1,8 +1,9 @@
 <template>
 	<!-- 人格测评题型页面 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
-	<section class="e-body" v-if="isShow==1">
+	<section class="e-body" v-if="isShow=1">
 			<section id="evaluation">
 					<div class="e-header">
 							<div class="e-h-left">
@@ -84,6 +85,7 @@
 					<a href="#" @click="sClick(1)">开始测评</a>
 			</div>
 	</section>
+</div>
 <!-- 完成 -->
 </template>
 
@@ -123,6 +125,7 @@
 						return false
 				}
 				this.pageNum = data.data.question_total
+				console.log(this.isShow)
 				if(this.desnum == 4){
 						this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/00_rgqxcp_2_input', {api_token: window.localStorage.data,data:this.quesDataList})
 						this.$router.push("threeindex")

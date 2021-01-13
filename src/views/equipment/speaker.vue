@@ -1,6 +1,7 @@
 <template>
 	<!-- 设备检测--声音检测 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area-speaker">
 		<h2>设备检测</h2>
@@ -24,11 +25,12 @@
 				<img v-else-if="istype ==2" src="../../assets/img/laugh.png">
 				<img v-else-if="istype ==3" src="../../assets/img/sad.png">
 				<span>操作正常吗 ？</span>
-				<router-link to="/keyboard" @mouseover="selectStyle (2)"  @click="to('正常')" @mouseout="select(1)">能听到</router-link>
-				<router-link to="/keyboard" @mouseover="selectStyle (3)"  @click="to('异常')" @mouseout="select(1)">不能听到</router-link> 
+				<a  @mouseover="selectStyle (2)"  @click="to('正常')" @mouseout="select(1)">能听到</a>
+				<a  @mouseover="selectStyle (3)"  @click="to('异常')" @mouseout="select(1)">不能听到</a> 
 			</div>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>
@@ -53,7 +55,9 @@
 				this.istype = e
 			},
 			to(e){
-				window.localStorage.setItem('equipment', e);		
+				window.localStorage.setItem('equipment', e);	
+				this.$router.push("keyboard")
+					
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 <template>
 	<!-- 注意游戏三（注意稳定性游戏）读题页面 - 正式阶段读题 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="content-area">
 		<div class="c-header">
@@ -26,6 +27,7 @@
 			</div>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>

@@ -1,6 +1,7 @@
 <template>
 	<!-- 逻辑游戏一（表象游戏）练习阶段 -->
 	<!-- 头部组件：logo、暂停、退出 -->
+	<div>
 	<Header />
 	<section class="apart-body">
 		<div class="apart-top">
@@ -31,6 +32,7 @@
 			<a  @click="toNext(dataList.question_num)" v-html="dataList.option_4"></a>
 		</div>
 	</section>
+	</div>
 </template>
 
 <script>
