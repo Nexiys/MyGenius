@@ -3,13 +3,22 @@ import App from './App.vue'              // 引入 App.vue 组件 （根组件 s
 import router from './router'            // 引入路由 （src/router）
 import store from './store'              // 引入 store 资源 （src/store）               // 引入 axios 插件
 import VueAxios from 'vue-axios'         // 引入 vue-axios Vue 集成的 axios 作用方法
+import axios from 'axios'
+import { Loading } from 'element-ui'
+import echarts from 'echarts'
+import jsPlumb from 'jsplumb'
 
 import '@/assets/js/flexible.js'   	     //  可视窗口适配方法
 import '@/assets/style/base.css'   	     //  初始化样式文件
 import '@/assets/style/iconFont.css'     //  引入字体图标样式
-import axios from 'axios'
-Vue.prototype.axios = axios
+import '@/assets/css/theme/index.css'
 
+Vue.prototype.axios = axios
+Vue.config.productionTip = false
+Vue.prototype.$echarts = echarts
+Vue.prototype.$jsPlumb = jsPlumb.jsPlumb
+
+Vue.use(Loading)
 
 new Vue({
   router,

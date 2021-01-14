@@ -1,0 +1,249 @@
+html, body {
+  user-select: none;
+}
+.tswc-button {
+  display: inline-block;
+  line-height: 1;
+  font-size: 0;
+  letter-spacing: 0;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background: #ffffff;
+  & + .tswc-button {
+    margin-left: 30px;
+  }
+}
+
+.tswc-button-default {
+  padding: 9px 21px;
+  font-size: 16px;
+  border: 1px solid #47A1FE;
+  color: #47A1FE;
+  &:hover,
+  &:focus {
+    border-color: #47A1FE;
+    color: #ffffff;
+    background: #47A1FE;
+  }
+  &:active {
+    background: #1583D6;
+    border-color: #1583D6;
+    color: #ffffff;
+  }
+}
+
+.tswc-button-middle {
+  padding: 15px 68px;
+  font-size: 16px;
+  background: #47A1FE;
+  color: #ffffff;  
+  &:hover,
+  &:focus {
+    background: #50B2FF;
+  }
+  &:active {
+    background: #1583D6;
+  }
+}
+
+.tswc-button-primary {
+  padding: 18px 92px;
+  font-size: 24px;
+  background: #47A1FE;
+  color: #ffffff;  
+  &:hover,
+  &:focus {
+    background: #50B2FF;
+  }
+  &:active {
+    background: #1583D6;
+  }
+}
+
+.tswc-button-big {
+  width: 280px;
+  height: 60px;
+  font-size: 24px;
+  line-height: 60px;
+  background: #47A1FE;
+  color: #ffffff;  
+  &:hover,
+  &:focus {
+    background: #50B2FF;
+  }
+  &:active {
+    background: #1583D6;
+  }
+}
+
+.tswc-button-icon {
+  margin-right: 8px;
+  font-size: 18px;
+  vertical-align: text-bottom;
+}
+
+.dialog-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, .4);
+  // filter: blur(10px);
+}
+.dialog-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // margin-top: -190px;
+  // margin-left: -225px;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  padding: 18px 18px 40px;
+  border-radius: 4px;
+  background: #FFFFFF;
+  z-index: 1000;
+  .dialog-header {
+    font-size: 0;
+    color: #333;
+    text-align: right;
+    .icon {
+      line-height: 16px;
+      font-size: 16px;
+      color: #848894;
+      cursor: pointer;
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+  .dialog-exit-middle {
+    margin-top: 6px;
+    margin-bottom: 48px;
+    color: #33363E;
+    text-align: center;
+    .dialog-title {
+      margin-bottom: 48px;
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  .dialog-paused-middle {
+    margin-top: 6px;
+    margin-bottom: 63px;
+    color: #33363E;
+    text-align: center;
+    .dialog-title {
+      margin-bottom: 63px;
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    p {
+      line-height: 14px;
+      font-size: 14px;
+    }
+  }
+  .btn-box {
+    text-align: center;
+    .tswc-button {
+      display: inline-block;
+      line-height: 1;
+      padding: 14px 47px;
+      font-size: 14px;
+      border-radius: 4px;
+      white-space: nowrap;
+      box-sizing: border-box;
+      background: #ffffff;
+      & + .tswc-button {
+        margin-left: 30px;
+      }
+    }
+
+    .tswc-button-primary {
+      background: #47A1FE;
+      color: #ffffff;  
+      &:hover,
+      &:focus {
+        background: #50B2FF;
+      }
+      &:active {
+        background: #1583D6;
+      }
+    }
+    .tswc-button-cancel {
+      padding: 13px 46px;
+      border: 1px solid #B4BECD;
+      background: #ffffff;
+      color: #565A66;  
+      &:hover,
+      &:focus {
+        color: #ffffff;
+        background: #565A66;
+      }
+      &:active {
+        color: #ffffff;
+        background: #B4BECD;
+      }
+    }
+  }
+}
+
+.color1 {
+  color: #9CA3F6;
+}
+.color2 {
+  color: #75B7FF;
+}
+.color3 {
+  color: #8DCC74;
+}
+.color4 {
+  color: #F68D7B;
+}
+.color5 {
+  color: #5AD9DA;
+}
+.color6 {
+  color: #F288C0;
+}
+.color7 {
+  color: #A49CF6;
+}
+.color8 {
+  color: #FFAD5A;
+}
+.bg1 {
+  background: #9CA3F6;
+}
+.bg2 {
+  background: #75B7FF;
+}
+.bg3 {
+  background: #8DCC74;
+}
+.bg4 {
+  background: #F68D7B;
+}
+.bg5 {
+  background: #5AD9DA;
+}
+.bg6 {
+  background: #F288C0;
+}
+.bg7 {
+  background: #A49CF6;
+}
+.bg8 {
+  background: #FFAD5A;
+}
+.bg9 {
+  background: #CBD6E5;
+}
+

@@ -102,7 +102,13 @@
 				this.timer = setInterval(() => {
 					if (time ==1) {
 						clearInterval(this.timer);
-						window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+						this.$router.push({
+							path: '/question',
+							query: {
+								case: 1
+							}
+						})
+						// window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
 					} else {
 						time--;
 					}
@@ -120,7 +126,13 @@
 							api_token: window.localStorage.data
 						}) 
 						// this.$router.push("MSITransition")
-						window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+						this.$router.push({
+							path: '/question',
+							query: {
+								case: 1
+							}
+						})
+						// window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
 						clearInterval(this.timer);
 					}else{
 						this.content = this.content1[this.index]

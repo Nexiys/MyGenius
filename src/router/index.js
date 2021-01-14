@@ -1,6 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 Vue.use(VueRouter)
+
+// 报告
+const Report = () => import('../views/report/index.vue')
+// 整体报告
+const WholeReport = () => import('../views/report-list/whole-report.vue')
+// 报告-认知潜能
+const PerceptionReport = () => import('../views/report-list/perception-report.vue')
+// 报告-学习潜能
+const LearningReport = () => import('../views/report-list/learning-report.vue')
+// 报告-兴趣倾向
+const InterestReport = () => import('../views/report-list/interest-report.vue')
+// 报告-性格特点
+const CharacterReport = () => import('../views/report-list/character-report.vue')
+// 报告-选科规划
+const SelectionReport = () => import('../views/report-list/selection-report.vue')
+// 报告-志愿填报
+const VolunteerReport = () => import('../views/report-list/volunteer-report.vue')
+// 报告-职业发展
+const CareerReport = () => import('../views/report-list/career-report.vue')
+// 报告-题目
+const Question = () => import('../views/questions/index.vue')
 
 const routes = [
   {
@@ -373,7 +395,50 @@ const routes = [
   //     needLogin: false
   //   }
   // },
-	
+	{
+    path: '/report',
+    component: Report,
+    redirect: '/report/whole',
+    children: [
+      {
+        path: 'whole',
+        component: WholeReport
+      },
+      {
+        path: 'perception',
+        component: PerceptionReport
+      },
+      {
+        path: 'learning',
+        component: LearningReport
+      },
+      {
+        path: 'interest',
+        component: InterestReport
+      },
+      {
+        path: 'character',
+        component: CharacterReport
+      },
+      {
+        path: 'selection',
+        component: SelectionReport
+      },
+      {
+        path: 'volunteer',
+        component: VolunteerReport
+      },
+      {
+        path: 'career',
+        component: CareerReport
+      }
+    ]
+  },
+  {
+    path: '/question',
+    name: 'Question',
+    component: Question
+  }
 ]
 // const router = createRouter({
 //   mode:"hash",

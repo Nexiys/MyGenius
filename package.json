@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "echarts": "^5.0.0",
+    "element-ui": "^2.14.1",
+    "jsplumb": "^2.15.5",
     "lib-flexible": "^0.3.2",
     "postcss-px2rem-exclude": "0.0.6",
     "vue": "^2.6.11",
