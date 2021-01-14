@@ -105,7 +105,8 @@
 						this.$router.push({
 							path: '/question',
 							query: {
-								case: 1
+								num: '18;21;20',
+								routeName: 'LTIntroduce'
 							}
 						})
 						// window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
@@ -129,7 +130,8 @@
 						this.$router.push({
 							path: '/question',
 							query: {
-								case: 1
+								num: '18;21;20',
+								routeName: 'LTIntroduce'
 							}
 						})
 						// window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"

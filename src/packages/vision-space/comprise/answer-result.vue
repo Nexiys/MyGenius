@@ -121,9 +121,11 @@ export default {
       }
       .right {
         background: url("../../../assets/img/right-face.png") no-repeat center center;
+        background-size: cover;
       }
       .error {
         background: url("../../../assets/img/error-face.png") no-repeat center center;
+        background-size: cover;
       }
       .word {
         font-size: 22px;

@@ -56,6 +56,8 @@ export default {
   name: 'Questions',
   data () {
     return {
+      num: this.$route.query.num || 0,
+      routeName: this.$route.query.routeName || '',
       caseFlag: this.$route.query.case || '1',
       startTime: 0,
       interval: null,
@@ -84,16 +86,7 @@ export default {
     DialogExit
   },
   created () {
-    if (this.caseFlag === '1') {
-      // case1转换 语音环 视觉空间模板
-      this.currentType = 18
-    } else if (this.caseFlag === '2') {
-      // case2联想策略
-      this.currentType = 13
-    } else {
-      // case3 场景
-      this.currentType = 22
-    }
+    this.compatibleHandle()
     if (window.localStorage.getItem('questionTime')) {
       this.startTime = parseInt(window.localStorage.getItem('questionTime'))
     }
@@ -103,6 +96,24 @@ export default {
     clearInterval(this.interval)
   },
   methods: {
+    // 跳转兼容逻辑
+    compatibleHandle () {
+      if (this.num) {
+        this.order = this.num.split(';')
+        this.currentType = Number(this.order[this.currentIndex])
+      } else {
+        if (this.caseFlag === '1') {
+          // case1转换 语音环 视觉空间模板
+          this.currentType = 18
+        } else if (this.caseFlag === '2') {
+          // case2联想策略
+          this.currentType = 13
+        } else {
+          // case3 场景
+          this.currentType = 22
+        }
+      }
+    },
     // 开始计时
     timeStart () {
       this.interval = setInterval(this.timeHandle, 1000)
@@ -131,24 +142,40 @@ export default {
     },
     // 进入下一个题目处理操作
     enterNextQuestionHandle () {
-      this.questionStatus = 0
-      this.currentIndex += 1
+      // this.questionStatus = 0
+      // this.currentIndex += 1
       // if (this.currentIndex >= this.order.length) {
       //   this.questionStatus = 2
       // }
-      if (this.caseFlag === '1') {
+      if (this.routeName) {
+        this.questionStatus = 0
+        this.currentIndex += 1
+        this.currentType = Number(this.order[this.currentIndex])
+        console.log(this.currentIndex, 'this.currentIndex')
         if (this.currentIndex >= this.order.length) {
-          // 记忆复述策略
-          this.$router.push('/msintroduce')
+          if (this.currentType === 22) {
+            this.questionStatus = 2
+          } else {
+            this.$router.push({ name: this.routeName })
+          }
         }
-        // case1转换 语音环 视觉空间模板
-        this.currentType = this.order[this.currentIndex]
-      } else if (this.caseFlag === '2') {
-        // case2联想策略
-        this.$router.push('/one')
       } else {
-        // case3 场景题
-        this.questionStatus = 2
+        if (this.caseFlag === '1') {
+          if (this.currentIndex >= this.order.length) {
+            // 记忆复述策略
+            this.$router.push('/msintroduce')
+          }
+          this.questionStatus = 0
+          this.currentIndex += 1
+          // case1转换 语音环 视觉空间模板
+          this.currentType = this.order[this.currentIndex]
+        } else if (this.caseFlag === '2') {
+          // case2联想策略
+          this.$router.push('/one')
+        } else {
+          // case3 场景题
+          this.questionStatus = 2
+        }
       }
     },
     // 答题阶段暂停处理
