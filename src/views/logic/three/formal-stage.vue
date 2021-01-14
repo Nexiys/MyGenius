@@ -99,7 +99,7 @@
 					this.$router.push({
 						path:'/question',
 						query:{
-							num:'18;13;12',
+							// num:'18;13;12',
 							case:1
 						}
 					})
