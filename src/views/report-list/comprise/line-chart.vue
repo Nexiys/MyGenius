@@ -57,6 +57,10 @@ export default {
     styleId: {
       type: Number,
       default: 0
+    },
+    maxValue: {
+      type: Number,
+      default: 10
     }
   },
   data () {
@@ -164,7 +168,7 @@ export default {
           {
             type: 'value',
             scale: true,
-            max: 10,
+            max: this.maxValue,
             min: 0,
             splitNumber: 5,
             splitLine: {

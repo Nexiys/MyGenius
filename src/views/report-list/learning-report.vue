@@ -69,6 +69,7 @@
             :lineChartData="interpretation.detail"
             :rightData="interpretation.des"
             :styleId="1"
+            :maxValue="100"
           ></line-chart>
         </div>
       </block>
