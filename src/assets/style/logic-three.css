@@ -211,6 +211,11 @@ body {
   font-size: 24px;
   line-height: 40px;
   color: #33363E;
+  overflow: hidden;
+}
+.apart-body .apart-top .question .question-box .img-box img {
+  width: 1060px;
+  height: 300px;
 }
 .apart-body .apart-top .question .question-box .img-box p {
   font-size: 24px;

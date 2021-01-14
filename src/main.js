@@ -1,4 +1,4 @@
-import Vue from 'vue'         // 引入 Vue 框架，来自 node_modules
+import Vue from 'vue'                    // 引入 Vue 框架，来自 node_modules
 import App from './App.vue'              // 引入 App.vue 组件 （根组件 src/App.vue）
 import router from './router'            // 引入路由 （src/router）
 import store from './store'              // 引入 store 资源 （src/store）               // 引入 axios 插件
