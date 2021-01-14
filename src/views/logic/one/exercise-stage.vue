@@ -19,17 +19,17 @@
 			
 			<div class="question">
 				<span class="stage-tit">{{ stage_tit }}</span>
-				<span class="answer-guide">{{ answer_guide }}</span>
+				<span class="answer-guide">{{ answer_guide }}</span> 
 				<div class="question-box"  v-html="dataList.content">
 					
 				</div>
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a  @click="toNext(dataList.question_num)" v-html="dataList.option_1"></a>
-			<a  @click="toNext(dataList.question_num)" v-html="dataList.option_2"></a>
-			<a  @click="toNext(dataList.question_num)" v-html="dataList.option_3"></a>
-			<a  @click="toNext(dataList.question_num)" v-html="dataList.option_4"></a>
+			<a  @click="toNext(index+1,dataList.question_num)" v-html="dataList.option_1"></a>
+			<a  @click="toNext(index+1,dataList.question_num)" v-html="dataList.option_2"></a>
+			<a  @click="toNext(index+1,dataList.question_num)" v-html="dataList.option_3"></a>
+			<a  @click="toNext(index+1,dataList.question_num)" v-html="dataList.option_4"></a>
 		</div>
 	</section>
 	</div>
@@ -74,19 +74,20 @@
 				let answer_guide = this.answer.answer_guide;
 				this.newData = data.data.data[1].data
 				this.dataList = data.data.data[1].data
+				
 				this.dataList =this.dataList[this.index] 
 				this.allNum = this.newData.length
+				console.log(this.dataList)
 			
 			},
-
-
-
 	    	toNext(a,b){
+				console.log(this.allNum )
 				if(this.index == this.allNum -1 ){
 					this.$router.push({path:"lotransition"})
 				}else{
 					this.index = this.index+a
 					this.dataList = this.newData[a]	
+					
 					
 				}
 			}

@@ -8,7 +8,7 @@
 			<div class="content-header">
 				<div class="left">
 					<span>进度：</span>
-					<span>{{num== 11? 10 : num}}</span>
+					<span>{{ num}}</span>
 					<span>/{{maxnum}}</span>
 				</div>
 				<div class="right">
@@ -26,10 +26,10 @@
 			</div>
 		</div>
 		<div class="apart-bottom">
-			<a  @click="toNext(dataList.question_num,dataList.answer_1, new Date().getTime())" v-html="dataList.option_1"></a>
-			<a  @click="toNext(dataList.question_num,dataList.answer_2,new Date().getTime())" v-html="dataList.option_2"></a>
-			<a  @click="toNext(dataList.question_num,dataList.answer_3,new Date().getTime())" v-html="dataList.option_3"></a>
-			<a  @click="toNext(dataList.question_num,dataList.answer_4,new Date().getTime())" v-html="dataList.option_4"></a>
+			<a  @click="toNext(dataList.question_num,dataList.answer_1, new Date().getTime(),num)" v-html="dataList.option_1"></a>
+			<a  @click="toNext(dataList.question_num,dataList.answer_2,new Date().getTime(),num)" v-html="dataList.option_2"></a>
+			<a  @click="toNext(dataList.question_num,dataList.answer_3,new Date().getTime(),num)" v-html="dataList.option_3"></a>
+			<a  @click="toNext(dataList.question_num,dataList.answer_4,new Date().getTime(),num)" v-html="dataList.option_4"></a>
 		</div>
 	</section>
 	</div>
@@ -94,14 +94,13 @@
 				console.log(this.maxnum)
 				this.dataList =this.dataList[this.index] 
 			},
-			toNext(a,b,c){
+			toNext(a,b,c,d){
+				console.log(d)
 				this.react =(c -this.thisTime )/1000
-				console.log(this.react)
 				let data = {question_num:a,answer:b,react:this.react}
 				this.dataAll.push(data)
-				this.num = this.num + 1
 				this.thisTime = c
-				if(a == this.newData.length){
+				if(d == this.newData.length){
 					 this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/08_bxyx_input',{
 						 data:this.dataAll,
 						 api_token: window.localStorage.data
@@ -111,8 +110,8 @@
 					 
 					 //window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
 				}else{
-					
-					this.dataList = this.newData[a]
+					this.num = this.num + 1
+					this.dataList = this.newData[d]
 				}
 
 			}
