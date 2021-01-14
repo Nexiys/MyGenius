@@ -129,7 +129,7 @@
 						this.$router.push({
 							path: '/question',
 							query: {
-								case: 1
+								case: 2
 							}
 						})
 						// window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"

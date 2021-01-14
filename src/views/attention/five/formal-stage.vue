@@ -88,7 +88,7 @@
 						 data:this.dataAll,
 						 api_token: window.localStorage.data
 					}) 
-					this.$router.push("MSIntroduce")
+					this.$router.push("LOIntroduce")
 				}else{
 					this.number = this.number+1
 					this.sub = this.sub+1

@@ -96,7 +96,13 @@
 						 data:this.dataAll,
 						 api_token: window.localStorage.data
 					})
-					this.$router.push("AFIntroduce")
+					this.$router.push({
+						path:'/question',
+						query:{
+							num:'18;13;12',
+							case:1
+						}
+					})
 				}else{
 					this.number = this.number+1
 					this.sub = this.sub+1

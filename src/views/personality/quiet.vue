@@ -128,7 +128,12 @@
 				console.log(this.isShow)
 				if(this.desnum == 4){
 						this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/00_rgqxcp_2_input', {api_token: window.localStorage.data,data:this.quesDataList})
-						this.$router.push("threeindex")
+						this.$router.push({
+							path: '/question',
+							query: {
+								case: 3
+							}
+						})
 				} 
 				this.isShow = this.desnum
 				if(this.desnum <= 3){   

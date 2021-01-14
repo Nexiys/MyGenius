@@ -123,7 +123,7 @@
 						this.content = this.datalist[this.thisindex]
 						this.lastanswer =this.lastanswer.splice(1)
 						if(this.page == 6){
-							this.$router.push("lointroduce")
+							this.$router.push("AFIntroduce")
 						}
 					} else {
 						time--;
@@ -158,7 +158,7 @@
 					this.content = this.datalist[this.thisindex]
 					this.lastanswer =this.lastanswer.splice(1)
 					if(this.page == 6){
-						this.$router.push("lointroduce")
+						this.$router.push("AFIntroduce")
 						localStorage.removeItem("reload");
 					}
 				} 
