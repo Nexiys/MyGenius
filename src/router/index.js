@@ -447,8 +447,13 @@ const routes = [
 // })
 const router = new VueRouter({
 	// mode: 'history',
+	mode: 'hash',
 	base: process.env.BASE_URL,
-	routes
-  })
+	routes,
+	scrollBehavior: () => {
+		// 禁止浏览器后退操作
+		history.pushState(null, null, document.URL)
+	}
+})
 
 export default router
