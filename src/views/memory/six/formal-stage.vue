@@ -62,7 +62,7 @@
 				length:0,
 				disabled:false,
 				content1:'',
-				timelimit:240,
+				timelimit:3,
 				answerValhttpVal:'',
 				contentTitleVal:'',
 				beAnswer:'',
@@ -101,31 +101,43 @@
 				console.log( this.timelimit)
 				this.timer = setInterval(() => {
 					if (time ==1) {
+						
+						for (var i = 1; i < this.content1.length; i++) {
+			                
+							let data = {question_num:this.content1[i].question_num,answer:0}
+							this.dataAll.push(data)
+							
+			            }
+						
+						this.inputData() 
 						clearInterval(this.timer);
 						this.$router.push({
 							path: '/question',
 							query: {
-								num: '18;21;20',
-								routeName: 'LTIntroduce'
+								case: 2
 							}
 						})
-						// window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+						
 					} else {
 						time--;
 					}
 				},1000);
 			},
+			inputData(){
+				console.log(this.dataAll)
+				this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/11_jyfscl_input',{
+					data:this.dataAll,
+					api_token: window.localStorage.data
+				}) 
+			},
 			btn(e,n){
-				let data = {question_num:n,answer:this.beAnswer}
-				this.dataAll.push(data)
+					let data = {question_num:n,answer:this.beAnswer==''?0:this.beAnswer}
+					this.dataAll.push(data)
 					this.answerVal=''
 					this.iShow=false
 					this.index = this.index+e
 					if(this.index == this.length){
-						this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/11_jyfscl_input',{
-							data:this.dataAll,
-							api_token: window.localStorage.data
-						}) 
+						this.inputData()
 						// this.$router.push("MSITransition")
 						this.$router.push({
 							path: '/question',
@@ -133,7 +145,7 @@
 								case: 2
 							}
 						})
-						// window.location.href="http://www.ruggear.mobi/tianshengwocai/#/question"
+						
 						clearInterval(this.timer);
 					}else{
 						this.content = this.content1[this.index]
