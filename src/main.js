@@ -1,9 +1,9 @@
 import Vue from 'vue'                    // 引入 Vue 框架，来自 node_modules
 import App from './App.vue'              // 引入 App.vue 组件 （根组件 src/App.vue）
 import router from './router'            // 引入路由 （src/router）
-import store from './store'              // 引入 store 资源 （src/store）               // 引入 axios 插件
+import store from './store'              // 引入 store 资源 （src/store）               
 import VueAxios from 'vue-axios'         // 引入 vue-axios Vue 集成的 axios 作用方法
-import axios from 'axios'
+import axios from 'axios'                // 引入 axios 插件
 import { Loading } from 'element-ui'
 import echarts from 'echarts'
 import jsPlumb from 'jsplumb'
