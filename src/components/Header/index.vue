@@ -15,7 +15,7 @@
 				<span>退出</span>
 			</button>
 		</div>
-	</header>
+	</header> 
 </template>
 
 <script>
@@ -24,11 +24,13 @@
 		methods: {
 			// 暂停处理
 			pauseClickHandle () {
-			  this.$emit('pause')
+	
+			  this.$emit('question-paused')
 			},
 			// 退出处理
 			quitClickHandle () {
-			  this.$emit('quit')
+		
+			  this.$emit('question-quit')
 			}
 		}
 	}

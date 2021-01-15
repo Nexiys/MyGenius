@@ -5,7 +5,7 @@
       @question-paused="questionPausedHandle"
       @question-quit="questionQuitHandle"
     ></question-header>
-    <!-- 题目主体 -->
+    <!-- 题目主体 --> 
     <div class="question-card-wrap">
       <!-- 介绍页 -->
       <introduced-card
@@ -42,7 +42,7 @@
     ></dialog-exit>
   </div>
 </template>
-
+ 
 <script>
 import Service from '@/api'
 import QuestionHeader from './comprise/header.vue'

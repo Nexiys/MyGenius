@@ -49,7 +49,7 @@
 	import Header from '../../../components/Header/index.vue'
   import timing from '../../../components/TimingRing/index'
 	export default {
-		components: {
+		components: { 
 			Header,
 			timing,
 		},
