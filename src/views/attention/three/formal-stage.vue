@@ -72,13 +72,13 @@
 				model : 0,
 				timer:null,
 				update:true,
-				answerVal:''
+				answerVal:'',
+				inputVal:'',
+				dataAll:[],
+				datago:[]
 			}
 		},
 		created(){	
-			
-			var a = document.getElementsByTagName("input");
-			console.log(a)
 			this.getData()
 			this.timeFun()
 		},
@@ -101,7 +101,7 @@
 				this.content = data.data.data[2].data.content[this.thisindex]
 				this.datalist = data.data.data[2].data.content
 				this.lastanswer = data.data.data[2].data.content.splice(1)
-				console.log(this.answer)
+				
 						
 			},
 			timeFun() {
@@ -109,16 +109,17 @@
 				this.timer = setInterval(() => {
 					if (time <= 1) {
 						clearInterval(this.timer);
-						
 						time = this.timelimit
 						this.timeFun()
 						this.page = this.page+1
 						var a = document.getElementsByTagName("input");
+						
 			            for (var i = 0; i < a.length; i++) {
 			                 a[i].value='';
-							a[0].focus()
+							 a[0].focus()
+							 console.log(a[i].value)
 			            }
-						console.log(this.answer)
+						
 						this.answer = this.answerVal[this.thisindex]
 						this.content = this.datalist[this.thisindex]
 						this.lastanswer =this.lastanswer.splice(1)
@@ -132,14 +133,21 @@
 				},1000);
 			},
 			nex(i){
+				
 				this.model=0
 				var a = document.getElementsByTagName("input");
+				let data = {question_num:i+1,answer:a[i].value==this.answer[i]?1:0}
+				this.dataAll.push(data)
+			
 	            for (var i = 0; i < a.length; i++) {
 	                if (a[i].value == "") {
 					 this.model=1
 	                }
 	            }
 				if(this.model==0){
+					this.datago.push(this.dataAll)
+					this.dataAll = []
+					console.log(this.datago)
 					clearInterval(this.timer);
 					this.timeFun()
 					this.page = this.page+1
@@ -147,9 +155,7 @@
 		            for (var i = 0; i < a.length; i++) {
 		                 a[i].value='';
 						a[0].focus()
-		            }
-					// this.timeFun()
-					// 
+		            } 
 					this.update = false
 					this.$nextTick(() => {
 						this.update = true
@@ -158,6 +164,10 @@
 					this.content = this.datalist[this.thisindex]
 					this.lastanswer =this.lastanswer.splice(1)
 					if(this.page == 6){
+						this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/02_zywdxyx_input',{
+							data:this.datago,
+							api_token: window.localStorage.data
+						}) 
 						this.$router.push("AFIntroduce")
 						localStorage.removeItem("reload");
 					}

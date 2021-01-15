@@ -122,7 +122,7 @@
 					this.iShow=false
 					this.index = this.index+e
 					if(this.index == this.length){
-							this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/11_jyfscl_input',{
+						this.axios.post('http://www.ruggear.mobi/api/v0.9/evaluation/11_jyfscl_input',{
 							data:this.dataAll,
 							api_token: window.localStorage.data
 						}) 
