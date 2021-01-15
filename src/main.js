@@ -29,6 +29,10 @@ new Vue({
 }).$mount('#app')
 
 // Vue.use(store).use(router).use(VueAxios,axios).$mount('#app')
+// 禁止浏览器后退操作
+window.addEventListener('popstate', function() {
+	history.pushState(null, null, document.URL)
+})
 
 router.beforeEach((to, from, next)=>{
   // 路由中设置的 needLogin 字段就在 to 当中
